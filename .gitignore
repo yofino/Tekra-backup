@@ -1,0 +1,6 @@
+config.json
+data/databases/*.sql.gz
+data/workspace/*.tar.gz
+backup.log
+__pycache__/
+*.pyc
