@@ -39,7 +39,7 @@ TODAY = datetime.date.today().isoformat()
 MIKROTIK_DEVICES = [
     {"name": "CCR1-Hotspot", "ip": "10.10.10.1",    "port": 18, "user": "asep", "pass": "asep$888"},
     {"name": "PUSAT-X86",    "ip": "172.80.10.100",  "port": 18, "user": "asep", "pass": "asep$888"},
-    {"name": "CILISUNG-GX4", "ip": "10.10.10.5",     "port": 18, "user": "asep", "pass": "asep$888"},
+    {"name": "CILISUNG-GX4", "ip": "10.6.0.5",      "port": 18, "user": "asep", "pass": "asep$888"},
 ]
 
 PFSENSE_DEVICES = [
@@ -48,9 +48,9 @@ PFSENSE_DEVICES = [
 ]
 
 PORTALS = [
-    {"name": "portal-pusat",   "host": "103.129.148.97", "db": "portal_tekra",  "user": "root", "pass": "k34Nu335577", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---1dcf1850-c117-402b-a1fa-0553e4ae1267"},
-    {"name": "portal-dago",    "host": "103.129.148.97", "db": "north_db",       "user": "root", "pass": "k34Nu335577", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---1dcf1850-c117-402b-a1fa-0553e4ae1267"},
-    {"name": "portal-katapang","host": "103.129.148.97", "db": "southnet_db",    "user": "root", "pass": "k34Nu335577", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---1dcf1850-c117-402b-a1fa-0553e4ae1267"},
+    {"name": "portal-pusat",   "host": "103.129.148.97", "db": "portal",  "user": "portal",  "pass": "portal",  "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---1dcf1850-c117-402b-a1fa-0553e4ae1267"},
+    {"name": "portal-dago",    "host": "103.129.148.97", "db": "utara",   "user": "utara",   "pass": "utara",   "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---1dcf1850-c117-402b-a1fa-0553e4ae1267"},
+    {"name": "portal-katapang","host": "103.129.148.97", "db": "selatan", "user": "selatan", "pass": "selatan", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---1dcf1850-c117-402b-a1fa-0553e4ae1267"},
 ]
 
 # ─────────────────────────────────────────────
@@ -144,14 +144,15 @@ def backup_pfsense():
                 "__csrf_magic": tok2.group(1) if tok2 else "",
                 "backuparea": "",
                 "donotbackuprrd": "on",
-                "Submit": "Download configuration as XML"
+                "nopackages": "on",
+                "download": "Download configuration as XML"
             }, headers={"Referer": dev["url"] + "/diag_backup.php"}, timeout=30)
-            if "config-" in r3.headers.get("Content-Disposition", "") or r3.text.startswith("<?xml"):
+            if r3.text.strip().startswith("<?xml") or "<pfsense" in r3.text[:500]:
                 out_file = out_dir / f"{name}.xml"
                 out_file.write_text(r3.text)
                 ok(f"pfSense {name}")
             else:
-                raise Exception("Response bukan XML config")
+                raise Exception(f"Response bukan XML config ({r3.status_code}, {len(r3.text)} chars)")
         except Exception as e:
             fail(f"pfSense {name}", e)
 
@@ -166,12 +167,13 @@ def backup_databases():
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             ssh.connect(portal["host"], username=portal["ssh_user"],
                         key_filename=portal["ssh_key"], timeout=20)
-            cmd = f"mysqldump -u{portal['user']} -p{portal['pass']} {portal['db']} 2>/dev/null"
+            cmd = f"mysqldump -h127.0.0.1 -u{portal['user']} -p{portal['pass']} {portal['db']} 2>/dev/null"
             _, stdout, stderr = ssh.exec_command(cmd, timeout=120)
             dump = stdout.read()
+            err = stderr.read().decode(errors='replace')
             ssh.close()
             if len(dump) < 500:
-                raise Exception("Dump terlalu kecil, mungkin DB kosong atau gagal")
+                raise Exception(f"Dump terlalu kecil ({len(dump)} bytes). Err: {err[:100]}")
             out_file = out_dir / f"{name}-{TODAY}.sql.gz"
             with gzip.open(out_file, "wb") as gz:
                 gz.write(dump)
