@@ -267,13 +267,6 @@ if __name__ == "__main__":
     backup_mikrotik()
     backup_databases()
     backup_workspace()
-
-    # pfSense & OLT: hanya backup seminggu sekali (hari Minggu)
-    if datetime.date.today().weekday() == 6:  # 6 = Minggu
-        backup_pfsense()
-        backup_olt_epon()
-    else:
-        log("pfSense & OLT: skip (hanya backup hari Minggu)")
     cleanup_old_backups()
     git_commit_push()
 
