@@ -265,10 +265,15 @@ if __name__ == "__main__":
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     backup_mikrotik()
-    backup_pfsense()
     backup_databases()
-    backup_olt_epon()
     backup_workspace()
+
+    # pfSense & OLT: hanya backup seminggu sekali (hari Minggu)
+    if datetime.date.today().weekday() == 6:  # 6 = Minggu
+        backup_pfsense()
+        backup_olt_epon()
+    else:
+        log("pfSense & OLT: skip (hanya backup hari Minggu)")
     cleanup_old_backups()
     git_commit_push()
 
