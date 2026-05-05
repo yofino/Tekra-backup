@@ -1,4 +1,4 @@
-# 2026-05-05 02:04:03 by RouterOS 7.11.3
+# 2026-05-06 02:05:16 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -478,7 +478,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=RIAN profile=PAKET1 service=pppoe
 /ppp secret add name=HENDRA profile=PAKET1 service=pppoe
 /ppp secret add name=CILISUNG profile=PAKET1 service=pppoe
-/ppp secret add name=230909151059-IMAS profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230909151059-IMAS profile=PAKET1 service=pppoe
 /ppp secret add name=RIA profile=PAKET2 service=pppoe
 /ppp secret add name=ADIBIL profile=PAKET1 service=pppoe
 /ppp secret add name=IRFA profile=PAKET1 service=pppoe
@@ -498,7 +498,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=230909151072-DINGGO profile=PAKET1 service=pppoe
 /ppp secret add name=220322140756-INOY profile=PAKET1 service=pppoe
 /ppp secret add name=230909151055-CACAH profile=PAKET1 service=pppoe
-/ppp secret add name=230909151062-ASEP profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=230909151062-ASEP profile=PAKET2 service=pppoe
 /ppp secret add name=230114074216-FITRIYANI profile=PAKET2 service=pppoe
 /ppp secret add name=231008170936-YUNITA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230909151063-RANTI profile=PAKET1 service=pppoe
@@ -533,14 +533,14 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add disabled=yes name=230909151060-RENI profile=PAKET1 service=pppoe
 /ppp secret add name=220818123605-ESA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=231009185222-LINA profile=PAKET3 service=pppoe
-/ppp secret add name=231008170942-MENTARI profile=PAKET3 service=pppoe
+/ppp secret add disabled=yes name=231008170942-MENTARI profile=PAKET3 service=pppoe
 /ppp secret add name=230909151074-HERMAWAN profile=PAKET1 service=pppoe
 /ppp secret add name=230909151075-AYI profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=220318142406-AHO profile=PAKET1 service=pppoe
 /ppp secret add name=210902133706-CIKAL profile=PAKET2 service=pppoe
 /ppp secret add name=230909151076-KOMARIAH profile=PAKET1 service=pppoe
 /ppp secret add name=OGUT profile=PAKET1 service=pppoe
-/ppp secret add name=230613081734-YADI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230613081734-YADI profile=PAKET1 service=pppoe
 /ppp secret add name=230909151077-RESTIWI profile=PAKET1 service=pppoe
 /ppp secret add name=ARIF profile=PAKET2 service=pppoe
 /ppp secret add name=SAEFUL profile=PAKET2 service=pppoe
@@ -561,16 +561,16 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=210902170557-YANA profile=PAKET1 service=pppoe
 /ppp secret add name=210902164603-DENI profile=PAKET2 service=pppoe
 /ppp secret add name=210902161800-GUSTI profile=PAKET3 service=pppoe
-/ppp secret add name=221228123326-AKUR profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=221228123326-AKUR profile=PAKET1 service=pppoe
 /ppp secret add name=210901114107-DEDI profile=PAKET1 service=pppoe
 /ppp secret add name=221228123324-IMAS profile=PAKET1 service=pppoe
 /ppp secret add name=210902140131-ASEP profile=PAKET1 service=pppoe
 /ppp secret add name=231008170943-VIQRI profile=PAKET1 service=pppoe
-/ppp secret add name=230909151080-EBIH profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230909151080-EBIH profile=PAKET1 service=pppoe
 /ppp secret add name=210902162311-TONO profile="PAKET PUAS" service=pppoe
-/ppp secret add name=220718133013-INDRA profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=220718133013-INDRA profile=PAKET2 service=pppoe
 /ppp secret add name=210902133102-ANWAR profile=PAKET1 service=pppoe
-/ppp secret add name=230311155641-DEBI profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=230311155641-DEBI profile=PAKET2 service=pppoe
 /ppp secret add name=210901143902-FAHRUN profile=PAKET3 service=pppoe
 /ppp secret add name=230114074225-FENI profile=PAKET1 service=pppoe
 /ppp secret add name=230909151050-FIKRI profile=PAKET1 service=pppoe
@@ -578,7 +578,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=221009174256-RUSTINI profile=PAKET4 service=pppoe
 /ppp secret add name=230114074214-IROB profile=PAKET1 service=pppoe
 /ppp secret add name=220512104255-IRPAN profile=PAKET2 service=pppoe
-/ppp secret add name=231009185221-IRFAN profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=231009185221-IRFAN profile=PAKET1 service=pppoe
 /ppp secret add name=210902194915-IZAL profile=PAKET2 service=pppoe
 /ppp secret add name=230909151052-UJANG profile=PAKET1 service=pppoe
 /ppp secret add name=220810121116-MAMAN profile=PAKET2 service=pppoe
@@ -589,7 +589,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=221119172548-SUHERMAN profile=PAKET2 service=pppoe
 /ppp secret add name=230909151051-UKON profile=PAKET1 service=pppoe
 /ppp secret add name=221126120614-OCANG profile=PAKET2 service=pppoe
-/ppp secret add name=230114074227-WIWI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230114074227-WIWI profile=PAKET1 service=pppoe
 /ppp secret add name=230114074228-YAYAT profile=PAKET1 service=pppoe
 /ppp secret add name=230615172244-SRI profile=PAKET2 service=pppoe
 /ppp secret add name=240315141543-THENDRA profile=PAKET2 service=pppoe
@@ -634,18 +634,18 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=210902132954-MORFIN profile=PAKET1 service=pppoe
 /ppp secret add name=r3 profile=PAKET5 service=pppoe
 /ppp secret add name=230613081736-KOMALA profile=PAKET1 service=pppoe
-/ppp secret add name=230613081737-ADE profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230613081737-ADE profile=PAKET1 service=pppoe
 /ppp secret add name=230114074213-CAHYANA profile=PAKET1 service=pppoe
 /ppp secret add name=210902135124-ATEN profile=PAKET1 service=pppoe
 /ppp secret add name=240315141544-DEDEN profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=230909151082-ELIS profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230909151082-ELIS profile=PAKET1 service=pppoe
 /ppp secret add name=221119172546-YAYAH profile=PAKET2 service=pppoe
 /ppp secret add name=230114074224-RIKA profile=PAKET1 service=pppoe
 /ppp secret add name=221119172545-IKA profile=PAKET5 service=pppoe
 /ppp secret add name=230114190806-SABRINA profile=PAKET1 service=pppoe
 /ppp secret add name=230114190807-SRI profile=PAKET1 service=pppoe
-/ppp secret add name=240315141545-VIKY profile=PAKET1 service=pppoe
-/ppp secret add name=230909151083-BAGUS profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=240315141545-VIKY profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230909151083-BAGUS profile=PAKET1 service=pppoe
 /ppp secret add name=210901143902-TOKOFAHRUN profile=PAKET1 service=pppoe
 /ppp secret add name=220901083021-YADI profile=PAKET2 service=pppoe
 /ppp secret add name=230114074222-RESTI profile="PAKET MANTAP" service=pppoe
@@ -694,7 +694,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add disabled=yes name=11200002-ISUR profile=PAKET2 service=pppoe
 /ppp secret add name=230126060440-IIS profile=PAKET2 service=pppoe
 /ppp secret add disabled=yes name=220309142259-JUWITA profile=PAKET1 service=pppoe
-/ppp secret add name=230613081741-DEDI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230613081741-DEDI profile=PAKET1 service=pppoe
 /ppp secret add name=221212152521-IMAN profile=PAKET1 service=pppoe
 /ppp secret add name=240504175810-DIKI profile=PAKET1 service=pppoe
 /ppp secret add name=240315141550-JAJANG profile=PAKET1 service=pppoe
@@ -708,8 +708,8 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=220203105928-AGUNG profile=PAKET1 service=pppoe
 /ppp secret add name=221212153130-SONA profile=PAKET2 service=pppoe
 /ppp secret add name=230311155640-DIDIN profile=PAKET1 service=pppoe
-/ppp secret add name=240315141554-ITA profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=221101132931-DADI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=240315141554-ITA profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=221101132931-DADI profile=PAKET1 service=pppoe
 /ppp secret add name=230126060441-ERVAN profile=PAKET1 service=pppoe
 /ppp secret add name=230613081742-SUDRAJAT profile=PAKET1 service=pppoe
 /ppp secret add name=240315141555-IIN profile=PAKET1 service=pppoe
@@ -738,19 +738,19 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=230613081750-SIDIK profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=240315141559-ARNI profile=PAKET2 service=pppoe
 /ppp secret add name=210927114345-RISMA profile=PAKET1 service=pppoe
-/ppp secret add name=240315141560-AI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=240315141560-AI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230613081751-SITI profile=PAKET1 service=pppoe
 /ppp secret add name=230613081752-SUNANDAR profile="PAKET PUAS" service=pppoe
 /ppp secret add name=230909151097-HERI profile=PAKET1 service=pppoe
 /ppp secret add name=230613081753-WAHYUDIN profile=PAKET1 service=pppoe
 /ppp secret add name=240315141561-EDDY profile=PAKET1 service=pppoe
 /ppp secret add name=230613081754-NENDEN profile=PAKET1 service=pppoe
-/ppp secret add name=230909151098-ENCAR profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=221109122214-ALISKA profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230909151098-ENCAR profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=221109122214-ALISKA profile=PAKET1 service=pppoe
 /ppp secret add name=240315141562-SARDAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230126060443-WIWIN profile=PAKET1 service=pppoe
 /ppp secret add name=240315141563-ASEP profile=PAKET1 service=pppoe
-/ppp secret add name=230126060444-MUTHIYA profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230126060444-MUTHIYA profile=PAKET1 service=pppoe
 /ppp secret add name=230909151099-RUSLI profile=PAKET1 service=pppoe
 /ppp secret add name=240315141564-GUGUN profile=PAKET1 service=pppoe
 /ppp secret add name=230126060445-AGUS profile=PAKET1 service=pppoe
@@ -762,27 +762,27 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=230909151101-NANDANG profile=PAKET1 service=pppoe
 /ppp secret add name=221119172549-PURI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230613081758-SITI profile=PAKET1 service=pppoe
-/ppp secret add name=221109135358-ADELIA profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=221109135358-ADELIA profile=PAKET1 service=pppoe
 /ppp secret add name=240315141566-MUTIARA profile=PAKET5 service=pppoe
 /ppp secret add name=230613081759-ASEP profile=PAKET1 service=pppoe
 /ppp secret add name=240315141567-PAJAR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230613081760-WIDARYANTO profile=PAKET1 service=pppoe
 /ppp secret add name=240315141568-FITRIYA profile=PAKET1 service=pppoe
-/ppp secret add name=240315141569-JUJU profile=PAKET1 service=pppoe
-/ppp secret add name=241006135944-FIRMAN profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=240315141569-JUJU profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=241006135944-FIRMAN profile=PAKET2 service=pppoe
 /ppp secret add name=240315141570-DANA profile=PAKET1 service=pppoe
 /ppp secret add name=240315141571-ADE profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230613081761-HENDRA profile=PAKET1 service=pppoe
 /ppp secret add name=230114074215-SITI profile=PAKET2 service=pppoe
-/ppp secret add name=220808121224-ANTON profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=220808121224-ANTON profile=PAKET1 service=pppoe
 /ppp secret add name=230909151064-VINA profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=230909151068-NUR profile=PAKET1 service=pppoe
-/ppp secret add name=240315141572-YENI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=240315141572-YENI profile=PAKET1 service=pppoe
 /ppp secret add name=210902132104-ARFAN profile=PAKET3 service=pppoe
 /ppp secret add name=210902135207-ARIS profile=PAKET1 service=pppoe
 /ppp secret add name=210902140040-TONI profile=PAKET1 service=pppoe
 /ppp secret add name=210902123711-EMAN profile=PAKET3 service=pppoe
-/ppp secret add name=240315141573-ELIS profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=240315141573-ELIS profile=PAKET1 service=pppoe
 /ppp secret add name=241006135945-MIANETA profile=PAKET1 service=pppoe
 /ppp secret add name=221112092334-NENI profile=PAKET1 service=pppoe
 /ppp secret add name=210902124742-RONI profile=PAKET1 service=pppoe
@@ -801,10 +801,10 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=220108112546-SUSI profile=PAKET1 service=pppoe
 /ppp secret add name=220108101310-AGUS profile=PAKET1 service=pppoe
 /ppp secret add name=210902195917-EMAN profile=PAKET1 service=pppoe
-/ppp secret add name=230613081756-KANKAN profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230613081756-KANKAN profile=PAKET1 service=pppoe
 /ppp secret add name=210901144241-HENDRA profile=PAKET2 service=pppoe
-/ppp secret add name=10300077-SEPHIA profile=PAKET1 service=pppoe
-/ppp secret add name=10300078-EKA profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=10300077-SEPHIA profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=10300078-EKA profile=PAKET1 service=pppoe
 /ppp secret add name=210902195330-DYAN profile=PAKET1 service=pppoe
 /ppp secret add name=210902193918-ISTANA profile=PAKET2 service=pppoe
 /ppp secret add name=230615172246-EUISLUMAYA profile=PAKET1 service=pppoe
@@ -827,16 +827,16 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=221016171724-IPA profile=PAKET1 service=pppoe
 /ppp secret add name=220910200413-WIDANINGSIH profile=PAKET2 service=pppoe
 /ppp secret add name=211005123816-FATIMAH profile=PAKET1 service=pppoe
-/ppp secret add name=230615172245-DEWIUTARI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230615172245-DEWIUTARI profile=PAKET1 service=pppoe
 /ppp secret add name=210902195716-DUDI profile=PAKET1 service=pppoe
 /ppp secret add name=230613081724-FERI profile=PAKET2 service=pppoe
 /ppp secret add name=210902194811-EFI profile=PAKET2 service=pppoe
 /ppp secret add name=220309142257-RUDI profile=PAKET1 service=pppoe
-/ppp secret add name=220309142258-DAMAR profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=220309142258-DAMAR profile=PAKET1 service=pppoe
 /ppp secret add name=210902194311-IMAN profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=210902194358-IWAN profile=PAKET2 service=pppoe
 /ppp secret add name=210902195422-SILVY profile=PAKET1 service=pppoe
-/ppp secret add name=220309142262-ABING profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=220309142262-ABING profile=PAKET1 service=pppoe
 /ppp secret add name=210902194958-DENI profile=PAKET2 service=pppoe
 /ppp secret add name=211201182657-NOVI profile=PAKET1 service=pppoe
 /ppp secret add name=220309142261-YATNA profile=PAKET1 service=pppoe
@@ -849,7 +849,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=10300081-NADIA profile=PAKET4 service=pppoe
 /ppp secret add name=10300082-ECEP profile=PAKET2 service=pppoe
 /ppp secret add name=10300083-LIA profile=PAKET1 service=pppoe
-/ppp secret add name=10100001-AGUNG profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=10100001-AGUNG profile=PAKET2 service=pppoe
 /ppp secret add name=10100197-YANA profile=PAKET1 service=pppoe
 /ppp secret add name=10100198-YOPI profile=PAKET1 service=pppoe
 /ppp secret add name=10200107-RESTI profile=PAKET1 service=pppoe
@@ -870,11 +870,11 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=210902163107-MAMAHIIP profile=PAKET2 service=pppoe
 /ppp secret add name=241203121051-REVANA profile=PAKET2 service=pppoe
 /ppp secret add name=241205150940-FITRIANA profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=241206161113-MIASEPTIANI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=241206161113-MIASEPTIANI profile=PAKET1 service=pppoe
 /ppp secret add name=210902162706-ADANG profile=PAKET2 service=pppoe
 /ppp secret add name=241213145556-NOER profile=PAKET2 service=pppoe
 /ppp secret add name=241213155647-SAADAH profile=PAKET1 service=pppoe
-/ppp secret add name=241213180117-LERRY profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=241213180117-LERRY profile=PAKET1 service=pppoe
 /ppp secret add name=241213191106-NOVIARYANTI profile=PAKET2 service=pppoe
 /ppp secret add name=241214105706-ULAYYA profile=PAKET1 service=pppoe
 /ppp secret add name=210902163716-INTAN profile=PAKET2 service=pppoe
@@ -885,14 +885,14 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=241220150933-FERDY profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=220715102354-AJI profile=PAKET1 service=pppoe
 /ppp secret add name=241225104811-CACA profile=PAKET1 service=pppoe
-/ppp secret add name=210902194604-KEMBAR profile=PAKET3 service=pppoe
+/ppp secret add disabled=yes name=210902194604-KEMBAR profile=PAKET3 service=pppoe
 /ppp secret add name=210902195251-YANTI profile=PAKET2 service=pppoe
 /ppp secret add name=210902125337-TATA profile=PAKET1 service=pppoe
 /ppp secret add name=211002153847-SARIPUDIN profile=PAKET1 service=pppoe
 /ppp secret add name=210902135936-SUGEUNG profile=PAKET1 service=pppoe
 /ppp secret add name=220109070515-TAUFIK profile=PAKET2 service=pppoe
 /ppp secret add name=221119172551-RISA profile=PAKET2 service=pppoe
-/ppp secret add name=211210102802-ASEP profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=211210102802-ASEP profile=PAKET2 service=pppoe
 /ppp secret add name=211225102400-ROHMAT profile=PAKET1 service=pppoe
 /ppp secret add name=230114074217-NONO profile=PAKET1 service=pppoe
 /ppp secret add name=210902134124-AYU profile=PAKET1 service=pppoe
@@ -905,7 +905,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=IVENK profile=PAKET1 service=pppoe
 /ppp secret add name=250105143745-ISMAIL profile=PAKET1 service=pppoe
 /ppp secret add name=230114074220-ASEP profile=PAKET1 service=pppoe
-/ppp secret add name=220417143556-ANI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=220417143556-ANI profile=PAKET1 service=pppoe
 /ppp secret add name=210901144114-ENDA profile=PAKET1 service=pppoe
 /ppp secret add name=210901144009-HASAN profile=PAKET1 service=pppoe
 /ppp secret add name=210902135508-YOGA profile=PAKET1 service=pppoe
@@ -922,7 +922,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=250207112615-YAYANG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=10100198-YOPIHIDAYAT profile=PAKET1 service=pppoe
 /ppp secret add name=250212093026-SUNAEDI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250215140432-ASEP profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250215140432-ASEP profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250221163051-MIASITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250222093240-EUISSITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250222104603-VINAJULI profile="PAKET HEMAT" service=pppoe
@@ -930,7 +930,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=211109135251-FERA profile=PAKET2 service=pppoe
 /ppp secret add name=211109135123-RIYAN profile=PAKET2 service=pppoe
 /ppp secret add name=211223071015-DEBI profile=PAKET2 service=pppoe
-/ppp secret add name=230126060435-DESY profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=230126060435-DESY profile=PAKET2 service=pppoe
 /ppp secret add name=230126060436-TATI profile=PAKET2 service=pppoe
 /ppp secret add name=250223101518-ENENG profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250223101518-ENENGFITRI profile=PAKET2 service=pppoe
@@ -969,13 +969,13 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=210902163618-SANJAYA profile=PAKET1 service=pppoe
 /ppp secret add name=10200130-DEDENUR profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=10200131-NUNUNG profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250526152352-IRPAN profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250526152352-IRPAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=10600001-DIANROHENDI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=10600021-ELAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=10100219-DEDENMARDANI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250601173512-DINDA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250603112655-ALIT profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250605111505-ERNI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250605111505-ERNI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250612113506-ARIAZHAR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250616112815-HERI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250620100310-YATI profile="PAKET HEMAT" service=pppoe
@@ -990,12 +990,12 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=250717140138-MENAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250721095023-KUSTIWA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250722174120-NANA profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250724204016-WINDA profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250724204016-WINDA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250726103721-DEDEN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250803143349-YOGA profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250806154003-CEPI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250806154003-CEPI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250809135620-ERNI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250810145100-DEDEH profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250810145100-DEDEH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250824110757-NAUFALRAIS profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250831173811-YANYAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250901095118-NANI profile="PAKET HEMAT" service=pppoe
@@ -1009,17 +1009,17 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=250927175052-PANGGUNGBOSUR profile=PAKET4 service=pppoe
 /ppp secret add name=251001112727-LOUISE profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251001131207-SRI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=251002122329-KUSMIARSIH profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=251002122329-KUSMIARSIH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=KAFIR profile="PAKET MANTAP" service=pppoe
 /ppp secret add disabled=yes name=251007105218-EVA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=210902133555-ARTI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251009185936-SONI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251017172705-FUZI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251017172705-FUZINUR profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=251019150445-SHOBUR profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=251019150445-SHOBUR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251102102753-NIA profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=251102151517-UJANGRAHMAT profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=251103103741-WIDA profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=251102151517-UJANGRAHMAT profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=251103103741-WIDA profile="PAKET HEMAT" service=pppoe
 /ppp secret add local-address=10.10.13.1 name=251103182737-YERI profile="PAKET MANTAP" remote-address=10.10.13.178 service=pppoe
 /ppp secret add name=251104132447-PIKRI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251104143339-FUJI profile="PAKET HEMAT" service=pppoe
@@ -1032,7 +1032,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=251105173702-SIGIT profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251106100416-SITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251106143239-ASEPDEDI profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=251106143239-ASEPDEPY profile="PAKET MANTAP" service=pppoe
+/ppp secret add disabled=yes name=251106143239-ASEPDEPY profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251107095310-YOYOH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251107145714-TISNA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251107173707-WINDA profile="PAKET HEMAT" service=pppoe
@@ -1048,7 +1048,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=251125120936-WINIARTI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251128141759-EEN profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251129143806-EROS profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=251130130352-NOVI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=251130130352-NOVI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name="251203113041=ELSA" profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251203113041-ELSANUR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251204095426-RIFA profile="PAKET HEMAT" service=pppoe
@@ -1092,18 +1092,18 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260227135245-ACEP profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260227162520-ADEJUARIYAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260228105519-DEVA profile=PAKET2 service=pppoe
-/ppp secret add name=260228123401-SETIAWAN profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=260228123401-SETIAWAN profile=PAKET2 service=pppoe
 /ppp secret add name=260302144821-LALA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260303155159-INDRA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260304162648-TAUFIK profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260312105131-KOKO profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260318131256-ALVIN profile="PAKET PUAS" service=pppoe
-/ppp secret add name=260330134851-DEVIA profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260330134851-DEVIA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260330135611-LINA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260330152600-CUCUM profile=PAKET2 service=pppoe
 /ppp secret add name=260402181107-BAGUS profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260405165907-DADANG profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=260408115030-APRIYANI profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=260408115030-APRIYANI profile=PAKET2 service=pppoe
 /ppp secret add comment="Lilis Suryani - Ciburuy" name=20260424150744-LILIS profile=PAKET1 service=pppoe
 /ppp secret add comment="Heni Mulyani - Ciburuy" name=20260425131734-HENI profile=PAKET1 service=pppoe
 /ppp secret add name=260427110615-YULIA profile=PAKET2 service=pppoe
@@ -1112,10 +1112,12 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add comment="RONY - Bojong Seureuh" name=20260428133854-RONY profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260504133035-ELAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add comment="DINDA CITRA - Pusat" name=20260504183213-DINDA profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260505102240-ENUR profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260505184707-RENI profile=PAKET2 service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=489 show-at-login=no
+/system note set note=439 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
