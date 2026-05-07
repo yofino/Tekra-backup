@@ -1,4 +1,4 @@
-# 2026-05-07 02:01:48 by RouterOS 7.16.1
+# 2026-05-08 02:01:45 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -153,7 +153,7 @@ add action=dst-nat chain=dstnat dst-port=8121 in-interface=REMOTE protocol=tcp t
 /ppp secret add name=231209182065-FIKRI profile=PAKET2 service=pppoe
 /ppp secret add name=231209182068-ABDUL profile=PAKET1 service=pppoe
 /ppp secret add name=231209182069-GUGUN profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=231215114527-LAGIYONO profile=PAKET1 service=pppoe
+/ppp secret add name=231215114527-LAGIYONO profile=PAKET1 service=pppoe
 /ppp secret add name=240504175814-SASKIA profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=NOVITA profile=PAKET2 service=pppoe
 /ppp secret add name=NANA profile=PAKET2 service=pppoe
@@ -278,7 +278,7 @@ add action=dst-nat chain=dstnat dst-port=8121 in-interface=REMOTE protocol=tcp t
 /ppp secret add name=230304191421-HASTI profile=PAKET1 service=pppoe
 /ppp secret add name=250311155850-PANDU profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250319111600-YULI profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=250408102651-AGUSGUNAWAN profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=250408102651-AGUSGUNAWAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250429110120-MIMIN profile="PAKET HEMAT"
 /ppp secret add name=250430114024-SITIHAMIDAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250501112352-ALDIPRATAMA profile="PAKET HEMAT" service=pppoe
@@ -347,7 +347,7 @@ add action=dst-nat chain=dstnat dst-port=8121 in-interface=REMOTE protocol=tcp t
 /ppp secret add name=260112141011-AGUNGPERMANA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260114145947-ZIDAN profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260124130101-SRIDWI profile="PAKET MANTAP" service=pppoe
-/ppp secret add disabled=yes name=260130140141-FIRZI profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260130140141-FIRZI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260131125819-IMAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260203181552-HELLENA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260211162621-BAYU profile="PAKET MANTAP" service=pppoe
@@ -374,7 +374,7 @@ add action=dst-nat chain=dstnat dst-port=8121 in-interface=REMOTE protocol=tcp t
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=163 show-at-login=no
+/system note set note=166 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"
