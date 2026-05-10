@@ -1,0 +1,2118 @@
+{
+  "zabbix_export": {
+    "version": "7.0",
+    "host_groups": [
+      {
+        "uuid": "a571c0d144b14fd4a87a9d9b2aa9fcd6",
+        "name": "Applications"
+      },
+      {
+        "uuid": "21fff455004b417081245b84dfe8a2c4",
+        "name": "Content Monitoring"
+      },
+      {
+        "uuid": "6f6799aa69e844b4b3918f779f2abf08",
+        "name": "Zabbix servers"
+      }
+    ],
+    "hosts": [
+      {
+        "host": "CCR1",
+        "name": "CCR1",
+        "templates": [
+          {
+            "name": "Mikrotik by SNMP"
+          },
+          {
+            "name": "Template POP WAN ISP"
+          }
+        ],
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "SNMP",
+            "ip": "10.10.10.1",
+            "port": "161",
+            "details": {
+              "community": "{$SNMP_COMMUNITY}",
+              "max_repetitions": "30"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "pppoe-active",
+            "type": "SNMP_AGENT",
+            "snmp_oid": ".1.3.6.1.4.1.14988.1.1.6.1.0",
+            "key": "pppoe.active.count",
+            "interface_ref": "if1"
+          }
+        ],
+        "macros": [
+          {
+            "macro": "{$WAN_IFINDEX}",
+            "value": "23",
+            "description": "WAN sfp-HYPER"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "CCR2",
+        "name": "CCR2",
+        "templates": [
+          {
+            "name": "Mikrotik by SNMP"
+          },
+          {
+            "name": "Template POP WAN ISP"
+          }
+        ],
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "SNMP",
+            "ip": "172.80.10.100",
+            "port": "161",
+            "details": {
+              "community": "{$SNMP_COMMUNITY}",
+              "max_repetitions": "30"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "pppoe-active",
+            "type": "SNMP_AGENT",
+            "snmp_oid": ".1.3.6.1.4.1.14988.1.1.7.5.0",
+            "key": "pppoe.active.count",
+            "preprocessing": [
+              {
+                "type": "REGEX",
+                "parameters": [
+                  "([0-9]+)",
+                  "\\1"
+                ]
+              },
+              {
+                "type": "TRIM",
+                "parameters": [
+                  " "
+                ]
+              },
+              {
+                "type": "DISCARD_UNCHANGED",
+                "parameters": [
+                  ""
+                ]
+              }
+            ],
+            "interface_ref": "if1"
+          }
+        ],
+        "macros": [
+          {
+            "macro": "{$WAN_IFINDEX}",
+            "value": "2"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "CILISUNG",
+        "name": "CILISUNG",
+        "templates": [
+          {
+            "name": "Mikrotik by SNMP"
+          },
+          {
+            "name": "Template POP WAN ISP"
+          }
+        ],
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "SNMP",
+            "ip": "10.6.0.5",
+            "port": "161",
+            "details": {
+              "community": "{$SNMP_COMMUNITY}"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "pppoe-active",
+            "type": "SNMP_AGENT",
+            "snmp_oid": ".1.3.6.1.4.1.14988.1.1.7.5.0",
+            "key": "pppoe.active.count",
+            "preprocessing": [
+              {
+                "type": "REGEX",
+                "parameters": [
+                  "([0-9]+)",
+                  "\\1"
+                ]
+              },
+              {
+                "type": "TRIM",
+                "parameters": [
+                  " "
+                ]
+              },
+              {
+                "type": "DISCARD_UNCHANGED",
+                "parameters": [
+                  ""
+                ]
+              }
+            ],
+            "interface_ref": "if1"
+          }
+        ],
+        "macros": [
+          {
+            "macro": "{$WAN_IFINDEX}",
+            "value": "11"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "DAGO",
+        "name": "DAGO",
+        "templates": [
+          {
+            "name": "Mikrotik by SNMP"
+          },
+          {
+            "name": "Template POP WAN ISP"
+          }
+        ],
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "SNMP",
+            "ip": "10.6.0.2",
+            "port": "161",
+            "details": {
+              "community": "{$SNMP_COMMUNITY}"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "pppoe-active",
+            "type": "SNMP_AGENT",
+            "snmp_oid": "1.3.6.1.4.1.14988.1.1.7.5.0",
+            "key": "pppoe.active.count",
+            "preprocessing": [
+              {
+                "type": "REGEX",
+                "parameters": [
+                  "([0-9]+)",
+                  "\\1"
+                ]
+              },
+              {
+                "type": "TRIM",
+                "parameters": [
+                  " "
+                ]
+              },
+              {
+                "type": "DISCARD_UNCHANGED",
+                "parameters": [
+                  ""
+                ]
+              }
+            ],
+            "interface_ref": "if1"
+          }
+        ],
+        "macros": [
+          {
+            "macro": "{$WAN_IFINDEX}",
+            "value": "15"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "DESKTOP-WHJFVWIHJF.home.arpa",
+        "name": "DESKTOP-WHJFVWIHJF.home.arpa",
+        "templates": [
+          {
+            "name": "Linux by Zabbix agent"
+          }
+        ],
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "ip": "192.168.123.1",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "CPU Temperature",
+            "key": "pfsense.cpu.temp",
+            "units": "\u00b0C",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "WAN1 - Latency",
+            "key": "pfsense.gw.latency[WAN1]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "ms",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "WAN2 - Latency",
+            "key": "pfsense.gw.latency[WAN2]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "ms",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "WAN3 - Latency",
+            "key": "pfsense.gw.latency[WAN3]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "ms",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "WAN4 - Latency",
+            "key": "pfsense.gw.latency[WAN4]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "ms",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "WAN5 - Latency",
+            "key": "pfsense.gw.latency[WAN5]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "ms",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "WAN6 - Latency",
+            "key": "pfsense.gw.latency[WAN6]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "ms",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "WAN7 - Latency",
+            "key": "pfsense.gw.latency[WAN7GW]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "ms",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "WAN1 - Packet Loss",
+            "key": "pfsense.gw.loss[WAN1]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.loss[WAN1])>10",
+                "name": "PfSense RTO Tinggi WAN1",
+                "status": "DISABLED",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN2 - Packet Loss",
+            "key": "pfsense.gw.loss[WAN2]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.loss[WAN2])>10",
+                "name": "PfSense RTO Tinggi WAN2",
+                "status": "DISABLED",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN3 - Packet Loss",
+            "key": "pfsense.gw.loss[WAN3]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.loss[WAN3])>10",
+                "name": "PfSense RTO Tinggi WAN3",
+                "status": "DISABLED",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN4 - Packet Loss",
+            "key": "pfsense.gw.loss[WAN4]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.loss[WAN4])>10",
+                "name": "PfSense RTO Tinggi WAN4",
+                "status": "DISABLED",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN5 - Packet Loss",
+            "key": "pfsense.gw.loss[WAN5]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.loss[WAN5])>10",
+                "name": "PfSense RTO Tinggi WAN5",
+                "status": "DISABLED",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN6 - Packet Loss",
+            "key": "pfsense.gw.loss[WAN6]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.loss[WAN6])>10",
+                "name": "PfSense RTO Tinggi WAN6",
+                "status": "DISABLED",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN7 - Packet Loss",
+            "key": "pfsense.gw.loss[WAN7GW]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "WAN1 - Status",
+            "key": "pfsense.gw.status.num[WAN1]",
+            "delay": "30s",
+            "trends": "0",
+            "valuemap": {
+              "name": "pfSense Gateway Status"
+            },
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.status.num[WAN1])=0",
+                "name": "pfSense Gateway Status WAN1",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN2 - Status",
+            "key": "pfsense.gw.status.num[WAN2]",
+            "delay": "30s",
+            "trends": "0",
+            "valuemap": {
+              "name": "pfSense Gateway Status"
+            },
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.status.num[WAN2])=0",
+                "name": "pfSense Gateway Status WAN2",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN3 - Status",
+            "key": "pfsense.gw.status.num[WAN3]",
+            "delay": "30s",
+            "trends": "0",
+            "valuemap": {
+              "name": "pfSense Gateway Status"
+            },
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.status.num[WAN3])=0",
+                "name": "pfSense Gateway Status WAN3",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN4 - Status",
+            "key": "pfsense.gw.status.num[WAN4]",
+            "delay": "30s",
+            "trends": "0",
+            "valuemap": {
+              "name": "pfSense Gateway Status"
+            },
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.status.num[WAN4])=0",
+                "name": "pfSense Gateway Status WAN4",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN5 - Status",
+            "key": "pfsense.gw.status.num[WAN5]",
+            "delay": "30s",
+            "trends": "0",
+            "valuemap": {
+              "name": "pfSense Gateway Status"
+            },
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.status.num[WAN5])=0",
+                "name": "pfSense Gateway Status WAN5",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN6 - Status",
+            "key": "pfsense.gw.status.num[WAN6]",
+            "delay": "30s",
+            "trends": "0",
+            "valuemap": {
+              "name": "pfSense Gateway Status"
+            },
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/DESKTOP-WHJFVWIHJF.home.arpa/pfsense.gw.status.num[WAN6])=0",
+                "name": "pfSense Gateway Status WAN6",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "WAN7 - Status",
+            "key": "pfsense.gw.status.num[WAN7GW]",
+            "delay": "30s",
+            "trends": "0",
+            "valuemap": {
+              "name": "pfSense Gateway Status"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "inventory_mode": "DISABLED",
+        "valuemaps": [
+          {
+            "name": "pfSense Gateway Status",
+            "mappings": [
+              {
+                "value": "1",
+                "newvalue": "ONLINE"
+              },
+              {
+                "value": "0",
+                "newvalue": "OFFLINE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "host": "facebook.com",
+        "name": "Facebook",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "ip": "",
+            "dns": "facebook.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - facebook.com",
+            "type": "SIMPLE",
+            "key": "icmppingloss[facebook.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%",
+            "description": "Packet loss to facebook.com"
+          },
+          {
+            "name": "ICMP Ping - facebook.com",
+            "type": "SIMPLE",
+            "key": "icmpping[facebook.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms",
+            "description": "Latency to facebook.com"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "ff.garena.com",
+        "name": "Free Fire",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "dns": "ff.garena.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - Free Fire",
+            "type": "SIMPLE",
+            "key": "icmppingloss[ff.garena.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%"
+          },
+          {
+            "name": "ICMP Ping - Free Fire",
+            "type": "SIMPLE",
+            "key": "icmpping[ff.garena.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "google.com",
+        "name": "Google",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "ip": "",
+            "dns": "google.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - google.com",
+            "type": "SIMPLE",
+            "key": "icmppingloss[google.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%",
+            "description": "Packet loss to google.com"
+          },
+          {
+            "name": "ICMP Ping - google.com",
+            "type": "SIMPLE",
+            "key": "icmpping[google.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms",
+            "description": "Latency to google.com"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "instagram.com",
+        "name": "Instagram",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "ip": "",
+            "dns": "instagram.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - instagram.com",
+            "type": "SIMPLE",
+            "key": "icmppingloss[instagram.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%",
+            "description": "Packet loss to instagram.com"
+          },
+          {
+            "name": "ICMP Ping - instagram.com",
+            "type": "SIMPLE",
+            "key": "icmpping[instagram.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms",
+            "description": "Latency to instagram.com"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "INTERNET-QUALITY-MONITOR",
+        "name": "INTERNET-QUALITY-MONITOR",
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "pubg-LOSS",
+            "type": "SIMPLE",
+            "key": "icmppingloss[43.252.0.1,5]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "ML-LOSS",
+            "type": "SIMPLE",
+            "key": "icmppingloss[47.91.0.1,5]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "ff-LOSS",
+            "type": "SIMPLE",
+            "key": "icmppingloss[52.76.0.1,5]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "pubg-LATENCY",
+            "type": "SIMPLE",
+            "key": "icmppingsec[43.252.0.1,5]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "s",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "ML-LATENCY",
+            "type": "SIMPLE",
+            "key": "icmppingsec[47.91.0.1,5]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "s",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "ff-LATENCY",
+            "type": "SIMPLE",
+            "key": "icmppingsec[52.76.0.1,5]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "s",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "pubg-PING",
+            "type": "SIMPLE",
+            "key": "icmpping[43.252.0.1]",
+            "delay": "30s",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "ML-PING",
+            "type": "SIMPLE",
+            "key": "icmpping[47.91.0.1]",
+            "delay": "30s",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "ff-PING",
+            "type": "SIMPLE",
+            "key": "icmpping[52.76.0.1]",
+            "delay": "30s",
+            "interface_ref": "if1"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "ISP-CORE",
+        "name": "ISP-CORE",
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "SNMP",
+            "port": "161",
+            "details": {
+              "community": "{$SNMP_COMMUNITY}"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "TOTAL DOWNLOAD NASIONAL",
+            "type": "CALCULATED",
+            "key": "traffic.nasional.in",
+            "delay": "30s",
+            "units": "bps",
+            "params": "last(/CCR1/wan.in)+\nlast(/CCR2/wan.in)+\nlast(/CILISUNG/wan.in)+\nlast(/DAGO/wan.in)+\nlast(/KATAPANG/wan.in)"
+          },
+          {
+            "name": "TOTAL UPLOAD NASIONAL",
+            "type": "CALCULATED",
+            "key": "traffic.nasional.out",
+            "delay": "30s",
+            "units": "bps",
+            "params": "last(/CCR1/wan.out)+\nlast(/CCR2/wan.out)+\nlast(/CILISUNG/wan.out)+\nlast(/DAGO/wan.out)+\nlast(/KATAPANG/wan.out)"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "KATAPANG",
+        "name": "KATAPANG",
+        "templates": [
+          {
+            "name": "Mikrotik by SNMP"
+          },
+          {
+            "name": "Template POP WAN ISP"
+          }
+        ],
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "SNMP",
+            "ip": "10.6.0.4",
+            "port": "161",
+            "details": {
+              "community": "{$SNMP_COMMUNITY}"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "pppoe-active",
+            "type": "SNMP_AGENT",
+            "snmp_oid": ".1.3.6.1.4.1.14988.1.1.7.5.0",
+            "key": "pppoe.active.count",
+            "preprocessing": [
+              {
+                "type": "REGEX",
+                "parameters": [
+                  "([0-9]+)",
+                  "\\1"
+                ]
+              },
+              {
+                "type": "TRIM",
+                "parameters": [
+                  " "
+                ]
+              },
+              {
+                "type": "DISCARD_UNCHANGED",
+                "parameters": [
+                  ""
+                ]
+              }
+            ],
+            "interface_ref": "if1"
+          }
+        ],
+        "macros": [
+          {
+            "macro": "{$WAN_IFINDEX}",
+            "value": "1"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "lazada.co.id",
+        "name": "Lazada",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "dns": "lazada.co.id",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - Lazada",
+            "type": "SIMPLE",
+            "key": "icmppingloss[lazada.co.id,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%"
+          },
+          {
+            "name": "ICMP Ping - Lazada",
+            "type": "SIMPLE",
+            "key": "icmpping[lazada.co.id,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "mobilelegends.com",
+        "name": "Mobile Legends",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "ip": "",
+            "dns": "mobilelegends.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - mobilelegends.com",
+            "type": "SIMPLE",
+            "key": "icmppingloss[mobilelegends.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%",
+            "description": "Packet loss to mobilelegends.com"
+          },
+          {
+            "name": "ICMP Ping - mobilelegends.com",
+            "type": "SIMPLE",
+            "key": "icmpping[mobilelegends.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms",
+            "description": "Latency to mobilelegends.com"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "Monitoring-Qos",
+        "name": "Monitoring-Qos",
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "QoE - Google DNS Packet Loss",
+            "type": "SIMPLE",
+            "key": "icmppingloss[8.8.8.8]",
+            "delay": "30s",
+            "value_type": "FLOAT",
+            "units": "%",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "QoE - Google DNS Latency",
+            "type": "SIMPLE",
+            "key": "icmppingsec[8.8.8.8]",
+            "value_type": "FLOAT",
+            "units": "s",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "QoE - Google DNS Availability",
+            "type": "SIMPLE",
+            "key": "icmpping[8.8.8.8]",
+            "valuemap": {
+              "name": "Status UP / DOWN"
+            },
+            "interface_ref": "if1"
+          },
+          {
+            "name": "QoE - Meta TCP Response",
+            "type": "SIMPLE",
+            "key": "net.tcp.service.perf[https,facebook.com,443]",
+            "delay": "60s",
+            "value_type": "FLOAT",
+            "units": "s",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "QoE - TikTok TCP Response",
+            "type": "SIMPLE",
+            "key": "net.tcp.service.perf[https,www.tiktok.com,443]",
+            "value_type": "FLOAT",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "QoE - Meta Availability",
+            "type": "SIMPLE",
+            "key": "net.tcp.service[https,facebook.com,443]",
+            "valuemap": {
+              "name": "Status UP / DOWN"
+            },
+            "interface_ref": "if1"
+          },
+          {
+            "name": "QoE - TikTok Availability",
+            "type": "SIMPLE",
+            "key": "net.tcp.service[https,www.tiktok.com,443]",
+            "valuemap": {
+              "name": "Status UP / DOWN"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "inventory_mode": "DISABLED",
+        "valuemaps": [
+          {
+            "name": "Status UP / DOWN",
+            "mappings": [
+              {
+                "value": "0",
+                "newvalue": "Down"
+              },
+              {
+                "value": "1",
+                "newvalue": "Up"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "host": "netflix.com",
+        "name": "Netflix",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "dns": "netflix.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - Netflix",
+            "type": "SIMPLE",
+            "key": "icmppingloss[netflix.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%"
+          },
+          {
+            "name": "ICMP Ping - Netflix",
+            "type": "SIMPLE",
+            "key": "icmpping[netflix.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "OLT-EPON-PUSAT",
+        "name": "OLT-EPON-PUSAT",
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "SNMP",
+            "ip": "10.10.10.203",
+            "port": "161",
+            "details": {
+              "community": "{$SNMP_COMMUNITY}"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "OLT ONU Offline",
+            "type": "SNMP_AGENT",
+            "snmp_oid": "walk[1.3.6.1.4.1.50224.3.3.2.1.9]",
+            "key": "olt.onu.offline",
+            "preprocessing": [
+              {
+                "type": "JAVASCRIPT",
+                "parameters": [
+                  "if (!value) {\n    return 0;\n}\n\nvar matches = value.match(/INTEGER:\\s*2/g);\nreturn matches ? matches.length : 0;"
+                ]
+              }
+            ],
+            "interface_ref": "if1"
+          },
+          {
+            "name": "OLT ONU Online",
+            "type": "SNMP_AGENT",
+            "snmp_oid": "walk[1.3.6.1.4.1.50224.3.3.2.1.9]",
+            "key": "olt.onu.online",
+            "preprocessing": [
+              {
+                "type": "JAVASCRIPT",
+                "parameters": [
+                  "if (!value) {\n    return 0;\n}\n\nvar matches = value.match(/INTEGER:\\s*1/g);\nreturn matches ? matches.length : 0;"
+                ]
+              }
+            ],
+            "interface_ref": "if1"
+          },
+          {
+            "name": "OLT Total ONU",
+            "type": "CALCULATED",
+            "key": "olt.onu.total",
+            "params": "max(/OLT-EPON-PUSAT/olt.onu.online,5m)\n+\nmax(/OLT-EPON-PUSAT/olt.onu.offline,5m)"
+          },
+          {
+            "name": "PON01 ONU Offline",
+            "type": "SNMP_AGENT",
+            "snmp_oid": "walk[1.3.6.1.4.1.50224.3.3.2.1.9]",
+            "key": "olt.pon01.onu.offline",
+            "preprocessing": [
+              {
+                "type": "JAVASCRIPT",
+                "parameters": [
+                  "if (!value) {\n    return 0;\n}\n\nvar lines = value.match(/ONU01\\/\\d+.*INTEGER:\\s*1/g);\nreturn lines ? lines.length : 0;"
+                ]
+              }
+            ],
+            "interface_ref": "if1"
+          },
+          {
+            "name": "PON01 ONU Online",
+            "type": "SNMP_AGENT",
+            "snmp_oid": "walk[1.3.6.1.4.1.50224.3.3.2.1.9]",
+            "key": "olt.pon01.onu.online",
+            "preprocessing": [
+              {
+                "type": "JAVASCRIPT",
+                "parameters": [
+                  "if (!value) {\n    return 0;\n}\n\nvar lines = value.match(/ONU01\\/\\d+.*INTEGER:\\s*1/g);\nreturn lines ? lines.length : 0;"
+                ]
+              }
+            ],
+            "interface_ref": "if1"
+          },
+          {
+            "name": "TOTAL PON 1",
+            "type": "CALCULATED",
+            "key": "olt.pon01.onu.total",
+            "params": "max(/OLT-EPON-PUSAT/olt.pon01.onu.online,5m)\n+\nmax(/OLT-EPON-PUSAT/olt.pon01.onu.offline,5m)"
+          }
+        ],
+        "discovery_rules": [
+          {
+            "name": "Discovery ONU HSGQ",
+            "type": "SNMP_AGENT",
+            "snmp_oid": "discovery[{#ONUNAME},.1.3.6.1.4.1.50224.3.3.2.1.2]",
+            "key": "hsgq.onu.discovery",
+            "delay": "1h",
+            "status": "DISABLED",
+            "interface_ref": "if1",
+            "item_prototypes": [
+              {
+                "name": "Status ONU: {#ONUNAME}",
+                "type": "SNMP_AGENT",
+                "snmp_oid": ".1.3.6.1.4.1.50224.3.3.2.1.9.{#SNMPINDEX}",
+                "key": "hsgq.onu.status[{#SNMPINDEX}]",
+                "interface_ref": "if1",
+                "trigger_prototypes": [
+                  {
+                    "expression": "last(/OLT-EPON-PUSAT/hsgq.onu.status[{#SNMPINDEX}])=2",
+                    "name": "ONU {#ONUNAME} is OFFLINE on 10.10.10.203",
+                    "opdata": "Status: {ITEM.LASTVALUE}",
+                    "priority": "HIGH"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "inventory_mode": "DISABLED",
+        "valuemaps": [
+          {
+            "name": "HSGQ ONU Status",
+            "mappings": [
+              {
+                "value": "1",
+                "newvalue": "Online"
+              },
+              {
+                "value": "2",
+                "newvalue": "Offline"
+              },
+              {
+                "value": "3",
+                "newvalue": "Pending"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "host": "pfsenese-gateway",
+        "name": "network/gateway",
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "isp1 packet loss",
+            "type": "SIMPLE",
+            "key": "icmppingloss[8.8.8.8]",
+            "delay": "30s",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "isp1 latency",
+            "type": "SIMPLE",
+            "key": "icmppingsec[8.8.8.8]",
+            "delay": "30s",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "interface_ref": "if1"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "pfsense",
+        "name": "pfsense",
+        "templates": [
+          {
+            "name": "PFSense by SNMP"
+          }
+        ],
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "type": "SNMP",
+            "ip": "192.168.123.1",
+            "port": "161",
+            "details": {
+              "community": "{$SNMP_COMMUNITY}"
+            },
+            "interface_ref": "if1"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "powerr",
+        "name": "powerr",
+        "templates": [
+          {
+            "name": "power"
+          }
+        ],
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "ip": "10.10.10.15",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "voltase",
+            "key": "modbus.get[\"tcp://10.10.10.15:502\", 1, 4, 8192, 2, float]",
+            "interface_ref": "if1"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "pubg.com",
+        "name": "PUBG",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "dns": "pubg.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - PUBG",
+            "type": "SIMPLE",
+            "key": "icmppingloss[pubg.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%"
+          },
+          {
+            "name": "ICMP Ping - PUBG",
+            "type": "SIMPLE",
+            "key": "icmpping[pubg.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "PZEM-Gardu-A",
+        "name": "PZEM-Gardu-A",
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "Current",
+            "type": "DEPENDENT",
+            "key": "pzem.current",
+            "delay": "0",
+            "units": "A",
+            "preprocessing": [
+              {
+                "type": "MULTIPLIER",
+                "parameters": [
+                  "0.01"
+                ]
+              }
+            ],
+            "master_item": {
+              "key": "pzem.current.raw"
+            }
+          },
+          {
+            "name": "Current (raw)",
+            "key": "pzem.current.raw",
+            "delay": "30s",
+            "history": "7d",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Energy",
+            "type": "DEPENDENT",
+            "key": "pzem.Energy",
+            "delay": "0",
+            "units": "V",
+            "preprocessing": [
+              {
+                "type": "MULTIPLIER",
+                "parameters": [
+                  "0.001"
+                ]
+              }
+            ],
+            "master_item": {
+              "key": "pzem.energy.wh.raw"
+            }
+          },
+          {
+            "name": "Energy (raw)",
+            "key": "pzem.energy.wh.raw",
+            "delay": "30s",
+            "history": "7d",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Power",
+            "type": "DEPENDENT",
+            "key": "pzem.power",
+            "delay": "0",
+            "preprocessing": [
+              {
+                "type": "MULTIPLIER",
+                "parameters": [
+                  "1"
+                ]
+              }
+            ],
+            "master_item": {
+              "key": "pzem.power.raw"
+            }
+          },
+          {
+            "name": "Power (raw)",
+            "key": "pzem.power.raw",
+            "delay": "30s",
+            "history": "7d",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Voltage",
+            "type": "DEPENDENT",
+            "key": "pzem.voltage",
+            "delay": "0",
+            "units": "V",
+            "preprocessing": [
+              {
+                "type": "MULTIPLIER",
+                "parameters": [
+                  "0.00769"
+                ]
+              }
+            ],
+            "master_item": {
+              "key": "pzem.voltage.raw"
+            }
+          },
+          {
+            "name": "Voltage (raw)",
+            "key": "pzem.voltage.raw",
+            "delay": "30s",
+            "history": "7d",
+            "interface_ref": "if1"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "RaspberryPi-PZEM",
+        "name": "RaspberryPi-PZEM",
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "ip": "10.10.10.16",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "Biaya Listrik 24 Jam",
+            "type": "CALCULATED",
+            "key": "pzem.biaya.24h",
+            "value_type": "FLOAT",
+            "status": "DISABLED",
+            "units": "!Rp",
+            "params": "round((last(/RaspberryPi-PZEM/pzem.energy) / 1000) * 1444, 0)"
+          },
+          {
+            "name": "Biaya Listrik 24 Jam now",
+            "type": "CALCULATED",
+            "key": "pzem.biaya.hari",
+            "value_type": "FLOAT",
+            "status": "DISABLED",
+            "units": "!Rp",
+            "params": "round((last(/RaspberryPi-PZEM/pzem.energy.kwh) / 1000) * 1444, 0)"
+          },
+          {
+            "name": "Current",
+            "key": "pzem.current",
+            "delay": "15s",
+            "units": "A",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Energy",
+            "key": "pzem.energy",
+            "delay": "15s",
+            "units": "!Wh",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Energy KWH",
+            "type": "CALCULATED",
+            "key": "pzem.energy.kwh",
+            "value_type": "FLOAT",
+            "units": "kWH",
+            "params": "last(/RaspberryPi-PZEM/pzem.energy)/1000"
+          },
+          {
+            "name": "Frequency",
+            "key": "pzem.frequency",
+            "units": "Hz",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Gardu A Active",
+            "type": "DEPENDENT",
+            "key": "pzem.garduA.active",
+            "delay": "0",
+            "preprocessing": [
+              {
+                "type": "JAVASCRIPT",
+                "parameters": [
+                  "return value > 100 ? 1 : 0;"
+                ]
+              }
+            ],
+            "master_item": {
+              "key": "pzem.voltage"
+            },
+            "triggers": [
+              {
+                "expression": "last(/RaspberryPi-PZEM/pzem.garduA.active)=0",
+                "recovery_mode": "RECOVERY_EXPRESSION",
+                "recovery_expression": "last(/RaspberryPi-PZEM/pzem.garduA.active)=1",
+                "name": "NOTIFIKASI PLN 1 MAIN",
+                "opdata": "JALUR LISTRIK MAIN MATI",
+                "priority": "HIGH"
+              }
+            ]
+          },
+          {
+            "name": "Gardu B Active",
+            "type": "DEPENDENT",
+            "key": "pzem.garduB.active",
+            "delay": "0",
+            "preprocessing": [
+              {
+                "type": "JAVASCRIPT",
+                "parameters": [
+                  "return value > 100 ? 1 : 0;"
+                ]
+              }
+            ],
+            "master_item": {
+              "key": "pzem2.voltage"
+            },
+            "triggers": [
+              {
+                "expression": "last(/RaspberryPi-PZEM/pzem.garduB.active)=0",
+                "recovery_mode": "RECOVERY_EXPRESSION",
+                "recovery_expression": "last(/RaspberryPi-PZEM/pzem.garduB.active)=1",
+                "name": "NOTIFIKASI PLN 2 SECONDARY",
+                "opdata": "JALUR LISTRIK SECONDARY ABAH MATI",
+                "priority": "HIGH"
+              }
+            ]
+          },
+          {
+            "name": "Power Factor",
+            "key": "pzem.pf",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Voltage",
+            "key": "pzem.voltage",
+            "delay": "30s",
+            "units": "v",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Current2",
+            "key": "pzem2.current",
+            "delay": "15s",
+            "units": "A",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Energy2",
+            "key": "pzem2.energy",
+            "delay": "15s",
+            "units": "!Wh",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Frequency2",
+            "key": "pzem2.frequency",
+            "units": "Hz",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "Power Factor2",
+            "key": "pzem2.pf",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "voltage2",
+            "key": "pzem2.voltage",
+            "delay": "15s",
+            "units": "v",
+            "interface_ref": "if1"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "roblox.com",
+        "name": "Roblox",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "dns": "roblox.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - Roblox",
+            "type": "SIMPLE",
+            "key": "icmppingloss[roblox.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%"
+          },
+          {
+            "name": "ICMP Ping - Roblox",
+            "type": "SIMPLE",
+            "key": "icmpping[roblox.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "shopee.co.id",
+        "name": "Shopee",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "ip": "",
+            "dns": "shopee.co.id",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - shopee.co.id",
+            "type": "SIMPLE",
+            "key": "icmppingloss[shopee.co.id,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%",
+            "description": "Packet loss to shopee.co.id"
+          },
+          {
+            "name": "ICMP Ping - shopee.co.id",
+            "type": "SIMPLE",
+            "key": "icmpping[shopee.co.id,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms",
+            "description": "Latency to shopee.co.id"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "tiktok.com",
+        "name": "TikTok",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "ip": "",
+            "dns": "tiktok.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - tiktok.com",
+            "type": "SIMPLE",
+            "key": "icmppingloss[tiktok.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%",
+            "description": "Packet loss to tiktok.com"
+          },
+          {
+            "name": "ICMP Ping - tiktok.com",
+            "type": "SIMPLE",
+            "key": "icmpping[tiktok.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms",
+            "description": "Latency to tiktok.com"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "tokopedia.com",
+        "name": "Tokopedia",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "ip": "",
+            "dns": "tokopedia.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "HTTPS Response Time - Tokopedia",
+            "type": "ZABBIX_ACTIVE",
+            "key": "net.tcp.service.perf[https,tokopedia.com,443]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "s"
+          },
+          {
+            "name": "HTTPS Status - Tokopedia",
+            "type": "ZABBIX_ACTIVE",
+            "key": "net.tcp.service[https,tokopedia.com,443]",
+            "history": "7d"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "twitter.com",
+        "name": "X / Twitter",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "dns": "twitter.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - X / Twitter",
+            "type": "SIMPLE",
+            "key": "icmppingloss[twitter.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%"
+          },
+          {
+            "name": "ICMP Ping - X / Twitter",
+            "type": "SIMPLE",
+            "key": "icmpping[twitter.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "UPS-NUT-LOCAL",
+        "name": "UPS-NUT-LOCAL",
+        "groups": [
+          {
+            "name": "Applications"
+          }
+        ],
+        "interfaces": [
+          {
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "Battery Charge",
+            "key": "nut.get[battery.charge]",
+            "delay": "30s",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/UPS-NUT-LOCAL/nut.get[battery.charge])<15",
+                "recovery_mode": "RECOVERY_EXPRESSION",
+                "recovery_expression": "last(/UPS-NUT-LOCAL/nut.get[battery.charge])>=20",
+                "name": "UPS BATTERY CRITICAL",
+                "priority": "DISASTER"
+              },
+              {
+                "expression": "last(/UPS-NUT-LOCAL/nut.get[battery.charge])<30",
+                "recovery_mode": "RECOVERY_EXPRESSION",
+                "recovery_expression": "last(/UPS-NUT-LOCAL/nut.get[battery.charge])=35",
+                "name": "UPS BATTERY LOW",
+                "priority": "AVERAGE"
+              }
+            ]
+          },
+          {
+            "name": "Input Voltage",
+            "key": "nut.get[input.voltage]",
+            "delay": "30s",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/UPS-NUT-LOCAL/nut.get[input.voltage])<180 or last(/UPS-NUT-LOCAL/nut.get[input.voltage])>250",
+                "recovery_mode": "RECOVERY_EXPRESSION",
+                "recovery_expression": "last(/UPS-NUT-LOCAL/nut.get[input.voltage])>=190 and last(/UPS-NUT-LOCAL/nut.get[input.voltage])<=240",
+                "name": "UPS INPUT VOLTAGE ABNORMAL",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "Output Voltage",
+            "key": "nut.get[output.voltage]",
+            "delay": "30s",
+            "interface_ref": "if1"
+          },
+          {
+            "name": "UPS Load",
+            "key": "nut.get[ups.load]",
+            "delay": "30s",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/UPS-NUT-LOCAL/nut.get[ups.load])>80",
+                "recovery_mode": "RECOVERY_EXPRESSION",
+                "recovery_expression": "last(/UPS-NUT-LOCAL/nut.get[ups.load])<70",
+                "name": "UPS LOAD TINGGI",
+                "priority": "WARNING"
+              }
+            ]
+          },
+          {
+            "name": "UPS Status",
+            "key": "nut.get[ups.status]",
+            "delay": "10s",
+            "history": "7d",
+            "value_type": "TEXT",
+            "trends": "0",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/UPS-NUT-LOCAL/nut.get[ups.status])=\"OB\"",
+                "recovery_mode": "RECOVERY_EXPRESSION",
+                "recovery_expression": "last(/UPS-NUT-LOCAL/nut.get[ups.status])=\"OL\"",
+                "name": "\ud83d\udd0b UPS ON BATTERY",
+                "opdata": "UPS MODE BACKUP KE BATTERY",
+                "priority": "HIGH"
+              }
+            ]
+          },
+          {
+            "name": "UPS Temprature",
+            "key": "nut.get[ups.temperature]",
+            "delay": "30s",
+            "interface_ref": "if1",
+            "triggers": [
+              {
+                "expression": "last(/UPS-NUT-LOCAL/nut.get[ups.temperature])>40",
+                "recovery_mode": "RECOVERY_EXPRESSION",
+                "recovery_expression": "last(/UPS-NUT-LOCAL/nut.get[ups.temperature])<35",
+                "name": "\ud83c\udf21\ufe0f SUHU UPS TINGGI",
+                "priority": "HIGH"
+              }
+            ]
+          },
+          {
+            "name": "UPS Status Code",
+            "type": "DEPENDENT",
+            "key": "ups.status.code",
+            "delay": "0",
+            "preprocessing": [
+              {
+                "type": "JAVASCRIPT",
+                "parameters": [
+                  "if (value === \"OL\") return 1;\nif (value === \"OB\") return 0;\nreturn -1;"
+                ]
+              }
+            ],
+            "master_item": {
+              "key": "nut.get[ups.status]"
+            },
+            "triggers": [
+              {
+                "expression": "last(/UPS-NUT-LOCAL/ups.status.code)=0",
+                "recovery_mode": "RECOVERY_EXPRESSION",
+                "recovery_expression": "last(/UPS-NUT-LOCAL/ups.status.code)=1",
+                "name": "UPS PLN MATI (ON BATTERY)",
+                "priority": "HIGH"
+              }
+            ]
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "whatsapp.com",
+        "name": "WhatsApp",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "ip": "",
+            "dns": "whatsapp.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - whatsapp.com",
+            "type": "SIMPLE",
+            "key": "icmppingloss[whatsapp.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%",
+            "description": "Packet loss to whatsapp.com"
+          },
+          {
+            "name": "ICMP Ping - whatsapp.com",
+            "type": "SIMPLE",
+            "key": "icmpping[whatsapp.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms",
+            "description": "Latency to whatsapp.com"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "youtube.com",
+        "name": "YouTube",
+        "groups": [
+          {
+            "name": "Content Monitoring"
+          }
+        ],
+        "interfaces": [
+          {
+            "useip": "NO",
+            "ip": "",
+            "dns": "youtube.com",
+            "interface_ref": "if1"
+          }
+        ],
+        "items": [
+          {
+            "name": "ICMP Loss - youtube.com",
+            "type": "SIMPLE",
+            "key": "icmppingloss[youtube.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "%",
+            "description": "Packet loss to youtube.com"
+          },
+          {
+            "name": "ICMP Ping - youtube.com",
+            "type": "SIMPLE",
+            "key": "icmpping[youtube.com,4,2000,68,1000]",
+            "history": "7d",
+            "value_type": "FLOAT",
+            "trends": "90d",
+            "units": "ms",
+            "description": "Latency to youtube.com"
+          }
+        ],
+        "inventory_mode": "DISABLED"
+      },
+      {
+        "host": "Zabbix server",
+        "name": "Zabbix server",
+        "templates": [
+          {
+            "name": "Linux by Zabbix agent"
+          },
+          {
+            "name": "Zabbix server health"
+          }
+        ],
+        "groups": [
+          {
+            "name": "Zabbix servers"
+          }
+        ],
+        "interfaces": [
+          {
+            "interface_ref": "if1"
+          }
+        ],
+        "inventory": {
+          "name": "keanu",
+          "os": "Linux version 5.15.0-177-generic (buildd@lcy02-amd64-099) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, GNU ld (GNU Binutils for",
+          "location_lat": "56.97612",
+          "location_lon": "24.16553"
+        },
+        "inventory_mode": "AUTOMATIC"
+      }
+    ]
+  }
+}
