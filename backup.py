@@ -48,9 +48,9 @@ PFSENSE_DEVICES = [
 ]
 
 PORTALS = [
-    {"name": "portal-pusat",   "host": "103.129.148.97", "db": "portal",  "user": "portal",  "pass": "portal",  "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---1dcf1850-c117-402b-a1fa-0553e4ae1267"},
-    {"name": "portal-dago",    "host": "103.129.148.97", "db": "utara",   "user": "utara",   "pass": "utara",   "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---1dcf1850-c117-402b-a1fa-0553e4ae1267"},
-    {"name": "portal-katapang","host": "103.129.148.97", "db": "selatan", "user": "selatan", "pass": "selatan", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---1dcf1850-c117-402b-a1fa-0553e4ae1267"},
+    {"name": "portal-pusat",   "host": "103.129.148.97", "db": "portal",  "user": "portal",  "pass": "portal",  "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer"},
+    {"name": "portal-dago",    "host": "103.129.148.97", "db": "utara",   "user": "utara",   "pass": "utara",   "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer"},
+    {"name": "portal-katapang","host": "103.129.148.97", "db": "selatan", "user": "selatan", "pass": "selatan", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer"},
 ]
 
 # ─────────────────────────────────────────────
