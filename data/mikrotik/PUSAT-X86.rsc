@@ -1,4 +1,4 @@
-# 2026-05-13 02:04:47 by RouterOS 7.11.3
+# 2026-05-14 02:05:29 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -132,7 +132,6 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ip address add address=192.168.123.90/24 interface=SFP1-WAN-1 network=192.168.123.0
 /ip address add address=172.80.10.100/24 interface=ether1-SIMAYA network=172.80.10.0
 /ip address add address=192.168.100.25/24 interface=ether10 network=192.168.100.0
-/ip address add address=192.168.78.1/24 interface=ether5 network=192.168.78.0
 /ip dhcp-server network add address=10.10.10.0/24 comment="hotspot network" gateway=10.10.10.1
 /ip dhcp-server network add address=10.100.0.0/21 dhcp-option=acs gateway=10.100.0.1
 /ip dhcp-server network add address=172.90.10.0/24 comment="hotspot network" gateway=172.90.10.1
@@ -779,7 +778,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=220808121224-ANTON profile=PAKET1 service=pppoe
 /ppp secret add name=230909151064-VINA profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=230909151068-NUR profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=240315141572-YENI profile=PAKET1 service=pppoe
+/ppp secret add name=240315141572-YENI profile=PAKET1 service=pppoe
 /ppp secret add name=210902132104-ARFAN profile=PAKET3 service=pppoe
 /ppp secret add name=210902135207-ARIS profile=PAKET1 service=pppoe
 /ppp secret add name=210902140040-TONI profile=PAKET1 service=pppoe
@@ -1122,10 +1121,14 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260511182420-SHIVA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260512112214-CUCU profile=PAKET2 service=pppoe
 /ppp secret add name=260427110615-YULIA profile=PAKET2 service=pppoe
+/ppp secret add name=260513085338-RONAULI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260513090910-TITAPUSPA profile=PAKET3 service=pppoe
+/ppp secret add comment="Bojong Suren - Ayu Wahyudi" name=260513122932-AYUWAHYUDI profile=PAKET3 service=pppoe
+/ppp secret add comment="Saepul Ramdani" name=260513160117-SAEPULRAMDANI profile=PAKET3 service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=487 show-at-login=no
+/system note set note=490 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"

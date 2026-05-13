@@ -1,0 +1,100 @@
+{
+  "OLT-EPON-PUSAT": {
+    "updated": "2026-05-14 02:01:02",
+    "offline_onu": [
+      {
+        "pon_onu": "2/7",
+        "mac": "3c:57:4f:bf:79:6a",
+        "name": "YUNITA",
+        "last_online": "2026/05/11 15:59:06",
+        "pon": 2,
+        "portal": "ID=457 YUNI Status=Aktif"
+      },
+      {
+        "pon_onu": "2/9",
+        "mac": "dc:71:37:51:ab:48",
+        "name": "DEBIBOSGIR",
+        "last_online": "2026/04/30 22:08:25",
+        "pon": 2,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      },
+      {
+        "pon_onu": "2/25",
+        "mac": "14:79:f3:9c:33:a2",
+        "name": "ONU02/25",
+        "last_online": "2026/05/13 06:15:13",
+        "pon": 2,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      },
+      {
+        "pon_onu": "3/7",
+        "mac": "14:79:f3:95:70:c1",
+        "name": "ONU03/07",
+        "last_online": "2026/04/30 22:46:35",
+        "pon": 3,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      },
+      {
+        "pon_onu": "3/12",
+        "mac": "00:11:41:30:f1:2b",
+        "name": "ONU03/12",
+        "last_online": "2026/05/11 11:42:29",
+        "pon": 3,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      },
+      {
+        "pon_onu": "3/18",
+        "mac": "b4:b0:55:6e:bf:13",
+        "name": "ONU03/18",
+        "last_online": "2026/05/14 02:14:37",
+        "pon": 3,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      },
+      {
+        "pon_onu": "3/52",
+        "mac": "e0:e0:c2:d1:db:0c",
+        "name": "ONU03/52",
+        "last_online": "2026/05/10 18:30:35",
+        "pon": 3,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      },
+      {
+        "pon_onu": "4/43",
+        "mac": "04:21:6f:17:c4:f9",
+        "name": "ONU04/43",
+        "last_online": "2026/04/15 06:58:38",
+        "pon": 4,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      },
+      {
+        "pon_onu": "4/46",
+        "mac": "3c:57:4f:c9:9f:a2",
+        "name": "ONU04/46",
+        "last_online": "2026/05/05 07:32:05",
+        "pon": 4,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      },
+      {
+        "pon_onu": "4/63",
+        "mac": "14:79:f3:8c:09:ed",
+        "name": "ONU04/63",
+        "last_online": "2026/05/12 23:40:34",
+        "pon": 4,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      }
+    ]
+  },
+  "OLT-GPON-PUSAT": {
+    "updated": "2026-05-14 02:02:42",
+    "offline_onu": [
+      {
+        "pon_onu": "4/10",
+        "mac": "GPON-ONU",
+        "name": "ONT04/010",
+        "last_online": "2026/05/13 20:27:31",
+        "pon": 4,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      }
+    ]
+  }
+}
