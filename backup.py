@@ -347,7 +347,6 @@ if __name__ == "__main__":
     backup_databases()
     backup_workspace()
     backup_workspace_remote()
-    backup_zabbix_config()
     cleanup_old_backups()
     git_commit_push()
 
