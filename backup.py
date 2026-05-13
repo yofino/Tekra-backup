@@ -48,9 +48,15 @@ PFSENSE_DEVICES = [
 ]
 
 PORTALS = [
-    {"name": "portal-pusat",   "host": "103.129.148.97", "db": "portal",  "user": "portal",  "pass": "portal",  "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer"},
-    {"name": "portal-dago",    "host": "103.129.148.97", "db": "utara",   "user": "utara",   "pass": "utara",   "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer"},
-    {"name": "portal-katapang","host": "103.129.148.97", "db": "selatan", "user": "selatan", "pass": "selatan", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer"},
+    {"name": "portal-pusat",   "host": "103.129.148.97", "db": "portal",  "user": "portal",  "pass": "portal",  "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer", "ssh_pass": "k34Nu335577"},
+    {"name": "portal-dago",    "host": "103.129.148.97", "db": "utara",   "user": "utara",   "pass": "utara",   "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer", "ssh_pass": "k34Nu335577"},
+    {"name": "portal-katapang","host": "103.129.148.97", "db": "selatan", "user": "selatan", "pass": "selatan", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer", "ssh_pass": "k34Nu335577"},
+]
+
+AGENT_WORKSPACES = [
+    {"name": "Anatasya", "host": "10.10.10.31", "ssh_user": "agent-ryan", "ssh_pass": "zeushera", "workspace": "/home/agent-ryan/.openclaw/workspace"},
+    {"name": "Zara",     "host": "10.10.10.30", "ssh_user": "agent-bos",  "ssh_pass": "zeushera", "workspace": "/home/agent-bos/.openclaw/workspace"},
+    {"name": "Siti",     "host": "103.129.148.97", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer", "ssh_pass": "k34Nu335577", "workspace": "/opt/openclaw/data/workspace"},
 ]
 
 # ─────────────────────────────────────────────
@@ -165,8 +171,13 @@ def backup_databases():
         try:
             ssh = paramiko.SSHClient()
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            ssh.connect(portal["host"], username=portal["ssh_user"],
-                        key_filename=portal["ssh_key"], timeout=20)
+            # Try key first, fallback to password
+            try:
+                ssh.connect(portal["host"], username=portal["ssh_user"],
+                            key_filename=portal["ssh_key"], timeout=20)
+            except Exception:
+                ssh.connect(portal["host"], username=portal["ssh_user"],
+                            password=portal["ssh_pass"], timeout=20)
             cmd = f"mysqldump -h127.0.0.1 -u{portal['user']} -p{portal['pass']} {portal['db']} 2>/dev/null"
             _, stdout, stderr = ssh.exec_command(cmd, timeout=120)
             dump = stdout.read()
@@ -222,6 +233,44 @@ def backup_workspace():
         fail("OpenClaw workspace", e)
 
 
+def backup_workspace_remote():
+    out_dir = DATA_DIR / "workspace-agents"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for agent in AGENT_WORKSPACES:
+        name = agent["name"]
+        try:
+            ssh = paramiko.SSHClient()
+            ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            # Try key, fallback to password
+            try:
+                connect_args = {"hostname": agent["host"], "username": agent["ssh_user"], "timeout": 20}
+                if "ssh_key" in agent and os.path.exists(agent["ssh_key"]):
+                    connect_args["key_filename"] = agent["ssh_key"]
+                else:
+                    connect_args["password"] = agent["ssh_pass"]
+                ssh.connect(**connect_args)
+            except Exception:
+                ssh.connect(agent["host"], username=agent["ssh_user"],
+                            password=agent["ssh_pass"], timeout=20)
+            # Archive workspace remotely and download
+            archive_name = f"workspace-{name}-{TODAY}.tar.gz"
+            remote_tmp = f"/tmp/{archive_name}"
+            ws_path = agent["workspace"]
+            cmd = f"tar czf {remote_tmp} --exclude='*.pyc' --exclude='__pycache__' -C $(dirname {ws_path}) $(basename {ws_path}) 2>/dev/null"
+            ssh.exec_command(cmd, timeout=60)
+            import time; time.sleep(2)
+            sftp = ssh.open_sftp()
+            local_file = out_dir / archive_name
+            sftp.get(remote_tmp, str(local_file))
+            sftp.remove(remote_tmp)
+            sftp.close()
+            ssh.close()
+            size_kb = local_file.stat().st_size // 1024
+            ok(f"Workspace {name} ({size_kb}KB)")
+        except Exception as e:
+            fail(f"Workspace {name}", e)
+
+
 def cleanup_old_backups(keep_days=7):
     """Hapus backup database > 7 hari"""
     cutoff = datetime.date.today() - datetime.timedelta(days=keep_days)
@@ -267,6 +316,7 @@ if __name__ == "__main__":
     backup_mikrotik()
     backup_databases()
     backup_workspace()
+    backup_workspace_remote()
     cleanup_old_backups()
     git_commit_push()
 
