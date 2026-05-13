@@ -271,6 +271,36 @@ def backup_workspace_remote():
             fail(f"Workspace {name}", e)
 
 
+def backup_zabbix_config():
+    """Export Zabbix host config to JSON for disaster recovery"""
+    out_dir = DATA_DIR / "zabbix"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        import json, datetime
+        r = requests.post("http://10.10.10.18/zabbix/api_jsonrpc.php", json={
+            "jsonrpc":"2.0","method":"user.login",
+            "params":{"username":"Admin","password":"zabbix"},"id":1
+        }, timeout=10)
+        auth = r.json()["result"]
+        r = requests.post("http://10.10.10.18/zabbix/api_jsonrpc.php", json={
+            "jsonrpc":"2.0","method":"host.get",
+            "params":{"output":["hostid","host","name","status"],
+                     "selectInterfaces":["ip","type","port"]},
+            "auth":auth,"id":2
+        }, timeout=10)
+        hosts = r.json()["result"]
+        export = {"exported_at": datetime.datetime.now().isoformat(), "hosts": [
+            {"host":h["host"],"name":h["name"],"hostid":h["hostid"],
+             "status":"enabled" if h["status"]=="0" else "disabled",
+             "interfaces":h.get("interfaces",[])} for h in hosts
+        ]}
+        out_file = out_dir / f"zabbix-config-{TODAY}.json"
+        out_file.write_text(json.dumps(export, indent=2))
+        ok(f"Zabbix config ({len(hosts)} hosts)")
+    except Exception as e:
+        fail("Zabbix config", e)
+
+
 def cleanup_old_backups(keep_days=7):
     """Hapus backup database > 7 hari"""
     cutoff = datetime.date.today() - datetime.timedelta(days=keep_days)
@@ -317,6 +347,7 @@ if __name__ == "__main__":
     backup_databases()
     backup_workspace()
     backup_workspace_remote()
+    backup_zabbix_config()
     cleanup_old_backups()
     git_commit_push()
 
