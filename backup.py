@@ -39,7 +39,8 @@ TODAY = datetime.date.today().isoformat()
 MIKROTIK_DEVICES = [
     {"name": "CCR1-Hotspot", "ip": "10.10.10.1",    "port": 18, "user": "asep", "pass": "asep$888"},
     {"name": "PUSAT-X86",    "ip": "172.80.10.100",  "port": 18, "user": "asep", "pass": "asep$888"},
-    {"name": "CILISUNG-GX4", "ip": "10.6.0.5",      "port": 18, "user": "asep", "pass": "asep$888"},
+    {"name": "CILISUNG-GX4", "ip": "10.7.0.8",      "port": 18, "user": "asep", "pass": "asep$888"},
+    {"name": "KATAPANG",     "ip": "10.7.0.9",      "port": 18, "user": "asep", "pass": "asep$888"},
 ]
 
 PFSENSE_DEVICES = [
@@ -56,7 +57,7 @@ PORTALS = [
 AGENT_WORKSPACES = [
     {"name": "Anatasya", "host": "10.10.10.31", "ssh_user": "agent-ryan", "ssh_pass": "zeushera", "workspace": "/home/agent-ryan/.openclaw/workspace"},
     {"name": "Zara",     "host": "10.10.10.30", "ssh_user": "agent-bos",  "ssh_pass": "zeushera", "workspace": "/home/agent-bos/.openclaw/workspace"},
-    {"name": "Siti",     "host": "103.129.148.97", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer", "ssh_pass": "k34Nu335577", "workspace": "/opt/openclaw/data/workspace"},
+    {"name": "Siti",     "host": "103.129.148.97", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer", "ssh_pass": "k34Nu335577", "workspace": "/opt/openclaw/data/workspace", "sudo": True},
 ]
 
 # ─────────────────────────────────────────────
@@ -256,7 +257,13 @@ def backup_workspace_remote():
             archive_name = f"workspace-{name}-{TODAY}.tar.gz"
             remote_tmp = f"/tmp/{archive_name}"
             ws_path = agent["workspace"]
-            cmd = f"tar czf {remote_tmp} --exclude='*.pyc' --exclude='__pycache__' -C $(dirname {ws_path}) $(basename {ws_path}) 2>/dev/null"
+            sudo_prefix = "sudo " if agent.get("sudo") else ""
+            # Verify workspace exists before tar
+            stdin, stdout, stderr = ssh.exec_command(f"{sudo_prefix}test -d {ws_path} && echo EXISTS || echo MISSING", timeout=10)
+            check = stdout.read().decode().strip()
+            if check != "EXISTS":
+                raise Exception(f"Workspace path not found: {ws_path}")
+            cmd = f"{sudo_prefix}tar czf {remote_tmp} --exclude='*.pyc' --exclude='__pycache__' -C $(dirname {ws_path}) $(basename {ws_path}) 2>/dev/null && {sudo_prefix}chown {agent['ssh_user']}:{agent['ssh_user']} {remote_tmp}"
             ssh.exec_command(cmd, timeout=60)
             import time; time.sleep(2)
             sftp = ssh.open_sftp()

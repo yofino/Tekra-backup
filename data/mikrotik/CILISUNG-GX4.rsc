@@ -1,4 +1,4 @@
-# 2026-05-11 02:01:43 by RouterOS 7.16.1
+# 2026-05-14 09:39:33 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -13,10 +13,8 @@
 /interface ethernet set [ find default-name=ether6 ] name=ether6-LAN-SWITCH
 /interface ethernet set [ find default-name=ether7 ] name=ether7-OLT
 /interface ethernet set [ find default-name=sfp-sfpplus1 ] auto-negotiation=no speed=1G-baseT-full
+/interface ovpn-client add cipher=aes128-cbc connect-to=115.178.49.186 mac-address=02:F8:50:B2:4E:C0 mode=ethernet name=OVPN-TEKRA port=1000 user=CILISUNG
 /interface ovpn-client add comment=tunnel-31721 connect-to=id-20.tunnel.web.id mac-address=FE:32:21:AE:89:DE name=tunnel-31721 user=cilisung
-/interface l2tp-client add connect-to=103.226.138.15 disabled=no name=REMOTE user=CILIGX
-/interface l2tp-client add connect-to=115.178.49.186 disabled=no name=TUNNEL-DARI-CCR1-PUSAT user=CILISUNGGX
-/interface l2tp-client add connect-to=210.79.190.25 disabled=no name=TUNNEL-NEW user=CILISUNG
 /interface vlan add interface=sfp-sfpplus1 name=VLAN-FROM-PUSAT vlan-id=202
 /interface vlan add interface=ether7-OLT name=VLAN-MONITOR-OLT vlan-id=144
 /interface vlan add interface=ether8 name=VLAN-PPOE-CILISUNG-HIOSO vlan-id=143
@@ -90,11 +88,14 @@
 /ip firewall nat add action=masquerade chain=srcnat out-interface=ether2-DARI-PUSAT
 /ip firewall nat add action=masquerade chain=srcnat out-interface=VLAN-MONITOR-OLT
 /ip firewall nat add action=masquerade chain=srcnat out-interface=VLAN-FROM-PUSAT
+/ip firewall nat add action=masquerade chain=srcnat out-interface=OVPN-TEKRA
 /ip firewall nat add action=dst-nat chain=dstnat dst-address=210.79.190.25 dst-port=8321 protocol=tcp to-addresses=10.5.50.1 to-ports=8728
 /ip firewall nat
-# REMOTE not ready
-add action=dst-nat chain=dstnat dst-port=8121 in-interface=REMOTE protocol=tcp to-addresses=10.5.50.1 to-ports=8291
-/ip firewall nat add action=dst-nat chain=dstnat dst-port=8080 in-interface=TUNNEL-DARI-CCR1-PUSAT protocol=tcp to-addresses=192.168.101.10 to-ports=80
+# no interface
+add action=dst-nat chain=dstnat dst-port=8121 in-interface=*13 protocol=tcp to-addresses=10.5.50.1 to-ports=8291
+/ip firewall nat
+# no interface
+add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-addresses=192.168.101.10 to-ports=80
 /ip firewall nat add action=dst-nat chain=dstnat dst-port=53,5353 in-interface=BRIDGE-TR069 protocol=udp to-ports=53
 /ip firewall nat add action=dst-nat chain=dstnat dst-address=!10.10.10.230 in-interface=BRIDGE-TR069 protocol=tcp to-addresses=10.10.10.230 to-ports=7547
 /ip firewall nat add action=dst-nat chain=dstnat dst-port=!7547 in-interface=BRIDGE-TR069 protocol=tcp to-addresses=10.10.10.230 to-ports=7547
@@ -208,7 +209,7 @@ add action=dst-nat chain=dstnat dst-port=8121 in-interface=REMOTE protocol=tcp t
 /ppp secret add name=241111112249-FINNY profile=PAKET2 service=pppoe
 /ppp secret add name=241111123837-LINDA profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=230114074232-ACEP profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=101600012-NADIA profile=PAKET1 service=pppoe
+/ppp secret add name=101600012-NADIA profile=PAKET1 service=pppoe
 /ppp secret add name=231215114526-ELIS profile=PAKET2 service=pppoe
 /ppp secret add name=240504175826-TUBAGUS profile=PAKET1 service=pppoe
 /ppp secret add name=230906115925-INTAN profile=PAKET2 service=pppoe
@@ -372,10 +373,12 @@ add action=dst-nat chain=dstnat dst-port=8121 in-interface=REMOTE protocol=tcp t
 /ppp secret add name=260422150730-YANWAR profile=PAKET2 service=pppoe
 /ppp secret add name=260501153341-NOER profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260509102912-INAROSITA profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260511110219-DADANYOSEF profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260512144644-SUYADI profile=PAKET2 service=pppoe
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=167 show-at-login=no
+/system note set note=170 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"
