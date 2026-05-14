@@ -1,4 +1,4 @@
-# 2026-05-14 09:39:33 by RouterOS 7.16.1
+# 2026-05-15 02:01:55 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -80,7 +80,7 @@
 /ip address add address=192.168.0.1/24 interface=ether9 network=192.168.0.0
 /ip dhcp-server network add address=10.5.50.0/24 comment="hotspot network" gateway=10.5.50.1
 /ip dhcp-server network add address=10.30.64.0/21 gateway=10.30.64.1
-/ip dns set allow-remote-requests=yes servers=8.8.8.8,8.8.4.4
+/ip dns set allow-remote-requests=yes cache-max-ttl=1d cache-size=4096KiB servers=8.8.8.8,8.8.4.4
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall nat add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.5.50.0/24
@@ -100,6 +100,10 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ip firewall nat add action=dst-nat chain=dstnat dst-address=!10.10.10.230 in-interface=BRIDGE-TR069 protocol=tcp to-addresses=10.10.10.230 to-ports=7547
 /ip firewall nat add action=dst-nat chain=dstnat dst-port=!7547 in-interface=BRIDGE-TR069 protocol=tcp to-addresses=10.10.10.230 to-ports=7547
 /ip firewall nat add action=dst-nat chain=dstnat comment=tunnel-nat-172.22.0.226-443 dst-address=172.22.0.226 dst-port=443 protocol=tcp to-addresses=192.168.124.1 to-ports=443
+/ip firewall nat add action=dst-nat chain=dstnat comment=pfsense-ssl dst-port=1022 in-interface=OVPN-TEKRA protocol=tcp to-addresses=192.168.124.1 to-ports=443
+/ip firewall nat add action=dst-nat chain=dstnat comment=pfsense-snmp dst-port=1023 in-interface=OVPN-TEKRA protocol=tcp to-addresses=192.168.124.1 to-ports=161
+/ip firewall nat add action=dst-nat chain=dstnat comment=tunnel-nat-172.22.0.226-443 dst-address=172.22.0.226 dst-port=443 protocol=tcp to-addresses=192.168.124.1 to-ports=443
+/ip firewall nat add action=dst-nat chain=dstnat comment="mikortik winbox" dst-port=1021 in-interface=OVPN-TEKRA protocol=tcp to-addresses=192.168.101.1 to-ports=8291
 /ip hotspot ip-binding add address=172.10.0.4 to-address=172.10.0.4 type=bypassed
 /ip hotspot ip-binding add address=10.5.50.14 to-address=10.5.50.14 type=bypassed
 /ip hotspot ip-binding add address=10.5.50.46 to-address=10.5.50.46 type=bypassed
@@ -346,7 +350,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260109170440-KOMARIAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260112130002-SUGIONO profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260112141011-AGUNGPERMANA profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=260114145947-ZIDAN profile="PAKET PUAS" service=pppoe
+/ppp secret add disabled=yes name=260114145947-ZIDAN profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260124130101-SRIDWI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260130140141-FIRZI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260131125819-IMAN profile="PAKET HEMAT" service=pppoe
@@ -378,7 +382,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=170 show-at-login=no
+/system note set note=169 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"

@@ -1,4 +1,4 @@
-# 2026-05-14 09:39:41 by RouterOS 7.19.4
+# 2026-05-15 02:02:01 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -94,7 +94,7 @@
 /ip dhcp-server network add address=10.10.10.0/24 dns-server=8.8.8.8,8.8.4.4 gateway=10.10.10.1
 /ip dhcp-server network add address=10.40.64.0/21 gateway=10.40.64.1
 /ip dhcp-server network add address=21.21.21.0/24 comment="hotspot network" dns-server=8.8.8.8,8.8.4.4 gateway=21.21.21.1
-/ip dns set allow-remote-requests=yes servers=8.8.8.8,8.8.4.4
+/ip dns set allow-remote-requests=yes cache-max-ttl=1d cache-size=4096KiB servers=8.8.8.8,8.8.4.4
 /ip firewall address-list add address=10.10.10.0/24 list=private-lokal
 /ip firewall address-list add address=0.0.0.0/8 list=private-lokal
 /ip firewall address-list add address=10.0.0.0/8 list=private-lokal
@@ -172,6 +172,7 @@
 /ip firewall address-list add address=www.perfect-privacy.com list=speedtest
 /ip firewall address-list add address=perfect-privacy.com list=speedtest
 /ip firewall address-list add address=www.whatsmyip.org list=speedtest
+/ip firewall address-list add comment=ISOLIR|100010 list=EXPIRED
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=speedtest new-routing-mark=jalur-speedtest passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.2.3.24
@@ -198,7 +199,11 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=21.21.21.0/24
 /ip firewall nat add action=masquerade chain=srcnat src-address-list="REMOTE AP"
 /ip firewall nat add action=dst-nat chain=dstnat comment=tunnel-nat-172.29.0.80-443 dst-address=172.29.0.80 dst-port=443 protocol=tcp to-addresses=192.168.124.1 to-ports=443
+/ip firewall nat add action=dst-nat chain=dstnat comment=mikrotik-winbox dst-address=115.178.49.186 dst-port=1031 protocol=tcp to-addresses=10.10.10.1 to-ports=8291
+/ip firewall nat add action=dst-nat chain=dstnat comment=mikrotik-API dst-address=115.178.49.186 dst-port=1034 protocol=tcp to-addresses=10.10.10.1 to-ports=8728
+/ip firewall nat add action=dst-nat chain=dstnat comment="tunnel-tekra -pfsense-snmp" dst-address=115.178.49.186 dst-port=1033 protocol=udp to-addresses=192.168.124.1 to-ports=161
 /ip firewall nat add action=dst-nat chain=dstnat comment=tunnel-nat-172.29.0.80-8006 dst-address=172.29.0.80 dst-port=8006 protocol=tcp to-addresses=192.168.100.2 to-ports=8006
+/ip firewall nat add action=dst-nat chain=dstnat comment="tunnel-tekra -pfsense-ssl" dst-address=115.178.49.186 dst-port=1032 protocol=tcp to-addresses=192.168.124.1 to-ports=443
 /ip firewall raw add action=add-dst-to-address-list address-list=YOUTUBE address-list-timeout=30m chain=prerouting comment=YOUTUBE content=.youtube.com disabled=yes dst-address-list=!private-lokal src-address-list=private-lokal
 /ip firewall raw add action=add-dst-to-address-list address-list=YOUTUBE address-list-timeout=1h chain=prerouting content=.googlevideo.com disabled=yes dst-address-list=!private-lokal src-address-list=private-lokal
 /ip firewall raw add action=add-dst-to-address-list address-list=YOUTUBE address-list-timeout=1h chain=prerouting comment=FACEBOOK content=.facebook.com disabled=yes dst-address-list=!private-lokal src-address-list=private-lokal

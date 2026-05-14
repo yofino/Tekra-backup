@@ -1,12 +1,28 @@
 {
   "OLT-EPON-PUSAT": {
-    "updated": "2026-05-14 09:36:01",
+    "updated": "2026-05-15 02:01:01",
     "offline_onu": [
+      {
+        "pon_onu": "2/7",
+        "mac": "3c:57:4f:bf:79:6a",
+        "name": "YUNITA",
+        "last_online": "2026/05/14 10:08:00",
+        "pon": 2,
+        "portal": "ID=457 YUNI Status=Aktif"
+      },
       {
         "pon_onu": "2/9",
         "mac": "dc:71:37:51:ab:48",
         "name": "DEBIBOSGIR",
         "last_online": "2026/04/30 22:08:25",
+        "pon": 2,
+        "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
+      },
+      {
+        "pon_onu": "2/25",
+        "mac": "14:79:f3:9c:33:a2",
+        "name": "ONU02/25",
+        "last_online": "2026/05/14 06:04:05",
         "pon": 2,
         "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
       },
@@ -27,14 +43,6 @@
         "portal": "ID=994 RONAULI MARE MARE Status=Aktif"
       },
       {
-        "pon_onu": "4/20",
-        "mac": "1c:78:4e:43:98:08",
-        "name": "SUGIARTO",
-        "last_online": "2026/05/13 23:35:44",
-        "pon": 4,
-        "portal": "ID=311 SUGIARTO Status=Aktif"
-      },
-      {
         "pon_onu": "4/43",
         "mac": "04:21:6f:17:c4:f9",
         "name": "ONU04/43",
@@ -53,7 +61,7 @@
     ]
   },
   "OLT-GPON-PUSAT": {
-    "updated": "2026-05-14 09:37:41",
+    "updated": "2026-05-15 02:02:42",
     "offline_onu": [
       {
         "pon_onu": "4/10",
