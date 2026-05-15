@@ -1,4 +1,4 @@
-# 2026-05-15 02:04:59 by RouterOS 7.11.3
+# 2026-05-16 02:04:52 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -942,7 +942,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=250228161959-SARI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250302105822-ROBBY profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=250302114437-DINIFATIMAH profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250302134218-CEPI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250302134218-CEPI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250303143516-TATIKARYATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250303155354-ANENG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250305104835-NURSULASTRI profile="PAKET HEMAT" service=pppoe
@@ -1125,6 +1125,12 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260513090910-TITAPUSPA profile=PAKET3 service=pppoe
 /ppp secret add comment="Bojong Suren - Ayu Wahyudi" name=260513122932-AYUWAHYUDI profile=PAKET3 service=pppoe
 /ppp secret add comment="Saepul Ramdani" name=260513160117-SAEPULRAMDANI profile=PAKET3 service=pppoe
+/ppp secret add name=20260515155812-SRI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=20260515163542-TOING profile=PAKET1 service=pppoe
+/ppp secret add name=260515174436-NGIUT profile="PAKET PUAS" service=pppoe
+/ppp secret add name=260515175542-TUING profile=PAKET1 service=pppoe
+/ppp secret add name=260515191716-DIMAS profile=PAKET3 service=pppoe
+/ppp secret add name=260515192311-SISKA profile="PAKET HEMAT" service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT

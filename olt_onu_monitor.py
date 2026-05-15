@@ -17,6 +17,8 @@ PORTAL_AUTH = {"email":"asep@tekra.id","password":"12345"}
 OLTS = [
     {"name":"OLT-EPON-PUSAT","host":"10.10.10.203","user":"root","pass":"admin","zabbix":"OLT-EPON-PUSAT-SNMP","max":64,"pons":4,"type":"epon"},
     {"name":"OLT-GPON-PUSAT","host":"10.10.10.204","user":"root","pass":"k34Nu335577","zabbix":"OLT-GPON-PUSAT-SNMP","max":128,"pons":8,"type":"gpon"},
+    {"name":"OLT-HIOSO-CILISUNG","host":"192.168.0.88","user":"root","pass":"admin","zabbix":"OLT-HIOSO-CILISUNG","max":64,"pons":4,"type":"epon"},
+    {"name":"OLT-HSGQ-CILISUNG","host":"192.168.101.10","user":"root","pass":"admin","zabbix":"OLT-HSGQ-CILISUNG","max":128,"pons":4,"type":"gpon"},
 ]
 
 def zbx(host, key, value):
@@ -37,11 +39,12 @@ def portal_search(name):
     except:
         return []
 
-def scan_epon_pon(host, pon):
+def scan_epon_pon(olt, pon):
+    host, user, passwd = olt['host'], olt['user'], olt['pass']
     tn = telnetlib.Telnet(host, 23, timeout=20)
     tn.read_until(b"username:", timeout=15)
-    tn.write(b"root\r\n"); tn.read_until(b"assword:", timeout=10)
-    tn.write(b"admin\r\n"); time.sleep(1.5); tn.read_very_eager()
+    tn.write(bytes(f"{user}\r\n","utf-8")); tn.read_until(b"assword:", timeout=10)
+    tn.write(bytes(f"{passwd}\r\n","utf-8")); time.sleep(1.5); tn.read_very_eager()
     tn.write(b"enable\r\n"); time.sleep(1); tn.read_very_eager()
     sock = tn.get_socket()
     sock.send(b"configure\r\n"); time.sleep(1); tn.read_very_eager()
@@ -64,11 +67,12 @@ def scan_epon_pon(host, pon):
                 offline_list.append({"pon_onu":parts[0],"mac":parts[1],"name":name,"last_online":reg_time,"pon":pon})
     return online, offline, offline_list
 
-def scan_gpon_pon(host, pon):
+def scan_gpon_pon(olt, pon):
+    host, user, passwd = olt['host'], olt['user'], olt['pass']
     tn = telnetlib.Telnet(host, 23, timeout=20)
     tn.read_until(b"username:", timeout=15)
-    tn.write(b"root\r\n"); tn.read_until(b"assword:", timeout=10)
-    tn.write(b"k34Nu335577\r\n"); time.sleep(1.5); tn.read_very_eager()
+    tn.write(bytes(f"{user}\r\n","utf-8")); tn.read_until(b"assword:", timeout=10)
+    tn.write(bytes(f"{passwd}\r\n","utf-8")); time.sleep(1.5); tn.read_very_eager()
     tn.write(b"enable\r\n"); time.sleep(1); tn.read_very_eager()
     sock = tn.get_socket()
     sock.send(b"configure\r\n"); time.sleep(1); tn.read_very_eager()

@@ -1,4 +1,4 @@
-# 2026-05-15 02:01:55 by RouterOS 7.16.1
+# 2026-05-16 02:01:48 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -186,7 +186,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=11100105-DEFIANA profile=PAKET3 service=pppoe
 /ppp secret add name=11100106-SUHENDAR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=231215114525-ROSSIE profile=PAKET1 service=pppoe
-/ppp secret add name=231215114521-AIYETI profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=231215114521-AIYETI profile=PAKET2 service=pppoe
 /ppp secret add name=231215114522-FAUZIAH profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=230526121403-KALUA profile=PAKET1 service=pppoe
 /ppp secret add name=230312143258-ADECANDRA profile=PAKET1 service=pppoe
@@ -350,7 +350,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260109170440-KOMARIAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260112130002-SUGIONO profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260112141011-AGUNGPERMANA profile="PAKET MANTAP" service=pppoe
-/ppp secret add disabled=yes name=260114145947-ZIDAN profile="PAKET PUAS" service=pppoe
+/ppp secret add name=260114145947-ZIDAN profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260124130101-SRIDWI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260130140141-FIRZI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260131125819-IMAN profile="PAKET HEMAT" service=pppoe
@@ -379,6 +379,8 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260509102912-INAROSITA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260511110219-DADANYOSEF profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260512144644-SUYADI profile=PAKET2 service=pppoe
+/ppp secret add name=20260515155812-SRI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=20260515164704-TOUNG profile="PAKET HEMAT" service=pppoe
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
