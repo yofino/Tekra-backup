@@ -1,18 +1,18 @@
 {
   "OLT-EPON-PUSAT": {
-    "updated": "2026-05-16 02:00:01",
+    "updated": "2026-05-17 02:00:02",
     "offline_onu": []
   },
   "OLT-GPON-PUSAT": {
-    "updated": "2026-05-16 02:00:01",
+    "updated": "2026-05-17 02:00:02",
     "offline_onu": []
   },
   "OLT-HIOSO-CILISUNG": {
-    "updated": "2026-05-16 02:00:01",
+    "updated": "2026-05-17 02:00:02",
     "offline_onu": []
   },
   "OLT-HSGQ-CILISUNG": {
-    "updated": "2026-05-16 02:00:01",
+    "updated": "2026-05-17 02:00:02",
     "offline_onu": []
   }
 }

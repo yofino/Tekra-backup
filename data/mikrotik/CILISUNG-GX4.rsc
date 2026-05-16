@@ -1,4 +1,4 @@
-# 2026-05-16 02:01:48 by RouterOS 7.16.1
+# 2026-05-17 02:01:05 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -80,7 +80,7 @@
 /ip address add address=192.168.0.1/24 interface=ether9 network=192.168.0.0
 /ip dhcp-server network add address=10.5.50.0/24 comment="hotspot network" gateway=10.5.50.1
 /ip dhcp-server network add address=10.30.64.0/21 gateway=10.30.64.1
-/ip dns set allow-remote-requests=yes cache-max-ttl=1d cache-size=4096KiB servers=8.8.8.8,8.8.4.4
+/ip dns set allow-remote-requests=yes cache-size=4096KiB servers=8.8.8.8,8.8.4.4
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall nat add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.5.50.0/24
@@ -176,7 +176,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=240504175816-WAWAN profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=240504175819-RANNIA profile=PAKET1 service=pppoe
 /ppp secret add name=240504175820-YOSMIANTO profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=240504175821-SOFYAN profile=PAKET4 service=pppoe
+/ppp secret add name=240504175821-SOFYAN profile=PAKET4 service=pppoe
 /ppp secret add disabled=yes name=240504175824-AI profile=PAKET1 service=pppoe
 /ppp secret add name=240504175808-IWAN profile=PAKET2 service=pppoe
 /ppp secret add name=240504175825-YANI profile=PAKET2 service=pppoe
@@ -186,7 +186,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=11100105-DEFIANA profile=PAKET3 service=pppoe
 /ppp secret add name=11100106-SUHENDAR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=231215114525-ROSSIE profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=231215114521-AIYETI profile=PAKET2 service=pppoe
+/ppp secret add name=231215114521-AIYETI profile=PAKET2 service=pppoe
 /ppp secret add name=231215114522-FAUZIAH profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=230526121403-KALUA profile=PAKET1 service=pppoe
 /ppp secret add name=230312143258-ADECANDRA profile=PAKET1 service=pppoe
@@ -380,11 +380,14 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260511110219-DADANYOSEF profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260512144644-SUYADI profile=PAKET2 service=pppoe
 /ppp secret add name=20260515155812-SRI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=20260515164704-TOUNG profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=20260515192605-SALWA profile=PAKET1 service=pppoe
+/ppp secret add name=260516121051-TIUNG profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260516121946-TUING profile=PAKET1 service=pppoe
+/ppp secret add name=20260516143707-RANNIA profile="PAKET MANTAP" service=pppoe
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=169 show-at-login=no
+/system note set note=172 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"

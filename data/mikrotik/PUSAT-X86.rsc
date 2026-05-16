@@ -1,4 +1,4 @@
-# 2026-05-16 02:04:52 by RouterOS 7.11.3
+# 2026-05-17 02:04:10 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -136,7 +136,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ip dhcp-server network add address=10.100.0.0/21 dhcp-option=acs gateway=10.100.0.1
 /ip dhcp-server network add address=172.90.10.0/24 comment="hotspot network" gateway=172.90.10.1
 /ip dhcp-server network add address=192.168.78.0/24 gateway=192.168.78.1
-/ip dns set allow-remote-requests=yes cache-max-ttl=1d cache-size=4096KiB servers=8.8.8.8,8.8.4.4
+/ip dns set allow-remote-requests=yes cache-size=8192KiB servers=8.8.8.8,8.8.4.4
 /ip dns static add address=10.10.10.230 name=acs.id.myrepublic.net
 /ip dns static add address=10.10.10.230 name=acs
 /ip dns static add address=10.10.10.230 name=xlacs.xl.co.id
@@ -942,7 +942,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=250228161959-SARI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250302105822-ROBBY profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=250302114437-DINIFATIMAH profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=250302134218-CEPI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=250302134218-CEPI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250303143516-TATIKARYATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250303155354-ANENG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250305104835-NURSULASTRI profile="PAKET HEMAT" service=pppoe
@@ -1126,15 +1126,16 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add comment="Bojong Suren - Ayu Wahyudi" name=260513122932-AYUWAHYUDI profile=PAKET3 service=pppoe
 /ppp secret add comment="Saepul Ramdani" name=260513160117-SAEPULRAMDANI profile=PAKET3 service=pppoe
 /ppp secret add name=20260515155812-SRI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=20260515163542-TOING profile=PAKET1 service=pppoe
 /ppp secret add name=260515174436-NGIUT profile="PAKET PUAS" service=pppoe
-/ppp secret add name=260515175542-TUING profile=PAKET1 service=pppoe
-/ppp secret add name=260515191716-DIMAS profile=PAKET3 service=pppoe
-/ppp secret add name=260515192311-SISKA profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260516114442-TOING profile=PAKET3 service=pppoe
+/ppp secret add name=260516114819-TOUNG profile=PAKET3 service=pppoe
+/ppp secret add name=260516121054-KUSNA profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260516122945-ASEP profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260516145935-IPENG profile="PAKET HEMAT" service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=494 show-at-login=no
+/system note set note=488 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
