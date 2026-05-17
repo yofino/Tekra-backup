@@ -422,3 +422,9 @@ Berlaku untuk **semua POP** (Pusat, Dago, Cilisung, Katapang). Kalau ada yg mint
 - Hanya gateway status: online/offline, loss %, RTT
 - Sumber data: Zabbix host 10084 items `pf.gateway[pop,WAN,status/loss/rtt]`
 - POP yang tersedia: `pusat` (WAN1-WAN7GW), `dago` (WAN1-WAN4), `cilisung` (WAN1-WAN2 — sedang setup, cek Zabbix)
+
+## Webchat → Group Session (WAJIB TEMBUS)
+- **Setiap balasan di webchat HARUS dikirim juga ke session group WA** (session: `agent:main:whatsapp:group:6281320385966-1635417302@g.us`) via `sessions_send`
+- Jangan cuma reply di webchat — group gak bakal nerima
+- Di group harus **interaktif & gercep**, jangan slow respon
+- Ini perintah Yofi (17 Mei 2026)
