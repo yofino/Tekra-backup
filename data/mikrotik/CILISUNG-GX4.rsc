@@ -1,4 +1,4 @@
-# 2026-05-17 02:01:05 by RouterOS 7.16.1
+# 2026-05-18 02:01:03 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -344,7 +344,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260105152727-DEBI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260105171537-IWANSETIAWAN profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260106172244-NOVITA profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=260108123338-YATI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260108123338-YATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=260108160859-HESTIA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260108173445-ASEPDEDI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260109170440-KOMARIAH profile="PAKET HEMAT" service=pppoe
@@ -384,10 +384,11 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260516121051-TIUNG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260516121946-TUING profile=PAKET1 service=pppoe
 /ppp secret add name=20260516143707-RANNIA profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260517160643-TINI profile="PAKET PUAS" service=pppoe
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=172 show-at-login=no
+/system note set note=171 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"
