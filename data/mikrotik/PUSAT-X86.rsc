@@ -1,4 +1,4 @@
-# 2026-05-19 02:04:13 by RouterOS 7.11.3
+# 2026-05-20 02:04:16 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -769,7 +769,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=240315141567-PAJAR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230613081760-WIDARYANTO profile=PAKET1 service=pppoe
 /ppp secret add name=240315141568-FITRIYA profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=240315141569-JUJU profile=PAKET1 service=pppoe
+/ppp secret add name=240315141569-JUJU profile=PAKET1 service=pppoe
 /ppp secret add name=241006135944-FIRMAN profile=PAKET2 service=pppoe
 /ppp secret add name=240315141570-DANA profile=PAKET1 service=pppoe
 /ppp secret add name=240315141571-ADE profile="PAKET HEMAT" service=pppoe
@@ -1137,7 +1137,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=495 show-at-login=no
+/system note set note=498 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
