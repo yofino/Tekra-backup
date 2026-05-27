@@ -200,13 +200,28 @@ with tabs[0]:
             c5.metric("Vol", f"{last.get('tick_volume',0):,.0f}")
             st.divider()
 
-            ma_c = last.get('MA_cross',0); rsi = last.get('RSI',50)
-            if ma_c == 1 and 30 < rsi < 70:
-                st.markdown(f'<div class="signal-buy"><p style="font-size:1.2rem">🟢 <strong>BUY SIGNAL</strong> — ${last["close"]:.2f} — RSI {rsi:.1f}</p><p style="color:#81c784">MA9 cross ABOVE MA21 · Bullish momentum</p></div>', unsafe_allow_html=True)
-            elif ma_c == -1 and 30 < rsi < 70:
-                st.markdown(f'<div class="signal-sell"><p style="font-size:1.2rem">🔴 <strong>SELL SIGNAL</strong> — ${last["close"]:.2f} — RSI {rsi:.1f}</p><p style="color:#ef9a9a">MA9 cross BELOW MA21 · Bearish momentum</p></div>', unsafe_allow_html=True)
+            # AI Signal from live log
+            if os.path.exists(AI_LOG):
+                with open(AI_LOG) as f:
+                    ai_lines = [l.strip() for l in f.readlines() if '>>> AI' in l]
+                if ai_lines:
+                    ai_last = ai_lines[-1]
+                    conf = ai_last.split('Confidence=')[1].split('%')[0] if 'Confidence=' in ai_last else '0'
+                    if 'BUY' in ai_last:
+                        st.markdown(f'<div class="signal-buy"><p style="font-size:1.2rem">🤖 <strong>AI BUY SIGNAL</strong> — ${last["close"]:.2f} — Confidence {conf}%</p><p style="color:#81c784">XGBoost prediction · AI actively trading</p></div>', unsafe_allow_html=True)
+                    elif 'SELL' in ai_last:
+                        st.markdown(f'<div class="signal-sell"><p style="font-size:1.2rem">🤖 <strong>AI SELL SIGNAL</strong> — ${last["close"]:.2f} — Confidence {conf}%</p><p style="color:#ef9a9a">XGBoost prediction · AI actively trading</p></div>', unsafe_allow_html=True)
+                else:
+                    st.info("🤖 AI monitoring — no active signal yet")
             else:
-                st.info("🔇 No signal — monitoring market")
+                # Fallback manual
+                ma_c = last.get('MA_cross',0); rsi = last.get('RSI',50)
+                if ma_c == 1 and 30 < rsi < 70:
+                    st.markdown(f'<div class="signal-buy"><p style="font-size:1.2rem">🟢 <strong>BUY SIGNAL</strong> — ${last["close"]:.2f} — RSI {rsi:.1f}</p></div>', unsafe_allow_html=True)
+                elif ma_c == -1 and 30 < rsi < 70:
+                    st.markdown(f'<div class="signal-sell"><p style="font-size:1.2rem">🔴 <strong>SELL SIGNAL</strong> — ${last["close"]:.2f} — RSI {rsi:.1f}</p></div>', unsafe_allow_html=True)
+                else:
+                    st.info("🔇 No signal — monitoring market")
 
             c1,c2 = st.columns(2)
             c1.subheader("Price"); c1.line_chart(df[['close']].tail(100), height=250, color='#c9a84c')
