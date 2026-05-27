@@ -247,8 +247,9 @@ with tabs[0]:
 
             c1,c2 = st.columns(2)
             with c1:
-                st.subheader("Price")
-                st.line_chart(df[['close']].tail(120), height=250)
+                st.subheader("Price Change")
+                price_change = ((df['close'] - df['close'].iloc[0])).tail(120)
+                st.line_chart(price_change, height=250)
             with c2:
                 st.subheader("RSI (14)")
                 st.line_chart(df[['RSI']].tail(120), height=250)
@@ -260,8 +261,9 @@ with tabs[0]:
                 macd_df = pd.DataFrame({'MACD': ema12 - ema26, 'Signal': (ema12 - ema26).ewm(span=9, adjust=False).mean()}).tail(120)
                 st.line_chart(macd_df, height=200)
             with c4:
-                st.subheader("Price + MA")
-                ma_df = pd.DataFrame({'Close': df['close'], 'MA9': df['MA_9'], 'MA21': df['MA_21']}).tail(120)
+                st.subheader("Price vs MA")
+                base = df['close'].iloc[0]
+                ma_df = pd.DataFrame({'Close': df['close']-base, 'MA9': df['MA_9']-base, 'MA21': df['MA_21']-base}).tail(120)
                 st.line_chart(ma_df, height=200)
         else: st.info("Collecting data...")
 
