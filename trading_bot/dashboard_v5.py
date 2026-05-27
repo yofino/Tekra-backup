@@ -13,17 +13,6 @@ from datetime import datetime, timedelta
 
 st.set_page_config(page_title="Tekra AI | XAUUSD Intelligence", page_icon="🪙", layout="wide")
 
-# Auto-refresh every 10s (preserves login, busts cache)
-st.markdown("""
-<script>
-    setTimeout(function(){
-        var url = new URL(window.location);
-        url.searchParams.set('_t', Date.now());
-        window.location.href = url.toString();
-    }, 10000);
-</script>
-""", unsafe_allow_html=True)
-
 # ──── AUTH ────
 USERS = {
     "yofi":      {"pw": "tekra2026",   "name": "Yofi",   "role": "Admin"},
@@ -59,6 +48,14 @@ if not st.session_state.logged_in:
 # ══════════════════════════════════════
 # MAIN DASHBOARD
 # ══════════════════════════════════════
+
+# Auto-refresh every 10s (keeps session)
+import time as _time
+if 'last_refresh' not in st.session_state:
+    st.session_state.last_refresh = _time.time()
+if _time.time() - st.session_state.last_refresh > 10:
+    st.session_state.last_refresh = _time.time()
+    st.rerun()
 
 DATA_DIR = r"C:\TradingBot\data"
 LOG_FILE = r"C:\TradingBot\bot.log"
