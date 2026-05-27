@@ -13,10 +13,10 @@ from datetime import datetime, timedelta
 
 st.set_page_config(page_title="Tekra AI | XAUUSD Intelligence", page_icon="🪙", layout="wide")
 
-# Auto-refresh every 30s (preserves login session)
+# Auto-refresh every 10s (preserves login session)
 st.markdown("""
 <script>
-    setTimeout(function(){ window.location.reload(); }, 30000);
+    setTimeout(function(){ window.location.reload(); }, 10000);
 </script>
 """, unsafe_allow_html=True)
 
@@ -198,7 +198,7 @@ with tabs[0]:
     if os.path.exists(csv_path):
         df = pd.read_csv(csv_path)
         if len(df) > 20:
-            # Compute all indicators from close price
+            # Compute indicators from close/high/low (ignore NaN columns from CSV)
             df['RSI'] = 100 - (100 / (1 + (df['close'].diff().clip(lower=0).rolling(14).mean() / df['close'].diff().clip(upper=0).abs().rolling(14).mean().replace(0, np.nan))))
             hl = df['high'] - df['low']
             hc = np.abs(df['high'] - df['close'].shift())
@@ -209,7 +209,8 @@ with tabs[0]:
             df['MA_cross'] = 0
             df.loc[df['MA_9'] > df['MA_21'], 'MA_cross'] = 1
             df.loc[df['MA_9'] < df['MA_21'], 'MA_cross'] = -1
-            df.dropna(inplace=True)
+            # Only drop rows where OUR computed cols are NaN
+            df = df.dropna(subset=['RSI','ATR','MA_9','MA_21','MA_cross','close'])
 
         if len(df) > 0:
             last = df.iloc[-1]
