@@ -197,14 +197,28 @@ with tabs[0]:
     csv_path = f"{DATA_DIR}\\xauusd_{today}.csv"
     if os.path.exists(csv_path):
         df = pd.read_csv(csv_path)
+        if len(df) > 20:
+            # Compute all indicators from close price
+            df['RSI'] = 100 - (100 / (1 + (df['close'].diff().clip(lower=0).rolling(14).mean() / df['close'].diff().clip(upper=0).abs().rolling(14).mean().replace(0, np.nan))))
+            hl = df['high'] - df['low']
+            hc = np.abs(df['high'] - df['close'].shift())
+            lc = np.abs(df['low'] - df['close'].shift())
+            df['ATR'] = np.maximum(hl, np.maximum(hc, lc)).rolling(14).mean()
+            df['MA_9'] = df['close'].rolling(9).mean()
+            df['MA_21'] = df['close'].rolling(21).mean()
+            df['MA_cross'] = 0
+            df.loc[df['MA_9'] > df['MA_21'], 'MA_cross'] = 1
+            df.loc[df['MA_9'] < df['MA_21'], 'MA_cross'] = -1
+            df.dropna(inplace=True)
+
         if len(df) > 0:
             last = df.iloc[-1]
             c1,c2,c3,c4,c5 = st.columns(5)
-            c1.metric("XAUUSD", f"$ {last.get('close',0):.2f}")
-            c2.metric("Spread", f"{last.get('spread',0)/0.01:.0f} pips")
+            c1.metric("XAUUSD", f"$ {last['close']:.2f}")
+            c2.metric("Spread", f"{last.get('spread',0)/10:.1f} pips")
             c3.metric("RSI", f"{last.get('RSI',0):.1f}")
             c4.metric("ATR", f"{last.get('ATR',0):.2f}")
-            c5.metric("Vol", f"{last.get('tick_volume',0):,.0f}")
+            c5.metric("Vol", f"{int(last.get('tick_volume',0)):,}")
             st.divider()
 
             # AI Signal from live log
