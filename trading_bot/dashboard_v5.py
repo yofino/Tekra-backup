@@ -13,6 +13,13 @@ from datetime import datetime, timedelta
 
 st.set_page_config(page_title="Tekra AI | XAUUSD Intelligence", page_icon="🪙", layout="wide")
 
+# Auto-refresh every 30s (preserves login session)
+st.markdown("""
+<script>
+    setTimeout(function(){ window.location.reload(); }, 30000);
+</script>
+""", unsafe_allow_html=True)
+
 # ──── AUTH ────
 USERS = {
     "yofi":      {"pw": "tekra2026",   "name": "Yofi",   "role": "Admin"},
