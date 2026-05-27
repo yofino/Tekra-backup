@@ -1,0 +1,23 @@
+# Data & Logs
+data/
+*.csv
+*.log
+*.json
+
+# Model binaries
+models/*.pkl
+models/*.joblib
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Sensitive
+*.pem
+*password*
+*credential*
+.env
+
+# IDE
+.vscode/
+.idea/
