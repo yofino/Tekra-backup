@@ -13,10 +13,14 @@ from datetime import datetime, timedelta
 
 st.set_page_config(page_title="Tekra AI | XAUUSD Intelligence", page_icon="🪙", layout="wide")
 
-# Auto-refresh every 10s (preserves login session)
+# Auto-refresh every 10s (preserves login, busts cache)
 st.markdown("""
 <script>
-    setTimeout(function(){ window.location.reload(); }, 10000);
+    setTimeout(function(){
+        var url = new URL(window.location);
+        url.searchParams.set('_t', Date.now());
+        window.location.href = url.toString();
+    }, 10000);
 </script>
 """, unsafe_allow_html=True)
 
