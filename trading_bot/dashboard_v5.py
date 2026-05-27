@@ -234,10 +234,17 @@ with tabs[0]:
             c1.subheader("Price"); c1.line_chart(df[['close']].tail(100), height=250, color='#c9a84c')
             c2.subheader("RSI"); c2.line_chart(df[['RSI']].tail(100), height=250)
             c3,c4 = st.columns(2)
-            c3.subheader("MACD")
-            if 'MACD' in df.columns: c3.line_chart(df[['MACD','MACD_signal']].tail(100), height=200)
-            c4.subheader("Moving Averages")
-            if all(c in df.columns for c in ['close','MA_9','MA_21']): c4.line_chart(df[['close','MA_9','MA_21']].tail(100), height=200)
+            with c3:
+                st.subheader("MACD")
+                # Compute MACD from close
+                ema12 = df['close'].ewm(span=12, adjust=False).mean()
+                ema26 = df['close'].ewm(span=26, adjust=False).mean()
+                macd_df = pd.DataFrame({'MACD': ema12 - ema26, 'Signal': (ema12 - ema26).ewm(span=9, adjust=False).mean()}).tail(100)
+                st.line_chart(macd_df, height=200)
+            with c4:
+                st.subheader("Moving Averages")
+                ma_df = pd.DataFrame({'close': df['close'], 'MA9': df['close'].rolling(9).mean(), 'MA21': df['close'].rolling(21).mean()}).tail(100)
+                st.line_chart(ma_df, height=200)
         else: st.info("Collecting data...")
 
 # ═══ TAB 2: AI PROGRESS ═══
