@@ -246,19 +246,22 @@ with tabs[0]:
                     st.info("🔇 No signal — monitoring market")
 
             c1,c2 = st.columns(2)
-            c1.subheader("Price"); c1.line_chart(df[['close']].tail(100), height=250, color='#c9a84c')
-            c2.subheader("RSI"); c2.line_chart(df[['RSI']].tail(100), height=250)
+            with c1:
+                st.subheader("Price")
+                st.line_chart(df[['close']].tail(120), height=250)
+            with c2:
+                st.subheader("RSI (14)")
+                st.line_chart(df[['RSI']].tail(120), height=250)
             c3,c4 = st.columns(2)
             with c3:
                 st.subheader("MACD")
-                # Compute MACD from close
                 ema12 = df['close'].ewm(span=12, adjust=False).mean()
                 ema26 = df['close'].ewm(span=26, adjust=False).mean()
-                macd_df = pd.DataFrame({'MACD': ema12 - ema26, 'Signal': (ema12 - ema26).ewm(span=9, adjust=False).mean()}).tail(100)
+                macd_df = pd.DataFrame({'MACD': ema12 - ema26, 'Signal': (ema12 - ema26).ewm(span=9, adjust=False).mean()}).tail(120)
                 st.line_chart(macd_df, height=200)
             with c4:
-                st.subheader("Moving Averages")
-                ma_df = pd.DataFrame({'close': df['close'], 'MA9': df['close'].rolling(9).mean(), 'MA21': df['close'].rolling(21).mean()}).tail(100)
+                st.subheader("Price + MA")
+                ma_df = pd.DataFrame({'Close': df['close'], 'MA9': df['MA_9'], 'MA21': df['MA_21']}).tail(120)
                 st.line_chart(ma_df, height=200)
         else: st.info("Collecting data...")
 
