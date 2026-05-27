@@ -23,6 +23,29 @@ if "logged_in" not in st.session_state:
     st.session_state.user = None
 
 if not st.session_state.logged_in:
+    # Check for saved cookie (survives browser refresh)
+    st.markdown("""
+    <script>
+        var saved = document.cookie.split('; ').find(r => r.startsWith('tekra_user='));
+        if (saved) {
+            var user = saved.split('=')[1];
+            var params = new URLSearchParams(window.location.search);
+            if (!params.has('user')) {
+                window.location.search = '?user=' + user;
+            }
+        }
+    </script>
+    """, unsafe_allow_html=True)
+    
+    # Auto-login from URL param (set by cookie script above)
+    params = st.query_params
+    auto_user = params.get('user')
+    if auto_user and auto_user in USERS:
+        st.session_state.logged_in = True
+        st.session_state.user = USERS[auto_user]
+        st.query_params.clear()
+        st.rerun()
+
     st.markdown("""
     <style>
         .stApp { background: linear-gradient(135deg, #0a0e17 0%, #111827 50%, #1a2744 100%); }
@@ -41,7 +64,10 @@ if not st.session_state.logged_in:
             u = st.text_input("Username"); p = st.text_input("Password", type="password")
             if st.form_submit_button("Sign In", use_container_width=True):
                 if u.lower() in USERS and USERS[u.lower()]["pw"] == p:
-                    st.session_state.logged_in = True; st.session_state.user = USERS[u.lower()]; st.rerun()
+                    st.session_state.logged_in = True; st.session_state.user = USERS[u.lower()]
+                    # Set cookie (24h) so login survives browser refresh
+                    st.markdown(f"""<script>document.cookie='tekra_user={u.lower()};path=/;max-age=86400;SameSite=Lax'</script>""", unsafe_allow_html=True)
+                    st.rerun()
                 else: st.error("Invalid credentials")
     st.stop()
 
