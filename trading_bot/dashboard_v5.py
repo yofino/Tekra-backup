@@ -192,8 +192,8 @@ def get_ai_stats():
                 live_acc = results['correct'] / (results['correct'] + results['wrong']) * 100
                 if (results_high['correct'] + results_high['wrong']) > 5:
                     high_conf_acc = results_high['correct'] / (results_high['correct'] + results_high['wrong']) * 100
-    except:
-        pass
+    except Exception as e:
+        pass  # Live accuracy will show as None, display handles it
 
     return {
         'started': first_start,
@@ -409,7 +409,7 @@ with tabs[1]:
             <div style="background:#2a3040;border-radius:10px;height:8px;margin:10px 0">
                 <div style="background:linear-gradient(90deg,#ff9800,#ff9800);width:15%;height:8px;border-radius:10px"></div>
             </div>
-            <span style="color:#ff9800;font-size:0.8rem">🔄 IN PROGRESS — {ai['total_signals']} signals generated | {ai['total_checks']} checks performed</span>
+            <span style="color:#ff9800;font-size:0.8rem">🔄 IN PROGRESS — {ai['total_signals']} signals generated | Avg confidence {ai['avg_confidence']:.1f}%</span>
         </div>
 
         <div style="background:linear-gradient(135deg,#1a1f2e,#141926);border:1px solid #2a3040;border-radius:12px;padding:20px;margin:10px 0">
