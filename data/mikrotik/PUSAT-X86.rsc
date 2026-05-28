@@ -1,4 +1,4 @@
-# 2026-05-28 02:04:17 by RouterOS 7.11.3
+# 2026-05-29 02:05:00 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -884,7 +884,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=241218133449-MARIAM profile=PAKET1 service=pppoe
 /ppp secret add name=241219114432-DAUS profile=PAKET1 service=pppoe
 /ppp secret add name=241220150933-FERDY profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=220715102354-AJI profile=PAKET1 service=pppoe
+/ppp secret add name=220715102354-AJI profile=PAKET1 service=pppoe
 /ppp secret add name=241225104811-CACA profile=PAKET1 service=pppoe
 /ppp secret add name=210902194604-KEMBAR profile=PAKET3 service=pppoe
 /ppp secret add name=210902195251-YANTI profile=PAKET2 service=pppoe
@@ -1137,10 +1137,11 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260522134417-ASEP profile=PAKET3 service=pppoe
 /ppp secret add name=260525151356-FIFIT profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260525160909-YUYUS profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260528131954-DIDA profile="PAKET HEMAT" service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=501 show-at-login=no
+/system note set note=503 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"

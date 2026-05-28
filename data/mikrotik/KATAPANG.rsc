@@ -1,4 +1,4 @@
-# 2026-05-28 02:01:15 by RouterOS 7.19.4
+# 2026-05-29 02:01:57 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -172,6 +172,7 @@
 /ip firewall address-list add address=www.perfect-privacy.com list=speedtest
 /ip firewall address-list add address=perfect-privacy.com list=speedtest
 /ip firewall address-list add address=www.whatsmyip.org list=speedtest
+/ip firewall address-list add comment=ISOLIR|100010 list=EXPIRED
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=speedtest new-routing-mark=jalur-speedtest passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.2.3.24
