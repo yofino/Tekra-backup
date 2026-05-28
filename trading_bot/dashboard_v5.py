@@ -124,23 +124,22 @@ def get_vps():
 
 # ──── AI Stats ────
 def get_ai_stats():
-    """Parse AI log to get progress metrics"""
+    """Parse AI log to get progress metrics + live accuracy"""
     if not os.path.exists(AI_LOG):
         return None
     with open(AI_LOG) as f:
         lines = f.readlines()
 
+    import re
     starts = [l for l in lines if 'BOT V3 AI START' in l]
     signals = [l for l in lines if '>>> AI' in l]
     buys = [l for l in signals if 'BUY' in l]
     sells = [l for l in signals if 'SELL' in l]
-    all_lines = [l for l in lines if 'No AI signal' in l or '>>> AI' in l]
 
     if not starts:
         return None
 
     first_start = starts[0].split('[')[1].split(']')[0]
-    last_entry = lines[-1].split('[')[1].split(']')[0] if lines else first_start
 
     # Avg confidence
     confs = []
@@ -149,17 +148,64 @@ def get_ai_stats():
             try: confs.append(float(s.split('Confidence=')[1].split('%')[0]))
             except: pass
     avg_conf = np.mean(confs) if confs else 0
+    max_conf = max(confs) if confs else 0
+
+    # Live accuracy: check last 200 signals against price
+    live_acc = None
+    high_conf_acc = None
+    try:
+        today = datetime.now().strftime("%Y%m%d")
+        yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y%m%d")
+        prices = None
+        for d in [today, yesterday]:
+            cp = f"{DATA_DIR}\\xauusd_{d}.csv"
+            if os.path.exists(cp):
+                df = pd.read_csv(cp)
+                df['time'] = pd.to_datetime(df['time'])
+                df.set_index('time', inplace=True)
+                prices = pd.concat([prices, df]) if prices is not None else df
+        
+        if prices is not None and len(signals) > 10:
+            results = {'correct': 0, 'wrong': 0}
+            results_high = {'correct': 0, 'wrong': 0}
+            checked = 0
+            for s in signals[-200:]:
+                m = re.search(r"\[(.*?)\].*>>> AI (BUY|SELL).*Price=([\d.]+).*Confidence=([\d.]+)%", s)
+                if not m: continue
+                sig_time = pd.to_datetime(m.group(1))
+                sig_type = m.group(2)
+                sig_price = float(m.group(3))
+                sig_conf = float(m.group(4))
+                
+                future = prices[prices.index >= sig_time + timedelta(minutes=30)]
+                if len(future) == 0: continue
+                future_price = future.iloc[0]['close']
+                move = future_price - sig_price
+                correct = (sig_type == 'BUY' and move > 0) or (sig_type == 'SELL' and move < 0)
+                
+                results['correct' if correct else 'wrong'] += 1
+                if sig_conf >= 75:
+                    results_high['correct' if correct else 'wrong'] += 1
+                checked += 1
+            
+            if checked > 20:
+                live_acc = results['correct'] / (results['correct'] + results['wrong']) * 100
+                if (results_high['correct'] + results_high['wrong']) > 5:
+                    high_conf_acc = results_high['correct'] / (results_high['correct'] + results_high['wrong']) * 100
+    except:
+        pass
 
     return {
         'started': first_start,
         'total_signals': len(signals),
         'buys': len(buys), 'sells': len(sells),
-        'total_checks': len(all_lines),
         'avg_confidence': avg_conf,
-        'last_entry': last_entry,
+        'max_confidence': max_conf,
         'model': 'XGBoost V2',
         'features': 25,
-        'risk': '0.5% | SL 1.5x | TP 3.0x'
+        'risk': '0.5% | SL 1.5x | TP 3.0x',
+        'live_accuracy': live_acc,
+        'high_conf_accuracy': high_conf_acc
     }
 
 # ──── SIDEBAR ────
@@ -309,7 +355,22 @@ with tabs[1]:
         a1.metric("AI Started", ai['started'])
         a2.metric("AI Signals", ai['total_signals'])
         a3.metric("Avg Confidence", f"{ai['avg_confidence']:.1f}%")
-        a4.metric("Total Checks", ai['total_checks'])
+        a4.metric("Max Confidence", f"{ai['max_confidence']:.1f}%")
+
+        st.divider()
+        st.subheader(" Live Accuracy")
+        la1,la2,la3,la4 = st.columns(4)
+        if ai.get('live_accuracy'):
+            color = "normal" if ai['live_accuracy'] > 50 else "inverse"
+            la1.metric("Overall Accuracy", f"{ai['live_accuracy']:.1f}%", delta=f"{ai['live_accuracy']-50:.1f}% vs random", delta_color="normal" if ai['live_accuracy']>50 else "off")
+        else:
+            la1.metric("Overall Accuracy", "Collecting...")
+        if ai.get('high_conf_accuracy'):
+            la2.metric("High Conf (75%+)", f"{ai['high_conf_accuracy']:.1f}%")
+        else:
+            la2.metric("High Conf (75%+)", "Need more data")
+        la3.metric("Buy Signals", ai['buys'])
+        la4.metric("Sell Signals", ai['sells'])
 
         a5,a6,a7,a8 = st.columns(4)
         a5.metric("BUY Signals", ai['buys'])
