@@ -166,10 +166,11 @@ def get_ai_stats():
                 prices = pd.concat([prices, df]) if prices is not None else df
         
         if prices is not None and len(signals) > 10:
+            last_price_time = prices.index[-1]  # Latest price data timestamp
             results = {'correct': 0, 'wrong': 0}
             results_high = {'correct': 0, 'wrong': 0}
             checked = 0
-            for s in signals[-200:]:
+            for s in signals[-300:]:  # Check last 300 signals
                 m = re.search(r"\[(.*?)\].*>>> AI (BUY|SELL).*Price=([\d.]+).*Confidence=([\d.]+)%", s)
                 if not m: continue
                 sig_time = pd.to_datetime(m.group(1))
@@ -177,7 +178,11 @@ def get_ai_stats():
                 sig_price = float(m.group(3))
                 sig_conf = float(m.group(4))
                 
-                future = prices[prices.index >= sig_time + timedelta(minutes=30)]
+                # Only check signals with 30+ min of future price data available
+                target_time = sig_time + timedelta(minutes=30)
+                if target_time > last_price_time: continue
+                
+                future = prices[prices.index >= target_time]
                 if len(future) == 0: continue
                 future_price = future.iloc[0]['close']
                 move = future_price - sig_price
