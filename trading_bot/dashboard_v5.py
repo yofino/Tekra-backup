@@ -158,7 +158,7 @@ def get_ai_stats():
         yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y%m%d")
         prices = None
         for d in [today, yesterday]:
-            cp = f"{DATA_DIR}\\xauusd_{d}.csv"
+            cp = os.path.join(DATA_DIR, f"xauusd_{d}.csv")
             if os.path.exists(cp):
                 df = pd.read_csv(cp)
                 df['time'] = pd.to_datetime(df['time'])
@@ -188,7 +188,7 @@ def get_ai_stats():
                     results_high['correct' if correct else 'wrong'] += 1
                 checked += 1
             
-            if checked > 20:
+            if checked > 5:
                 live_acc = results['correct'] / (results['correct'] + results['wrong']) * 100
                 if (results_high['correct'] + results_high['wrong']) > 5:
                     high_conf_acc = results_high['correct'] / (results_high['correct'] + results_high['wrong']) * 100
