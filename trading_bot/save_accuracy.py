@@ -47,13 +47,13 @@ for s in signals[-500:]:
     m = re.search(r"\[(.*?)\].*>>> AI (BUY|SELL).*Price=([\d.]+).*Confidence=([\d.]+)%", s)
     if not m: continue
     
-    sig_time = pd.to_datetime(m.group(1))
+    sig_time = pd.to_datetime(m.group(1)) - timedelta(hours=7)  # WIB to UTC
     sig_type = m.group(2)
     sig_price = float(m.group(3))
     sig_conf = float(m.group(4))
     confs.append(sig_conf)
     
-    target = sig_time + timedelta(minutes=30)
+    target = sig_time + timedelta(minutes=60)  # Check 60 min later
     if target > last_price_time: continue
     
     future = prices[prices.index >= target]
