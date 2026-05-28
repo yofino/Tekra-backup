@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>BisaBicara — AAC Assistant</title>
+<meta name="description" content="Aplikasi bantu komunikasi untuk anak dengan apraxia dan kebutuhan khusus">
+<link rel="manifest" href="data:application/json,{'name':'BisaBicara','short_name':'BisaBicara','start_url':'.','display':'standalone','background_color':'#1a1a2e','theme_color':'#4f46e5','icons':[]}">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg: #0f0f1a;
+  --card: #1a1a2e;
+  --card2: #16213e;
+  --accent: #6366f1;
+  --accent2: #818cf8;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --red: #ef4444;
+  --text: #e2e8f0;
+  --text2: #94a3b8;
+  --radius: 20px;
+}
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.logo { font-size: 1.3rem; font-weight: 700; color: var(--accent2); letter-spacing: -0.5px; }
+.logo span { color: var(--text); }
+/* Output bar */
+#output {
+  background: var(--card);
+  border: 2px solid var(--card2);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+#output.speaking {
+  border-color: var(--accent);
+  box-shadow: 0 0 24px rgba(99,102,241,0.25);
+}
+#output .emoji-large { font-size: 2rem; }
+.speak-btn {
+  margin-left: auto;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.speak-btn:active { transform: scale(0.92); background: var(--accent2); }
+.speak-btn.clear { background: var(--card2); font-size: 0.9rem; }
+/* Category tabs */
+.categories {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 0;
+}
+.categories::-webkit-scrollbar { display: none; }
+.cat-tab {
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1.5px solid var(--card2);
+  background: transparent;
+  color: var(--text2);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.cat-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.cat-tab:active { transform: scale(0.95); }
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  flex: 1;
+}
+.tile {
+  background: var(--card);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 8px;
+  cursor: pointer;
+  transition: all 0.12s;
+  min-height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.tile:active {
+  transform: scale(0.93);
+  border-color: var(--accent);
+  background: var(--card2);
+}
+.tile .emoji { font-size: 2.8rem; transition: transform 0.15s; }
+.tile:active .emoji { transform: scale(1.15); }
+.tile .label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.2;
+}
+/* Ripple */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(99,102,241,0.3);
+  transform: scale(0);
+  animation: ripple .5s linear;
+}
+@keyframes ripple { to { transform: scale(4); opacity: 0; } }
+/* Footer */
+footer {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 8px 0;
+}
+.footer-btn {
+  padding: 14px 24px;
+  border-radius: 100px;
+  border: 1.5px solid var(--card2);
+  background: var(--card);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.footer-btn:active { transform: scale(0.95); }
+.footer-btn.danger { border-color: var(--red); color: var(--red); }
+.footer-btn.save { border-color: var(--green); color: var(--green); }
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  z-index: 100;
+}
+.toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🗣️ <span>BisaBicara</span></div>
+  <div style="font-size:0.8rem;color:var(--text2)">AAC Assistant</div>
+</header>
+
+<div id="output">
+  <span class="emoji-large">💬</span>
+  <span id="output-text" style="color:var(--text2)">Tap gambar untuk bicara...</span>
+  <button class="speak-btn" id="btn-speak" title="Ulangi">🔊</button>
+</div>
+
+<div class="categories" id="categories"></div>
+<div class="grid" id="grid"></div>
+
+<footer>
+  <button class="footer-btn danger" onclick="clearAll()">✕ Hapus</button>
+  <button class="footer-btn" onclick="addPhrase()">+ Kalimat</button>
+  <button class="footer-btn save" onclick="repeatLast()">🔊 Ulangi</button>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════ DATA ═══════════════
+const categories = {
+  basic: {
+    name: 'Dasar',
+    icon: '⭐',
+    items: [
+      { emoji: '👍', text: 'Ya / Iya' },
+      { emoji: '👎', text: 'Tidak / Bukan' },
+      { emoji: '👋', text: 'Halo / Hai' },
+      { emoji: '🖐️', text: 'Tunggu / Sebentar' },
+      { emoji: '🙏', text: 'Tolong' },
+      { emoji: '🤝', text: 'Terima kasih' },
+    ]
+  },
+  needs: {
+    name: 'Kebutuhan',
+    icon: '🍽️',
+    items: [
+      { emoji: '🥤', text: 'Mau minum' },
+      { emoji: '🍚', text: 'Mau makan' },
+      { emoji: '🚽', text: 'Ke toilet' },
+      { emoji: '😴', text: 'Mau tidur' },
+      { emoji: '🛁', text: 'Mandi' },
+      { emoji: '🤒', text: 'Lagi sakit' },
+    ]
+  },
+  feelings: {
+    name: 'Perasaan',
+    icon: '❤️',
+    items: [
+      { emoji: '😊', text: 'Senang / Happy' },
+      { emoji: '😢', text: 'Sedih' },
+      { emoji: '😠', text: 'Marah' },
+      { emoji: '😰', text: 'Takut / Cemas' },
+      { emoji: '😴', text: 'Lelah / Capek' },
+      { emoji: '😐', text: 'Biasa aja' },
+    ]
+  },
+  family: {
+    name: 'Keluarga',
+    icon: '👨‍👩‍👧‍👦',
+    items: [
+      { emoji: '👩', text: 'Ibu / Mama' },
+      { emoji: '👨', text: 'Ayah / Papa' },
+      { emoji: '🧒', text: 'Aku' },
+      { emoji: '👵', text: 'Nenek' },
+      { emoji: '👴', text: 'Kakek' },
+      { emoji: '👩‍🏫', text: 'Guru' },
+    ]
+  },
+  activities: {
+    name: 'Kegiatan',
+    icon: '🎮',
+    items: [
+      { emoji: '📺', text: 'Nonton TV' },
+      { emoji: '🎮', text: 'Main game' },
+      { emoji: '📚', text: 'Baca buku' },
+      { emoji: '🎵', text: 'Dengar musik' },
+      { emoji: '🏃', text: 'Main di luar' },
+      { emoji: '✏️', text: 'Belajar' },
+    ]
+  },
+  emergency: {
+    name: 'Darurat',
+    icon: '🆘',
+    items: [
+      { emoji: '🆘', text: 'TOLONG! DARURAT!' },
+      { emoji: '🤕', text: 'Sakit / Terluka' },
+      { emoji: '😨', text: 'Takut / Tidak aman' },
+      { emoji: '🏥', text: 'Mau ke dokter' },
+      { emoji: '📞', text: 'Telepon orang tua' },
+      { emoji: '🏠', text: 'Mau pulang' },
+    ]
+  },
+};
+
+let currentCat = 'basic';
+let phrase = [];
+let lastPhrase = '';
+let isSpeaking = false;
+const synth = window.speechSynthesis;
+
+// ═══════════════ RENDER ═══════════════
+function renderCategories() {
+  const el = document.getElementById('categories');
+  el.innerHTML = Object.entries(categories).map(([key, cat]) =>
+    `<button class="cat-tab ${key === currentCat ? 'active' : ''}" onclick="switchCat('${key}')">${cat.icon} ${cat.name}</button>`
+  ).join('');
+}
+
+function renderGrid() {
+  const el = document.getElementById('grid');
+  const items = categories[currentCat].items;
+  el.innerHTML = items.map((item, i) =>
+    `<div class="tile" onclick="tapTile(${i})" style="animation:fadeIn 0.2s ${i*0.03}s both">
+      <span class="emoji">${item.emoji}</span>
+      <span class="label">${item.text}</span>
+    </div>`
+  ).join('');
+}
+
+function switchCat(key) {
+  currentCat = key;
+  renderCategories();
+  renderGrid();
+}
+
+// ═══════════════ SPEECH ═══════════════
+function tapTile(i) {
+  const item = categories[currentCat].items[i];
+  phrase.push(item);
+  updateOutput();
+  speak(item.text);
+  flashOutput();
+}
+
+function updateOutput() {
+  const textEl = document.getElementById('output-text');
+  const emojiEl = document.querySelector('#output .emoji-large');
+  if (phrase.length === 0) {
+    textEl.textContent = 'Tap gambar untuk bicara...';
+    textEl.style.color = 'var(--text2)';
+    emojiEl.textContent = '💬';
+  } else {
+    textEl.textContent = phrase.map(p => p.text).join(' → ');
+    textEl.style.color = 'var(--text)';
+    emojiEl.textContent = phrase[phrase.length-1].emoji;
+  }
+}
+
+function flashOutput() {
+  const out = document.getElementById('output');
+  out.classList.add('speaking');
+  setTimeout(() => out.classList.remove('speaking'), 600);
+}
+
+function speak(text) {
+  synth.cancel();
+  // Bahasa Indonesia voice
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'id-ID';
+  utterance.rate = 0.9;
+  utterance.pitch = 1.1;
+  utterance.volume = 1;
+  
+  // Try to find Indonesian voice
+  const voices = synth.getVoices();
+  const idVoice = voices.find(v => v.lang.startsWith('id'));
+  if (idVoice) utterance.voice = idVoice;
+  
+  utterance.onstart = () => { isSpeaking = true; };
+  utterance.onend = () => { isSpeaking = false; };
+  synth.speak(utterance);
+}
+
+function repeatLast() {
+  if (phrase.length > 0) {
+    const last = phrase[phrase.length-1];
+    speak(last.text);
+    flashOutput();
+    toast('🔊 Diulangi');
+  } else if (lastPhrase) {
+    speak(lastPhrase);
+    flashOutput();
+    toast('🔊 Diulangi');
+  }
+}
+
+function clearAll() {
+  if (phrase.length > 0) {
+    lastPhrase = phrase.map(p => p.text).join('. ');
+  }
+  phrase = [];
+  updateOutput();
+  synth.cancel();
+  toast('Dihapus');
+}
+
+function addPhrase() {
+  if (phrase.length > 0) {
+    lastPhrase = phrase.map(p => p.text).join('. ');
+    toast('💾 Kalimat disimpan!');
+    phrase = [];
+    updateOutput();
+  } else {
+    toast('Tap gambar dulu!');
+  }
+}
+
+// ═══════════════ TOAST ═══════════════
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1500);
+}
+
+// ═══════════════ INIT ═══════════════
+document.getElementById('btn-speak').addEventListener('click', repeatLast);
+
+// Load voices
+synth.getVoices();
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = () => synth.getVoices();
+}
+
+renderCategories();
+renderGrid();
+
+// PWA install prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Show install toast after first interaction
+  setTimeout(() => toast('📲 Install ke HP: menu browser → Add to Home Screen'), 2000);
+});
+</script>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Mobile optimization */
+@media (min-width: 600px) {
+  body { max-width: 480px; margin: 0 auto; }
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</body>
+</html>
