@@ -1,4 +1,4 @@
-# 2026-06-05 02:01:56 by RouterOS 7.19.4
+# 2026-06-06 02:01:55 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -859,12 +859,12 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add disabled=yes name=RIVALDO profile="PAKET 1" service=pppoe
 /ppp secret add disabled=yes name=PUTRA2 profile="PAKET 4" service=pppoe
 /ppp secret add name=DIRA profile="PAKET 2" service=pppoe
-/ppp secret add name=JUHANA profile="PAKET 2" service=pppoe
+/ppp secret add disabled=yes name=JUHANA profile="PAKET 2" service=pppoe
 /ppp secret add name=HAFIDZ profile="PAKET 1" service=pppoe
 /ppp secret add name=POPI profile="PAKET 1" service=pppoe
 /ppp secret add name=FITRIA profile="PAKET 1" service=pppoe
 /ppp secret add name=HAFIZD profile="PAKET 2" service=pppoe
-/ppp secret add name=RIKA profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=RIKA profile="PAKET 1" service=pppoe
 /ppp secret add name=ELSA profile="PAKET 1" service=pppoe
 /ppp secret add name=250119111455-ERLINDA profile="PAKET 1" service=pppoe
 /ppp secret add name=100019-ANTI profile="PAKET 1" service=pppoe
@@ -902,24 +902,24 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=250801170007-RIZAL profile="PAKET 1" service=pppoe
 /ppp secret add name=ARGYA profile="PAKET 2" service=pppoe
 /ppp secret add name=ANITA profile="PAKET 3" service=pppoe
-/ppp secret add name=AYUMUNTHE profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=AYUMUNTHE profile="PAKET 1" service=pppoe
 /ppp secret add name=SACHIOALF profile="PAKET 2" service=pppoe
 /ppp secret add disabled=yes name=IWAN2 profile="PAKET 1" service=pppoe
 /ppp secret add disabled=yes name=250903104309-ASEP profile="PAKET 1" service=pppoe
 /ppp secret add name=250925095127-AIYETI profile="PAKET 1" service=pppoe
 /ppp secret add name=NANANG2 profile="PAKET 1" service=pppoe
 /ppp secret add name=251001173645-ONIMAWATI profile="PAKET 1" service=pppoe
-/ppp secret add name=251003093523-FITRIAH profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=251003093523-FITRIAH profile="PAKET 1" service=pppoe
 /ppp secret add name=ILHAM profile="PAKET 2" service=pppoe
 /ppp secret add name=251020123902-DONDY profile="PAKET 2" service=pppoe
 /ppp secret add name=251020145702-GENGEN profile="PAKET 1" service=pppoe
 /ppp secret add name=251112163131-MAMUN profile="PAKET 1" service=pppoe
 /ppp secret add name=251112181942-IRA profile="PAKET 1" service=pppoe
-/ppp secret add name=251127122925-BAYU profile="PAKET 2" service=pppoe
-/ppp secret add name=251205102442-NINA profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=251127122925-BAYU profile="PAKET 2" service=pppoe
+/ppp secret add disabled=yes name=251205102442-NINA profile="PAKET 1" service=pppoe
 /ppp secret add name=RAMA profile="PAKET 1" service=pppoe
 /ppp secret add name="KRISNA 2" profile="PAKET 1" service=pppoe
-/ppp secret add name=251215115412-RONI profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=251215115412-RONI profile="PAKET 1" service=pppoe
 /ppp secret add name=251215151741-DONI profile="PAKET 1" service=pppoe
 /ppp secret add name=260102154336-ERIKA profile="PAKET 1" service=pppoe
 /ppp secret add name=260102163839-KIKI profile="PAKET 2" service=pppoe
@@ -931,7 +931,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=260202165929-LIA profile="PAKET 1" service=pppoe
 /ppp secret add name=260202175238-IIN profile="PAKET 1" service=pppoe
 /ppp secret add disabled=yes name=260209111303-WAWAT profile="PAKET 1" service=pppoe
-/ppp secret add name=260220180402-FIKRI profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=260220180402-FIKRI profile="PAKET 1" service=pppoe
 /ppp secret add name=260223133923-EUIS profile="PAKET 1" service=pppoe
 /ppp secret add name=260223163942-FITRIYANI profile="PAKET 1" service=pppoe
 /ppp secret add name=260303150413-LINDA profile="PAKET 1" service=pppoe
@@ -946,7 +946,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /system clock set time-zone-autodetect=no time-zone-name=Asia/Jakarta
 /system identity set name="BARANG KITA"
 /system logging add action=disk prefix=-> topics=hotspot,info,debug
-/system note set note=107
+/system note set note=98
 /system ntp client set enabled=yes
 /system ntp client servers add address=202.65.114.202
 /system ntp client servers add address=212.26.18.41
