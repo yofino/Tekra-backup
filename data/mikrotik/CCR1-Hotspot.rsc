@@ -1,4 +1,4 @@
-# jun/07/2026 02:00:02 by RouterOS 6.49.13
+# jun/08/2026 02:00:02 by RouterOS 6.49.13
 # software id = DUUD-LHXS
 #
 # model = CCR1009-7G-1C-1S+
@@ -263,6 +263,7 @@
 /ip firewall mangle add action=mark-routing chain=prerouting comment="<<<===|| VPN-SPEEDTEST ||===>>>" dst-address-list=speedtest new-routing-mark=FASTAMA passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.10.10.28
 /ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=MYREP passthrough=yes src-address=10.10.10.22-10.10.10.51
+/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=MYREP passthrough=yes src-address=10.10.10.18
 /ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=MYREP passthrough=yes src-address=10.10.10.53-10.10.10.199
 /ip firewall mangle add action=mark-routing chain=prerouting comment="HOTSPOT VOUCHER" new-routing-mark=MYREP passthrough=yes src-address-list=VOUCHER
 /ip firewall mangle add action=mark-routing chain=prerouting comment="MYREP INOY" disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.1.0.0/22
@@ -1987,7 +1988,7 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6ry28 password=6ry28 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6ip65 password=6ip65 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6yv25 password=6yv25 profile=Paket6jam
-/ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6yt98 password=6yt98 profile=Paket6jam
+/ip hotspot user add comment="jun/08/2026 02:24:14" limit-uptime=6h name=6yt98 password=6yt98 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6ft27 password=6ft27 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6ha49 password=6ha49 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6wk88 password=6wk88 profile=Paket6jam
@@ -2183,8 +2184,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6ey3x password=6ey3x profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6gh2t password=6gh2t profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6mu4i password=6mu4i profile=Paket6jam
-/ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=68kjz password=68kjz profile=Paket6jam
-/ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=67f2t password=67f2t profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6eerr password=6eerr profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6scvr password=6scvr profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6fsrz password=6fsrz profile=Paket6jam
@@ -3165,7 +3164,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-810-03.15.26- limit-uptime=6h name=6xv37 password=6xv37 profile=Paket6jam
 /ip hotspot user add comment=vc-810-03.15.26- limit-uptime=6h name=6ty39 password=6ty39 profile=Paket6jam
 /ip hotspot user add comment=vc-810-03.15.26- limit-uptime=6h name=6sr46 password=6sr46 profile=Paket6jam
-/ip hotspot user add comment=vc-810-03.15.26- limit-uptime=6h name=6tn77 password=6tn77 profile=Paket6jam
 /ip hotspot user add comment=vc-810-03.15.26- limit-uptime=6h name=6nw98 password=6nw98 profile=Paket6jam
 /ip hotspot user add comment=vc-810-03.15.26- limit-uptime=6h name=6bu62 password=6bu62 profile=Paket6jam
 /ip hotspot user add comment=vc-810-03.15.26- limit-uptime=6h name=6fa53 password=6fa53 profile=Paket6jam
@@ -3703,30 +3701,23 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6dw36 password=6dw36 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ww62 password=6ww62 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6fu32 password=6fu32 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6nc98 password=6nc98 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6dd25 password=6dd25 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6rr39 password=6rr39 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ux29 password=6ux29 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6xm27 password=6xm27 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6mv98 password=6mv98 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6xn76 password=6xn76 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6bw63 password=6bw63 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6rm76 password=6rm76 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6pg63 password=6pg63 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6xz25 password=6xz25 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6zd97 password=6zd97 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6tb63 password=6tb63 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6fk33 password=6fk33 profile=Paket6jam
+/ip hotspot user add comment="jun/08/2026 02:21:39" limit-uptime=6h name=6fk33 password=6fk33 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6nf68 password=6nf68 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6af94 password=6af94 profile=Paket6jam
-/ip hotspot user add comment="jun/07/2026 02:46:55" limit-uptime=6h name=6gr29 password=6gr29 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6jy85 password=6jy85 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6mu78 password=6mu78 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6hk43 password=6hk43 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ae98 password=6ae98 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6vt62 password=6vt62 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6xp77 password=6xp77 profile=Paket6jam
-/ip hotspot user add comment="jun/07/2026 05:16:13" limit-uptime=6h name=6um75 password=6um75 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6kc25 password=6kc25 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6he75 password=6he75 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ms69 password=6ms69 profile=Paket6jam
@@ -3734,22 +3725,14 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6nd53 password=6nd53 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6rs89 password=6rs89 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6vr53 password=6vr53 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6sw76 password=6sw76 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6yv72 password=6yv72 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ns87 password=6ns87 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6bw39 password=6bw39 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6tn96 password=6tn96 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6yb47 password=6yb47 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6rs93 password=6rs93 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6xb85 password=6xb85 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6yd32 password=6yd32 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ff55 password=6ff55 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ii49 password=6ii49 profile=Paket6jam
-/ip hotspot user add comment="jun/07/2026 03:28:27" limit-uptime=6h name=6cz76 password=6cz76 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6fe35 password=6fe35 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6dr47 password=6dr47 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6iv74 password=6iv74 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6wr55 password=6wr55 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6zn98 password=6zn98 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ur64 password=6ur64 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6vv58 password=6vv58 profile=Paket6jam
@@ -3773,7 +3756,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6uv32 password=6uv32 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6xv77 password=6xv77 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6jy92 password=6jy92 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6pm52 password=6pm52 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6pr42 password=6pr42 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6at94 password=6at94 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ga55 password=6ga55 profile=Paket6jam
@@ -61044,6 +61026,24 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /system script add comment=mikhmon dont-require-permissions=no name=jun/06/2026-|-20:46:58-|-6gr29-|-2500-|-192.168.44.238-|-82:2C:CC:C7:AB:1B-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/06/2026
 /system script add comment=mikhmon dont-require-permissions=no name=jun/06/2026-|-21:28:30-|-6cz76-|-2500-|-192.168.44.159-|-04:E5:98:00:2A:A0-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/06/2026
 /system script add comment=mikhmon dont-require-permissions=no name=jun/06/2026-|-23:16:16-|-6um75-|-2500-|-192.168.44.194-|-FE:DF:3F:0B:49:A2-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/06/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-07:49:56-|-6sw76-|-2500-|-192.168.44.170-|-04:C8:07:94:15:0E-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-09:08:54-|-6rm76-|-2500-|-192.168.44.249-|-22:B6:95:64:BA:61-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-10:17:27-|-6pm52-|-2500-|-10.10.10.253-|-58:85:A2:64:5C:1F-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-10:43:13-|-6rr39-|-2500-|-192.168.44.103-|-22:4F:54:C3:B5:43-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-10:50:24-|-68kjz-|-2500-|-192.168.44.117-|-FA:67:89:50:1B:A8-|-6h-|-Paket6jam-|-vc-954-01.09.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-10:54:11-|-6tn77-|-2500-|-192.168.44.231-|-44:46:87:90:80:AD-|-6h-|-Paket6jam-|-vc-810-03.15.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-11:28:09-|-6zd97-|-2500-|-192.168.44.204-|-0C:A8:A7:46:3F:4A-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-11:39:14-|-67f2t-|-2500-|-192.168.44.126-|-CA:D2:76:4F:76:65-|-6h-|-Paket6jam-|-vc-954-01.09.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-11:43:31-|-6vt62-|-2500-|-192.168.44.127-|-F2:A8:2C:40:5F:BE-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-13:07:10-|-6fe35-|-2500-|-192.168.44.198-|-88:D5:0C:22:4C:79-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-13:35:24-|-6tn96-|-2500-|-192.168.44.242-|-9E:97:D7:0B:83:C0-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-14:09:26-|-6ff55-|-2500-|-192.168.44.187-|-20:5E:F7:75:A1:A2-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-17:16:43-|-6rs93-|-2500-|-192.168.44.214-|-62:8E:36:AB:D8:4B-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-17:55:17-|-6nc98-|-2500-|-192.168.44.39-|-72:E9:34:61:1A:F7-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-18:24:48-|-6wr55-|-2500-|-192.168.44.103-|-22:4F:54:C3:B5:43-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-18:28:49-|-6ii49-|-2500-|-192.168.44.214-|-58:85:A2:64:5C:1F-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-20:21:43-|-6fk33-|-2500-|-192.168.44.128-|-0C:A8:A7:46:3F:4A-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jun/07/2026-|-20:24:17-|-6yt98-|-2500-|-192.168.44.192-|-44:46:87:90:80:AD-|-6h-|-Paket6jam-|-vc-608-10.03.25- owner=jun2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jun/07/2026
 /tool netwatch add comment=tunnel-gateway-10.41.0.1 host=10.41.0.1
 /tool netwatch add comment=tunnel-gateway-10.47.0.1 host=10.47.0.1
 /tool netwatch add comment=tunnel-gateway-10.46.0.1 host=10.46.0.1
