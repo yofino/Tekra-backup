@@ -1,4 +1,4 @@
-# 2026-06-08 02:02:03 by RouterOS 7.19.4
+# 2026-06-09 02:01:19 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -845,7 +845,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=LASITO profile="PAKET 1" service=pppoe
 /ppp secret add name=NITA profile="PAKET 1" service=pppoe
 /ppp secret add name=NINDA profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=KRISNA profile="PAKET 1" service=pppoe
+/ppp secret add name=KRISNA profile="PAKET 1" service=pppoe
 /ppp secret add disabled=yes name=INTAN profile="PAKET 1" service=pppoe
 /ppp secret add name=TENI profile="PAKET 1" service=pppoe
 /ppp secret add name=RISTA profile="PAKET 1" service=pppoe
@@ -906,7 +906,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=SACHIOALF profile="PAKET 2" service=pppoe
 /ppp secret add disabled=yes name=IWAN2 profile="PAKET 1" service=pppoe
 /ppp secret add disabled=yes name=250903104309-ASEP profile="PAKET 1" service=pppoe
-/ppp secret add name=250925095127-AIYETI profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=250925095127-AIYETI profile="PAKET 1" service=pppoe
 /ppp secret add name=NANANG2 profile="PAKET 1" service=pppoe
 /ppp secret add name=251001173645-ONIMAWATI profile="PAKET 1" service=pppoe
 /ppp secret add name=251003093523-FITRIAH profile="PAKET 1" service=pppoe
@@ -941,12 +941,13 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=260403132654-RAMDHAN profile="PAKET 1" service=pppoe
 /ppp secret add name=260427154244-NARTI profile="PAKET 1" service=pppoe
 /ppp secret add name=260501140702-ISMA profile="PAKET 1" service=pppoe
+/ppp secret add name=260608151417-SRIASTUTI profile="PAKET 1" service=pppoe
 /routing bfd configuration add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /snmp set contact=AHKAM enabled=yes location=KATAPANG-KABUPATEN-BANDUNG trap-version=2
 /system clock set time-zone-autodetect=no time-zone-name=Asia/Jakarta
 /system identity set name="BARANG KITA"
 /system logging add action=disk prefix=-> topics=hotspot,info,debug
-/system note set note=105
+/system note set note=107
 /system ntp client set enabled=yes
 /system ntp client servers add address=202.65.114.202
 /system ntp client servers add address=212.26.18.41

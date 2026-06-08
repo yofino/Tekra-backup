@@ -1,4 +1,4 @@
-# 2026-06-08 02:01:52 by RouterOS 7.16.1
+# 2026-06-09 02:01:17 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -17,12 +17,12 @@
 /interface ovpn-client add comment=tunnel-31721 connect-to=id-20.tunnel.web.id mac-address=FE:32:21:AE:89:DE name=tunnel-31721 user=cilisung
 /interface vlan add interface=sfp-sfpplus1 name=VLAN-FROM-PUSAT vlan-id=202
 /interface vlan add interface=ether7-OLT name=VLAN-MONITOR-OLT vlan-id=144
-/interface vlan add interface=ether8 name=VLAN-PPOE-CILISUNG-HIOSO vlan-id=143
+/interface vlan add interface=ether4 name=VLAN-PPOE-CILISUNG-HIOSO vlan-id=143
 /interface vlan add interface=ether7-OLT name=VLAN-PPPOE-CILISUNG vlan-id=143
 /interface vlan add interface=ether7-OLT name=VLAN-PPPOE-SEKEAWI vlan-id=145
 /interface vlan add interface=sfp-sfpplus1 name=VLAN-TO-PUSAT vlan-id=203
 /interface vlan add interface=ether7-OLT name=vlan100-TR069-E7 vlan-id=100
-/interface vlan add interface=ether8 name=vlan100-TR069-E8 vlan-id=100
+/interface vlan add interface=ether4 name=vlan100-TR069-E8 vlan-id=100
 /ip dhcp-server option add code=43 name=acs value=0x0119687474703A2F2F31302E31302E31302E3233303A37353437
 /ip dhcp-server option sets add name=acs options=acs
 /ip hotspot profile add dns-name=tekra.hotspot hotspot-address=10.5.50.1 name=hsprof1
@@ -63,16 +63,17 @@
 /interface bridge port add bridge=BRIDGE-TR069 interface=vlan100-TR069-E7
 /interface bridge port add bridge=BRIDGE-TR069 interface=vlan100-TR069-E8
 /interface bridge port add bridge=bridge-vlan-hotspot disabled=yes interface=ether5-BRIDGE-VLAN-HOTSPOT
-/interface bridge port add bridge=BRIDGE-PORT-OLT interface=VLAN-PPOE-CILISUNG-HIOSO
+/interface bridge port add bridge=BRIDGE-PORT-OLT disabled=yes interface=VLAN-PPOE-CILISUNG-HIOSO
 /interface bridge port add bridge=BRIDGE-BACKBONE interface=VLAN-TO-PUSAT
 /interface bridge port add bridge=BRIDGE-BACKBONE interface=ether1
 /interface bridge port add bridge=BRIDGE-BACKBONE interface=sfp-sfpplus1
 /interface bridge port add bridge=BRIDGE-BACKBONE interface=ether10
-/interface bridge port add bridge=BRIDGE-PORT-OLT interface=VLAN-PPPOE-CILISUNG
 /ip firewall connection tracking set udp-timeout=10s
 /ip neighbor discovery-settings set discover-interface-list=!dynamic
 /interface pppoe-server server add disabled=no interface=BRIDGE-PORT-OLT service-name=service1
 /interface pppoe-server server add disabled=no interface=VLAN-PPPOE-SEKEAWI service-name=service2
+/interface pppoe-server server add disabled=no interface=VLAN-PPOE-CILISUNG-HIOSO service-name=service3
+/interface pppoe-server server add disabled=no interface=VLAN-PPPOE-CILISUNG service-name=service4
 /ip address add address=192.168.101.1/24 interface=VLAN-MONITOR-OLT network=192.168.101.0
 /ip address add address=192.168.124.11/24 interface=BRIDGE-BACKBONE network=192.168.124.0
 /ip address add address=172.90.10.11/24 interface=VLAN-FROM-PUSAT network=172.90.10.0
@@ -248,7 +249,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=230304191419-CENDRAWASIH profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=230312143247-ELLY profile=PAKET2 service=pppoe
 /ppp secret add disabled=yes name=230613081718-YADI profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=250118114445-MAMAD profile=PAKET1 service=pppoe
+/ppp secret add name=250118114445-MAMAD profile=PAKET1 service=pppoe
 /ppp secret add name=250118131256-FIRMAN profile=PAKET1 service=pppoe
 /ppp secret add name=231209182064-RT3 profile=PAKET1 service=pppoe
 /ppp secret add name=230906115929-AKIN profile=PAKET2 service=pppoe
@@ -320,7 +321,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add disabled=yes name=251128151302-NATASYA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251128162108-IKHWAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251128174314-INDRI profile="PAKET MANTAP" service=pppoe
-/ppp secret add disabled=yes name=251201140217-HARLAN profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=251201140217-HARLAN profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251205104858-AYIHAMDANI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251206102626-PARWATI profile="PAKET MANTAP" service=pppoe
 /ppp secret add disabled=yes name=251209152000-AGUS profile="PAKET MANTAP" service=pppoe
@@ -395,7 +396,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=172 show-at-login=no
+/system note set note=170 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"
