@@ -1,4 +1,4 @@
-# 2026-06-10 02:01:08 by RouterOS 7.16.1
+# 2026-06-11 02:01:11 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -197,9 +197,9 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=230613081722-NARTI profile=PAKET1 service=pppoe
 /ppp secret add name=231209182058-TAUFAN profile=PAKET1 service=pppoe
 /ppp secret add name=231215114524-IMELDA profile=PAKET1 service=pppoe
-/ppp secret add name=220815132421-LILIS profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=220815132421-LILIS profile=PAKET2 service=pppoe
 /ppp secret add name=231215114523-TATI profile=PAKET1 service=pppoe
-/ppp secret add name=220815132420-TRIAYU profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=220815132420-TRIAYU profile=PAKET2 service=pppoe
 /ppp secret add name=230906115927-EFSA profile=PAKET2 service=pppoe
 /ppp secret add name=231209182234-ILHAM profile=PAKET2 service=pppoe
 /ppp secret add name=231209182052-PANDJI profile=PAKET1 service=pppoe
@@ -395,6 +395,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260606160907-CEVI profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260609133503-DANI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260609152254-TENI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260610154815-SUPRIYANTO profile="PAKET PUAS" service=pppoe
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
