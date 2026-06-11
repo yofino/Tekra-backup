@@ -1,4 +1,4 @@
-# 2026-06-11 02:01:11 by RouterOS 7.16.1
+# 2026-06-12 02:01:13 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -197,7 +197,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=230613081722-NARTI profile=PAKET1 service=pppoe
 /ppp secret add name=231209182058-TAUFAN profile=PAKET1 service=pppoe
 /ppp secret add name=231215114524-IMELDA profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=220815132421-LILIS profile=PAKET2 service=pppoe
+/ppp secret add name=220815132421-LILIS profile=PAKET2 service=pppoe
 /ppp secret add name=231215114523-TATI profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=220815132420-TRIAYU profile=PAKET2 service=pppoe
 /ppp secret add name=230906115927-EFSA profile=PAKET2 service=pppoe
@@ -230,7 +230,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=230304191420-DEWI profile=PAKET1 service=pppoe
 /ppp secret add name=230613081717-TATANGTASIR profile=PAKET1 service=pppoe
 /ppp secret add name=230304191417-WILDAN profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=230312143257-ANGGA profile=PAKET1 service=pppoe
+/ppp secret add name=230312143257-ANGGA profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=231209182060-ENI profile=PAKET1 service=pppoe
 /ppp secret add name=230304191412-AEPP profile=PAKET1 service=pppoe
 /ppp secret add name=231209182073-SADIAH profile=PAKET1 service=pppoe
@@ -356,7 +356,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add disabled=yes name=260130140141-FIRZI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260131125819-IMAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260203181552-HELLENA profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=260211162621-BAYU profile="PAKET MANTAP" service=pppoe
+/ppp secret add disabled=yes name=260211162621-BAYU profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260216150447-ERNI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260217101102-ELI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260220145557-DENI profile=PAKET2 service=pppoe
