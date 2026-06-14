@@ -1,4 +1,4 @@
-# 2026-06-14 02:04:35 by RouterOS 7.11.3
+# 2026-06-15 02:05:28 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -243,6 +243,13 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ip firewall address-list add address=www.fast.com list=speedtest
 /ip firewall address-list add address=speed.is comment=whatismyip.net list=speedtest
 /ip firewall address-list add address=bgp.he.net list=speedtest
+/ip firewall address-list add address=31.13.0.0/16 comment=Meta/WhatsApp list=WA-SIMAYA
+/ip firewall address-list add address=57.144.0.0/16 comment=Meta/WhatsApp list=WA-SIMAYA
+/ip firewall address-list add address=157.240.0.0/16 comment=Meta/WhatsApp list=WA-SIMAYA
+/ip firewall address-list add address=185.60.216.0/22 comment=Meta/WhatsApp list=WA-SIMAYA
+/ip firewall address-list add address=129.134.0.0/17 comment=Meta/WhatsApp list=WA-SIMAYA
+/ip firewall address-list add address=163.70.128.0/17 comment=Meta/WhatsApp list=WA-SIMAYA
+/ip firewall address-list add address=179.60.192.0/22 comment=Meta/WhatsApp list=WA-SIMAYA
 /ip firewall filter add action=accept chain=input dst-port=3388 protocol=tcp
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall filter add action=drop chain=forward comment="BLOCK ISOLIR" src-address-list=ISOLIR-LIST
@@ -251,6 +258,8 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.13.178
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.1.0.2
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.13.245
+/ip firewall mangle add action=mark-routing chain=prerouting comment=PBR-WA-Simaya disabled=yes dst-address-list=WA-SIMAYA new-routing-mark=SIMAYA passthrough=yes
+/ip firewall mangle add action=mark-routing chain=output comment=PBR-WA-output-Simaya disabled=yes dst-address-list=WA-SIMAYA new-routing-mark=SIMAYA passthrough=no
 /ip firewall nat add action=redirect chain=dstnat comment=ACS-NAT dst-port=53,5353 in-interface=BRIDGE-TR069 protocol=udp to-ports=53
 /ip firewall nat add action=dst-nat chain=dstnat comment=ACS-NAT dst-address=!10.10.10.230 in-interface=BRIDGE-TR069 protocol=tcp to-addresses=10.10.10.230 to-ports=7547
 /ip firewall nat add action=dst-nat chain=dstnat comment=ACS-NAT dst-port=!7547 in-interface=BRIDGE-TR069 protocol=tcp to-addresses=10.10.10.230 to-ports=7547
@@ -434,6 +443,8 @@ add action=masquerade chain=srcnat out-interface=*21
 /ip service set www disabled=yes
 /ip service set ssh port=18
 /ip service set api-ssl disabled=yes
+/ip traffic-flow set active-flow-timeout=10m cache-entries=4k enabled=yes interfaces=SFP1-WAN-1
+/ip traffic-flow target add dst-address=10.10.10.18 v9-template-timeout=1s
 /ppp secret add local-address=10.6.0.1 name=DAGO remote-address=10.6.0.2
 /ppp secret add local-address=192.168.33.1 name=KEMBAR profile=PAKET4 remote-address=192.168.33.4 service=pppoe
 /ppp secret add name=ABANG profile=PAKET2 service=pppoe
@@ -1143,10 +1154,11 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260607164911-ANGGI profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260612134828-CHINTIA profile=PAKET3 service=pppoe
 /ppp secret add name=260612164435-LALU profile=PAKET3 service=pppoe
+/ppp secret add name=260614094435-EDEN profile=PAKET3 service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=502 show-at-login=no
+/system note set note=503 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
