@@ -1,4 +1,4 @@
-# 2026-06-15 02:05:28 by RouterOS 7.11.3
+# 2026-06-16 02:05:02 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -953,7 +953,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=250228161959-SARI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250302105822-ROBBY profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=250302114437-DINIFATIMAH profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250302134218-CEPI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250302134218-CEPI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250303143516-TATIKARYATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250303155354-ANENG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250305104835-NURSULASTRI profile="PAKET HEMAT" service=pppoe
@@ -1082,7 +1082,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260107165904-LATIFUDIN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260109112002-MUMAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260109150622-ANIHENDRAYANI profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=260113134055-HAIKAL profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260113134055-HAIKAL profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260118103427-RINI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260119114124-FITRIYANI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260121134333-DIANHERDIANA profile="PAKET HEMAT" service=pppoe
@@ -1158,7 +1158,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=503 show-at-login=no
+/system note set note=504 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
