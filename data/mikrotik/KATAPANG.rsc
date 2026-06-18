@@ -1,4 +1,4 @@
-# 2026-06-18 02:02:01 by RouterOS 7.19.4
+# 2026-06-19 02:01:54 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -176,6 +176,8 @@
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=speedtest new-routing-mark=jalur-speedtest passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.2.3.24
+/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=SPEEDTEST passthrough=no src-address=10.2.0.0/22
+/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=SPEEDTEST passthrough=no src-address=10.3.3.251
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.2.3.25
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.3.3.25
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.1.3.19-10.1.3.210
@@ -850,7 +852,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=TENI profile="PAKET 1" service=pppoe
 /ppp secret add name=RISTA profile="PAKET 1" service=pppoe
 /ppp secret add name=SIGIT profile="PAKET 1" service=pppoe
-/ppp secret add name=SULAIMAN profile="PAKET 3" service=pppoe
+/ppp secret add local-address=10.3.0.1 name=SULAIMAN profile="PAKET 3" remote-address=10.3.3.251 service=pppoe
 /ppp secret add name=100062-UCU profile="PAKET 2" service=pppoe
 /ppp secret add name=100064-KRISNA profile="PAKET 1" service=pppoe
 /ppp secret add name=100063-DEWIROHAENI profile="PAKET 2" service=pppoe
