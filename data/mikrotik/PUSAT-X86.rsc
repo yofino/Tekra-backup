@@ -1,4 +1,4 @@
-# 2026-06-20 02:01:07 by RouterOS 7.11.3
+# 2026-06-21 02:01:10 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -1158,10 +1158,11 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260614094435-EDEN profile=PAKET3 service=pppoe
 /ppp secret add name=260616173623-AGUS profile=PAKET2 service=pppoe
 /ppp secret add name=260619152230-SITI profile=PAKET3 service=pppoe
+/ppp secret add name=260620174152-AGUNG profile="PAKET MANTAP" service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=502 show-at-login=no
+/system note set note=508 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
