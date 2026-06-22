@@ -1,4 +1,4 @@
-# 2026-06-22 02:01:10 by RouterOS 7.11.3
+# 2026-06-23 02:01:11 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -1159,6 +1159,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260616173623-AGUS profile=PAKET2 service=pppoe
 /ppp secret add name=260619152230-SITI profile=PAKET3 service=pppoe
 /ppp secret add name=260620174152-AGUNG profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260622112131-RESTI profile="PAKET HEMAT" service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
