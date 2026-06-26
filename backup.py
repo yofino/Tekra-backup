@@ -55,9 +55,9 @@ PORTALS = [
 ]
 
 AGENT_WORKSPACES = [
-    {"name": "Anatasya", "host": "10.10.10.31", "ssh_user": "agent-ryan", "ssh_pass": "zeushera", "workspace": "/home/agent-ryan/.openclaw/workspace"},
-    {"name": "Zara",     "host": "10.10.10.30", "ssh_user": "agent-bos",  "ssh_pass": "zeushera", "workspace": "/home/agent-bos/.openclaw/workspace"},
-    {"name": "Siti",     "host": "103.129.148.97", "ssh_user": "keanuvps", "ssh_key": "/root/.openclaw/media/inbound/nocita---0ae44bb1-6a7b-441a-9f4a-17c556dbe83f.cer", "ssh_pass": "k34Nu335577", "workspace": "/opt/openclaw/data/workspace", "sudo": True},
+    {"name": "Anatasya", "host": "103.129.148.97", "ssh_user": "keanuvps", "ssh_key": "/root/.ssh/nocita_key", "ssh_pass": "k34Nu335577", "workspace": "/root/.openclaw-ana/data/workspace"},
+    {"name": "Zara",     "host": "103.129.148.97", "ssh_user": "keanuvps", "ssh_key": "/root/.ssh/nocita_key", "ssh_pass": "k34Nu335577", "workspace": "/root/.openclaw-zara/data/workspace"},
+    {"name": "Siti",     "host": "103.129.148.97", "ssh_user": "keanuvps", "ssh_key": "/root/.ssh/nocita_key", "ssh_pass": "k34Nu335577", "workspace": "/opt/openclaw/data/workspace", "sudo": True},
 ]
 
 # ─────────────────────────────────────────────
@@ -218,20 +218,33 @@ def backup_olt_epon():
         fail("OLT EPON", e)
 
 
-def backup_workspace():
+def backup_workspace_hermes():
+    """Backup Hermes home (config, skills, memory) + workspace scripts"""
     out_dir = DATA_DIR / "workspace"
     out_dir.mkdir(parents=True, exist_ok=True)
+    # Backup Hermes config/skills/memory
     try:
-        src = "/root/.openclaw/workspace"
-        archive = out_dir / f"workspace-{TODAY}.tar.gz"
+        archive = out_dir / f"hermes-home-{TODAY}.tar.gz"
         subprocess.run(
             ["tar", "czf", str(archive), "--exclude=*.pyc", "--exclude=__pycache__",
-             "--exclude=finance/*.db", "-C", "/root/.openclaw", "workspace"],
+             "--exclude=sessions", "--exclude=logs", "--exclude=audio_cache",
+             "-C", "/root", ".hermes"],
             check=True, timeout=60
         )
-        ok(f"OpenClaw workspace ({archive.stat().st_size//1024}KB)")
+        ok(f"Hermes home ({archive.stat().st_size//1024}KB)")
     except Exception as e:
-        fail("OpenClaw workspace", e)
+        fail("Hermes home", e)
+    # Backup workspace scripts (now at /opt/tekra-scripts/)
+    try:
+        archive = out_dir / f"workspace-scripts-{TODAY}.tar.gz"
+        subprocess.run(
+            ["tar", "czf", str(archive), "--exclude=*.pyc", "--exclude=__pycache__",
+             "--exclude=*.db", "-C", "/opt", "tekra-scripts"],
+            check=True, timeout=60
+        )
+        ok(f"Workspace scripts ({archive.stat().st_size//1024}KB)")
+    except Exception as e:
+        fail("Workspace scripts", e)
 
 
 def backup_workspace_remote():
@@ -352,7 +365,7 @@ if __name__ == "__main__":
 
     backup_mikrotik()
     backup_databases()
-    backup_workspace()
+    backup_workspace_hermes()
     backup_workspace_remote()
     cleanup_old_backups()
     git_commit_push()
