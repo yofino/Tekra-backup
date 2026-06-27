@@ -1,4 +1,4 @@
-# 2026-06-27 02:02:19 by RouterOS 7.11.3
+# 2026-06-28 02:02:00 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -256,6 +256,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ip firewall filter add action=drop chain=forward comment="BLOCK ISOLIR" src-address-list=ISOLIR-LIST
 /ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=speedtest new-routing-mark=SPEEDTEST passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.10.205
+/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.13.207
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.13.178
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.1.0.2
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.13.245
@@ -403,7 +404,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ip hotspot ip-binding add mac-address=78:9A:18:5E:2F:FA type=blocked
 /ip hotspot ip-binding add address=10.10.10.65 comment="SWITCH USW" to-address=10.10.10.65 type=bypassed
 /ip hotspot ip-binding add address=10.10.10.249 mac-address=48:A9:8A:1C:D1:AA server=hotspot1 to-address=10.10.10.249 type=bypassed
-/ip hotspot ip-binding add address=10.10.10.209 comment="OLT CILISUNG" to-address=10.10.10.209 type=bypassed
+/ip hotspot ip-binding add address=10.10.10.209 comment="KOMPUTER IMAC" to-address=10.10.10.209 type=bypassed
 /ip hotspot user add name=admin
 /ip hotspot user add name=UBUK profile=kontrakan
 /ip hotspot user add name=ridwan profile=kontrakan
@@ -1088,8 +1089,8 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260121134333-DIANHERDIANA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260125133109-RINAMARIANA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251220163813-DINDIN profile="PAKET MANTAP" service=pppoe
-/ppp secret add disabled=yes name=260126203536-AEP profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=260127144410-DHIYA profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260126203536-AEP profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260127144410-DHIYA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260129174645-SITIMARYANI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260131121150-RISYE profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260131165910-AGUNG profile="PAKET HEMAT" service=pppoe
@@ -1156,7 +1157,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260612164435-LALU profile=PAKET3 service=pppoe
 /ppp secret add name=260614094435-EDEN profile=PAKET3 service=pppoe
 /ppp secret add name=260616173623-AGUS profile=PAKET2 service=pppoe
-/ppp secret add name=260619152230-SITI profile=PAKET3 service=pppoe
+/ppp secret add local-address=10.10.13.1 name=260619152230-SITI profile=PAKET3 remote-address=10.10.13.207 service=pppoe
 /ppp secret add name=260620174152-AGUNG profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260622112131-RESTI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260623140552-TIA profile=PAKET2 service=pppoe
@@ -1164,10 +1165,11 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260625132343-SITI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260625144519-TATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260626175713-RAMDANI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260627110040-ELSA profile="PAKET HEMAT" service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=505 show-at-login=no
+/system note set note=507 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
