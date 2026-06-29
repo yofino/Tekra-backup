@@ -1,4 +1,4 @@
-# 2026-06-29 02:01:23 by RouterOS 7.19.4
+# 2026-06-30 02:01:24 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -172,7 +172,6 @@
 /ip firewall address-list add address=www.perfect-privacy.com list=speedtest
 /ip firewall address-list add address=perfect-privacy.com list=speedtest
 /ip firewall address-list add address=www.whatsmyip.org list=speedtest
-/ip firewall address-list add comment=ISOLIR|100010 list=EXPIRED
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=speedtest new-routing-mark=jalur-speedtest passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.2.3.24
@@ -819,14 +818,14 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=ANDRA profile="PAKET 1" service=pppoe
 /ppp secret add name=ERNI profile="PAKET 1" service=pppoe
 /ppp secret add name=LINGGA profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=MINAR profile="PAKET 4" service=pppoe
+/ppp secret add name=MINAR profile="PAKET 4" service=pppoe
 /ppp secret add disabled=yes name=CICI profile="PAKET 1" service=pppoe
 /ppp secret add name=FATIH profile="PAKET 3" service=pppoe
 /ppp secret add name=BADRUN profile="PAKET 1" service=pppoe
 /ppp secret add name=LISNA profile="PAKET 2" service=pppoe
 /ppp secret add name=ZAKKA profile="PAKET 2" service=pppoe
 /ppp secret add name=ZIDAN profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=DEGA profile="PAKET 2" service=pppoe
+/ppp secret add name=DEGA profile="PAKET 2" service=pppoe
 /ppp secret add name=TULUS profile="PAKET 2" service=pppoe
 /ppp secret add local-address=10.3.0.1 name=NOVRAN profile="PAKET 4" remote-address=10.3.3.25 service=pppoe
 /ppp secret add disabled=yes name=TELI profile="PAKET 1" service=pppoe
@@ -842,13 +841,13 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=RUDI profile="PAKET 1" service=pppoe
 /ppp secret add name=MARIA profile="PAKET 1" service=pppoe
 /ppp secret add disabled=yes name=ROHAENI2 profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=ADIVA profile="PAKET 1" service=pppoe
+/ppp secret add name=ADIVA profile="PAKET 1" service=pppoe
 /ppp secret add name=AGUNG profile="PAKET 1" service=pppoe
 /ppp secret add name=LASITO profile="PAKET 1" service=pppoe
 /ppp secret add name=NITA profile="PAKET 1" service=pppoe
 /ppp secret add name=NINDA profile="PAKET 1" service=pppoe
 /ppp secret add name=KRISNA profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=INTAN profile="PAKET 1" service=pppoe
+/ppp secret add name=INTAN profile="PAKET 1" service=pppoe
 /ppp secret add name=TENI profile="PAKET 1" service=pppoe
 /ppp secret add name=RISTA profile="PAKET 1" service=pppoe
 /ppp secret add name=SIGIT profile="PAKET 1" service=pppoe
@@ -925,14 +924,14 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=251215151741-DONI profile="PAKET 1" service=pppoe
 /ppp secret add name=260102154336-ERIKA profile="PAKET 1" service=pppoe
 /ppp secret add name=260102163839-KIKI profile="PAKET 2" service=pppoe
-/ppp secret add disabled=yes name=260106113519-SRIRAHAYU profile="PAKET 1" service=pppoe
+/ppp secret add name=260106113519-SRIRAHAYU profile="PAKET 1" service=pppoe
 /ppp secret add name=260106114508-DEDE profile="PAKET 1" service=pppoe
 /ppp secret add name=260112164604-SOFYAN profile="PAKET 1" service=pppoe
 /ppp secret add name=260119150334-ROSITA profile="PAKET 1" service=pppoe
 /ppp secret add name=260125163654-REVALDO profile="PAKET 1" service=pppoe
 /ppp secret add name=260202165929-LIA profile="PAKET 1" service=pppoe
 /ppp secret add name=260202175238-IIN profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=260209111303-WAWAT profile="PAKET 1" service=pppoe
+/ppp secret add name=260209111303-WAWAT profile="PAKET 1" service=pppoe
 /ppp secret add name=260220180402-FIKRI profile="PAKET 1" service=pppoe
 /ppp secret add name=260223133923-EUIS profile="PAKET 1" service=pppoe
 /ppp secret add name=260223163942-FITRIYANI profile="PAKET 1" service=pppoe
@@ -949,7 +948,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /system clock set time-zone-autodetect=no time-zone-name=Asia/Jakarta
 /system identity set name="BARANG KITA"
 /system logging add action=disk prefix=-> topics=hotspot,info,debug
-/system note set note=105
+/system note set note=106
 /system ntp client set enabled=yes
 /system ntp client servers add address=202.65.114.202
 /system ntp client servers add address=212.26.18.41
