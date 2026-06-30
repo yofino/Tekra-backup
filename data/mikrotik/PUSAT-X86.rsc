@@ -1,4 +1,4 @@
-# 2026-06-30 02:01:24 by RouterOS 7.11.3
+# 2026-07-01 02:03:08 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -114,9 +114,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /interface bridge port add bridge=BRIDGE-HOTSPOT-GX4 interface=ether7
 /interface bridge port add bridge=BRIDGE-TR069 interface=vlan11
 /interface bridge port add bridge=BRIDGE-HOTSPOT-GX4 interface="vlan2-HOTSPOT GX4"
-/interface bridge port add bridge=BRIDGE-HOTSPOT-GX4 interface=VLAN-TO-CILISUNG
 /interface bridge port add bridge=BRIDGE-BACKBONE-CILISUNG interface=ether12
-/interface bridge port add bridge=BRIDGE-BACKBONE-CILISUNG interface=sfp-sfpplus2
 /interface bridge port add bridge=BRIDGE-BACKBONE-CILISUNG interface=ether11
 /ip neighbor discovery-settings set discover-interface-list=!dynamic
 /interface pppoe-server server add disabled=no interface=BRIDGE-HOTSPOT service-name=service1
@@ -1169,7 +1167,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=506 show-at-login=no
+/system note set note=505 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
