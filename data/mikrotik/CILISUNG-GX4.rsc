@@ -1,4 +1,4 @@
-# 2026-07-01 02:03:03 by RouterOS 7.16.1
+# 2026-07-02 02:04:27 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -213,7 +213,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=11100109-SUGIYANTI profile=PAKET1 service=pppoe
 /ppp secret add name=241111112249-FINNY profile=PAKET2 service=pppoe
 /ppp secret add disabled=yes name=241111123837-LINDA profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=230114074232-ACEP profile=PAKET1 service=pppoe
+/ppp secret add name=230114074232-ACEP profile=PAKET1 service=pppoe
 /ppp secret add name=101600012-NADIA profile=PAKET1 service=pppoe
 /ppp secret add name=231215114526-ELIS profile=PAKET2 service=pppoe
 /ppp secret add name=240504175826-TUBAGUS profile=PAKET1 service=pppoe
@@ -248,7 +248,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=230304191419-PAUD profile=PAKET1 service=pppoe
 /ppp secret add name=230304191419-CENDRAWASIH profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=230312143247-ELLY profile=PAKET2 service=pppoe
-/ppp secret add disabled=yes name=230613081718-YADI profile=PAKET1 service=pppoe
+/ppp secret add name=230613081718-YADI profile=PAKET1 service=pppoe
 /ppp secret add name=250118114445-MAMAD profile=PAKET1 service=pppoe
 /ppp secret add name=250118131256-FIRMAN profile=PAKET1 service=pppoe
 /ppp secret add name=231209182064-RT3 profile=PAKET1 service=pppoe
@@ -398,6 +398,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260610154815-SUPRIYANTO profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260623103711-REVITA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260625180130-MASJIDCILISUNG profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260701122600-RINA profile="PAKET PUAS" service=pppoe
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG

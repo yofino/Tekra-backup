@@ -1,4 +1,4 @@
-# 2026-07-01 02:03:07 by RouterOS 7.19.4
+# 2026-07-02 02:04:31 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -832,7 +832,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=NABIL profile="PAKET 1" service=pppoe
 /ppp secret add name=JERI profile="PAKET 1" service=pppoe
 /ppp secret add name=GUNAWAN profile="PAKET 3" service=pppoe
-/ppp secret add disabled=yes name=ELIT profile="PAKET 1" service=pppoe
+/ppp secret add name=ELIT profile="PAKET 1" service=pppoe
 /ppp secret add name=MINAR2 profile="PAKET 1" service=pppoe
 /ppp secret add name=KHUDORI profile="PAKET 1" service=pppoe
 /ppp secret add name=SUYONO profile="PAKET 1" service=pppoe
@@ -948,7 +948,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /system clock set time-zone-autodetect=no time-zone-name=Asia/Jakarta
 /system identity set name="BARANG KITA"
 /system logging add action=disk prefix=-> topics=hotspot,info,debug
-/system note set note=104
+/system note set note=105
 /system ntp client set enabled=yes
 /system ntp client servers add address=202.65.114.202
 /system ntp client servers add address=212.26.18.41
