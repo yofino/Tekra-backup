@@ -1,4 +1,4 @@
-# jul/02/2026 02:00:02 by RouterOS 6.49.13
+# jul/03/2026 02:00:02 by RouterOS 6.49.13
 # software id = DUUD-LHXS
 #
 # model = CCR1009-7G-1C-1S+
@@ -2194,7 +2194,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=63988 password=63988 profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6eerr password=6eerr profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=68b6m password=68b6m profile=Paket6jam
-/ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6b4b5 password=6b4b5 profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6chyr password=6chyr profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6icbp password=6icbp profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6rfmf password=6rfmf profile=Paket6jam
@@ -2906,21 +2905,18 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2bf89 password=2bf89 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2kk82 password=2kk82 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2yb72 password=2yb72 profile=Paket2jam
-/ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2ay75 password=2ay75 profile=Paket2jam
+/ip hotspot user add comment="jul/03/2026 02:53:08" limit-uptime=2h name=2ay75 password=2ay75 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2cr89 password=2cr89 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2ax94 password=2ax94 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2zh45 password=2zh45 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2ig25 password=2ig25 profile=Paket2jam
-/ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2pe68 password=2pe68 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2jj98 password=2jj98 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2vu86 password=2vu86 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2zw66 password=2zw66 profile=Paket2jam
-/ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2ge72 password=2ge72 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2vd28 password=2vd28 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2hh63 password=2hh63 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2fi87 password=2fi87 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2pe86 password=2pe86 profile=Paket2jam
-/ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2yc85 password=2yc85 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2vb99 password=2vb99 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2nc58 password=2nc58 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2up36 password=2up36 profile=Paket2jam
@@ -3237,10 +3233,8 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-630-03.30.26- limit-uptime=2h name=2ka77 password=2ka77 profile=Paket2jam
 /ip hotspot user add comment=vc-630-03.30.26- limit-uptime=2h name=2kd38 password=2kd38 profile=Paket2jam
 /ip hotspot user add comment=vc-630-03.30.26- limit-uptime=2h name=2vm59 password=2vm59 profile=Paket2jam
-/ip hotspot user add comment="jul/02/2026 06:46:38" limit-uptime=2h name=2vy69 password=2vy69 profile=Paket2jam
 /ip hotspot user add comment=vc-630-03.30.26- limit-uptime=2h name=2ic47 password=2ic47 profile=Paket2jam
 /ip hotspot user add comment=vc-630-03.30.26- limit-uptime=2h name=2aj37 password=2aj37 profile=Paket2jam
-/ip hotspot user add comment=vc-630-03.30.26- limit-uptime=2h name=2gm77 password=2gm77 profile=Paket2jam
 /ip hotspot user add comment=vc-630-03.30.26- limit-uptime=2h name=2px29 password=2px29 profile=Paket2jam
 /ip hotspot user add comment=vc-630-03.30.26- limit-uptime=2h name=2jc49 password=2jc49 profile=Paket2jam
 /ip hotspot user add comment=vc-630-03.30.26- limit-uptime=2h name=2gb45 password=2gb45 profile=Paket2jam
@@ -3716,18 +3710,14 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc- name=ATirxxa9y2 password=ATirxxa9y2 profile=V-6000
 /ip hotspot user add comment="MARWIYAH - 55rb - Bojong Suren" name=260124095750-MARWIYAH password=260124095750-MARWIYAH profile="1BULAN 1ORANG"
 /ip hotspot user add comment=vc- name=ATozpxbbai password=ATozpxbbai profile=V-2000
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2db58 password=2db58 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2je95 password=2je95 profile=Paket2jam
+/ip hotspot user add comment="jul/03/2026 06:31:30" limit-uptime=2h name=2db58 password=2db58 profile=Paket2jam
+/ip hotspot user add comment="jul/03/2026 08:06:06" limit-uptime=2h name=2je95 password=2je95 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2sk86 password=2sk86 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2mx95 password=2mx95 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ze54 password=2ze54 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2nj93 password=2nj93 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2xx64 password=2xx64 profile=Paket2jam
-/ip hotspot user add comment="jul/02/2026 03:01:42" limit-uptime=2h name=2bt29 password=2bt29 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2cc42 password=2cc42 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2yc34 password=2yc34 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ca95 password=2ca95 profile=Paket2jam
-/ip hotspot user add comment="jul/02/2026 09:23:43" limit-uptime=2h name=2jd66 password=2jd66 profile=Paket2jam
+/ip hotspot user add comment="jul/03/2026 03:59:31" limit-uptime=2h name=2yc34 password=2yc34 profile=Paket2jam
+/ip hotspot user add comment="jul/03/2026 08:01:37" limit-uptime=2h name=2ca95 password=2ca95 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2wj44 password=2wj44 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2nj75 password=2nj75 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2mp52 password=2mp52 profile=Paket2jam
@@ -4157,20 +4147,16 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ym86 password=2ym86 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fu54 password=2fu54 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fn57 password=2fn57 profile=Paket2jam
-/ip hotspot user add comment="jul/02/2026 07:28:58" limit-uptime=2h name=2wc92 password=2wc92 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2dj75 password=2dj75 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ww28 password=2ww28 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2tr44 password=2tr44 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fi66 password=2fi66 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2tc49 password=2tc49 profile=Paket2jam
-/ip hotspot user add comment="jul/02/2026 08:48:27" limit-uptime=2h name=2pg54 password=2pg54 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ap46 password=2ap46 profile=Paket2jam
+/ip hotspot user add comment="jul/03/2026 07:51:41" limit-uptime=2h name=2ap46 password=2ap46 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2tf25 password=2tf25 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2kw22 password=2kw22 profile=Paket2jam
+/ip hotspot user add comment="jul/03/2026 05:22:25" limit-uptime=2h name=2kw22 password=2kw22 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ah32 password=2ah32 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2mu75 password=2mu75 profile=Paket2jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6fs58 password=6fs58 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6pr34 password=6pr34 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6an96 password=6an96 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6hy46 password=6hy46 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6eg56 password=6eg56 profile=Paket6jam
@@ -4562,14 +4548,8 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6jd38 password=6jd38 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6cj48 password=6cj48 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6dj83 password=6dj83 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6uy64 password=6uy64 profile=Paket6jam
-/ip hotspot user add comment="jul/02/2026 02:03:24" limit-uptime=6h name=6gj23 password=6gj23 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6yh34 password=6yh34 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6eh79 password=6eh79 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6in44 password=6in44 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6wy38 password=6wy38 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6jb44 password=6jb44 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6zc95 password=6zc95 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6sm89 password=6sm89 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6vm87 password=6vm87 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6dx63 password=6dx63 profile=Paket6jam
@@ -4586,7 +4566,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6up94 password=6up94 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6hc57 password=6hc57 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6zf24 password=6zf24 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6xv97 password=6xv97 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6wc37 password=6wc37 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6mh78 password=6mh78 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6gw99 password=6gw99 profile=Paket6jam
@@ -4598,6 +4577,493 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ec97 password=6ec97 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ki46 password=6ki46 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6nr57 password=6nr57 profile=Paket6jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cm36 password=2cm36 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kd88 password=2kd88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zf47 password=2zf47 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ai53 password=2ai53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yz87 password=2yz87 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2az26 password=2az26 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vv63 password=2vv63 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wr63 password=2wr63 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ty33 password=2ty33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rx99 password=2rx99 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ae43 password=2ae43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2md66 password=2md66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jk54 password=2jk54 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hd63 password=2hd63 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zt23 password=2zt23 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pk44 password=2pk44 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xj69 password=2xj69 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pf37 password=2pf37 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ah57 password=2ah57 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ev39 password=2ev39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rx63 password=2rx63 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tp45 password=2tp45 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fn53 password=2fn53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2dz66 password=2dz66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sm56 password=2sm56 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2su92 password=2su92 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xe54 password=2xe54 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bh43 password=2bh43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tg79 password=2tg79 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2eh48 password=2eh48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wn25 password=2wn25 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hj95 password=2hj95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zw48 password=2zw48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sx93 password=2sx93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ey96 password=2ey96 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uw37 password=2uw37 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2as52 password=2as52 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wx69 password=2wx69 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wp92 password=2wp92 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bb67 password=2bb67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tk39 password=2tk39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ju45 password=2ju45 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xr23 password=2xr23 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ff54 password=2ff54 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2dn44 password=2dn44 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nt68 password=2nt68 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2up72 password=2up72 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ms86 password=2ms86 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cw29 password=2cw29 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fc62 password=2fc62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ww76 password=2ww76 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2di43 password=2di43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ed39 password=2ed39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kg85 password=2kg85 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2za62 password=2za62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ph53 password=2ph53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ik75 password=2ik75 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zd76 password=2zd76 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bd77 password=2bd77 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xy96 password=2xy96 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zf59 password=2zf59 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nr65 password=2nr65 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ze64 password=2ze64 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cn98 password=2cn98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uv27 password=2uv27 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2im67 password=2im67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2iw27 password=2iw27 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zm58 password=2zm58 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bj77 password=2bj77 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tv47 password=2tv47 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xz99 password=2xz99 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vv66 password=2vv66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tm88 password=2tm88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vx52 password=2vx52 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pr65 password=2pr65 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ui64 password=2ui64 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yv66 password=2yv66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hg98 password=2hg98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jy49 password=2jy49 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jb87 password=2jb87 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yj62 password=2yj62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rt46 password=2rt46 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hy89 password=2hy89 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tu94 password=2tu94 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tu35 password=2tu35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xr27 password=2xr27 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sw66 password=2sw66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rc86 password=2rc86 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rk87 password=2rk87 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vp74 password=2vp74 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hf68 password=2hf68 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xm88 password=2xm88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yv98 password=2yv98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gp46 password=2gp46 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xk38 password=2xk38 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kw94 password=2kw94 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yk22 password=2yk22 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xz74 password=2xz74 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jg62 password=2jg62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2km79 password=2km79 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xx99 password=2xx99 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fi54 password=2fi54 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yc78 password=2yc78 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zk85 password=2zk85 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zp25 password=2zp25 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bf27 password=2bf27 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bz33 password=2bz33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bx88 password=2bx88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hj83 password=2hj83 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2av63 password=2av63 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vg29 password=2vg29 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wc39 password=2wc39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uy98 password=2uy98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yt73 password=2yt73 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hy34 password=2hy34 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tu25 password=2tu25 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rk93 password=2rk93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fc53 password=2fc53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sp49 password=2sp49 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ks56 password=2ks56 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kc43 password=2kc43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ga35 password=2ga35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cs49 password=2cs49 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ze98 password=2ze98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rk35 password=2rk35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ft32 password=2ft32 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gw56 password=2gw56 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ty23 password=2ty23 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ip67 password=2ip67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uu73 password=2uu73 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gk97 password=2gk97 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ej62 password=2ej62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mp57 password=2mp57 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gg83 password=2gg83 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yv29 password=2yv29 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vk53 password=2vk53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wv67 password=2wv67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wr35 password=2wr35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bh33 password=2bh33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ar32 password=2ar32 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yx74 password=2yx74 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ur49 password=2ur49 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ha87 password=2ha87 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ks79 password=2ks79 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2da66 password=2da66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2if37 password=2if37 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vb28 password=2vb28 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xx53 password=2xx53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fh93 password=2fh93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ed38 password=2ed38 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ji94 password=2ji94 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pg72 password=2pg72 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2dy92 password=2dy92 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tm24 password=2tm24 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mz88 password=2mz88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2by95 password=2by95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zc28 password=2zc28 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ds99 password=2ds99 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ca22 password=2ca22 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2je49 password=2je49 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kk84 password=2kk84 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jv67 password=2jv67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yn79 password=2yn79 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pg78 password=2pg78 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ww94 password=2ww94 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2az48 password=2az48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sy67 password=2sy67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cy69 password=2cy69 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2aj42 password=2aj42 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pf94 password=2pf94 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nj37 password=2nj37 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ud66 password=2ud66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xt98 password=2xt98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vj56 password=2vj56 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hn46 password=2hn46 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xg35 password=2xg35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pz95 password=2pz95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2id72 password=2id72 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yh73 password=2yh73 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kn98 password=2kn98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nm68 password=2nm68 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kc25 password=2kc25 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xj24 password=2xj24 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jz23 password=2jz23 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2au47 password=2au47 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kb35 password=2kb35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2di96 password=2di96 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2an59 password=2an59 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ps23 password=2ps23 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ki33 password=2ki33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cj75 password=2cj75 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ne43 password=2ne43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vg72 password=2vg72 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zu52 password=2zu52 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wb79 password=2wb79 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wt86 password=2wt86 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kf93 password=2kf93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2dy33 password=2dy33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xh76 password=2xh76 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hu58 password=2hu58 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hg78 password=2hg78 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ut96 password=2ut96 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sp72 password=2sp72 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ek99 password=2ek99 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ru84 password=2ru84 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pk47 password=2pk47 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2km57 password=2km57 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bu55 password=2bu55 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fy66 password=2fy66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2if32 password=2if32 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2th33 password=2th33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xz78 password=2xz78 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pt42 password=2pt42 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tr63 password=2tr63 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2me48 password=2me48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cb93 password=2cb93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vp56 password=2vp56 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pe56 password=2pe56 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gb39 password=2gb39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rv27 password=2rv27 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kn37 password=2kn37 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rk89 password=2rk89 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pr69 password=2pr69 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kg93 password=2kg93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nr73 password=2nr73 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kb69 password=2kb69 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wx39 password=2wx39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cc45 password=2cc45 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ia62 password=2ia62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mc69 password=2mc69 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mz67 password=2mz67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2he85 password=2he85 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zi92 password=2zi92 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nh46 password=2nh46 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vi92 password=2vi92 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wu58 password=2wu58 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wf98 password=2wf98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zr82 password=2zr82 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2na38 password=2na38 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ps48 password=2ps48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tv53 password=2tv53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bh57 password=2bh57 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xn46 password=2xn46 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ym76 password=2ym76 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2im52 password=2im52 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bc34 password=2bc34 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uv68 password=2uv68 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kc82 password=2kc82 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ki93 password=2ki93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vt78 password=2vt78 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gy53 password=2gy53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ju75 password=2ju75 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ah95 password=2ah95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kc93 password=2kc93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ng93 password=2ng93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kx83 password=2kx83 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pw46 password=2pw46 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bw88 password=2bw88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ai56 password=2ai56 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mt68 password=2mt68 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ig79 password=2ig79 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bu33 password=2bu33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rk98 password=2rk98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fv85 password=2fv85 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kf34 password=2kf34 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2np35 password=2np35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tc29 password=2tc29 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ds36 password=2ds36 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vv36 password=2vv36 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mj26 password=2mj26 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kc69 password=2kc69 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2iv35 password=2iv35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gc65 password=2gc65 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bu87 password=2bu87 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uf97 password=2uf97 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2du32 password=2du32 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ph74 password=2ph74 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zr93 password=2zr93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cs89 password=2cs89 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hi89 password=2hi89 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cx54 password=2cx54 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gu33 password=2gu33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mz26 password=2mz26 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tp52 password=2tp52 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bp94 password=2bp94 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pz24 password=2pz24 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ck39 password=2ck39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gb62 password=2gb62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hh96 password=2hh96 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vy33 password=2vy33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zk45 password=2zk45 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2eb64 password=2eb64 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bx67 password=2bx67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fb43 password=2fb43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mv56 password=2mv56 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cu98 password=2cu98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fu88 password=2fu88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tt38 password=2tt38 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kc68 password=2kc68 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yi59 password=2yi59 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ht39 password=2ht39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bj22 password=2bj22 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ps64 password=2ps64 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jg32 password=2jg32 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2at89 password=2at89 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mx62 password=2mx62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ft37 password=2ft37 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bc24 password=2bc24 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yg36 password=2yg36 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bm24 password=2bm24 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yu93 password=2yu93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xk48 password=2xk48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mj73 password=2mj73 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sg65 password=2sg65 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zc96 password=2zc96 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cc47 password=2cc47 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ae78 password=2ae78 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2aw86 password=2aw86 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fj36 password=2fj36 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2au45 password=2au45 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vn67 password=2vn67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fz78 password=2fz78 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nm44 password=2nm44 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cs76 password=2cs76 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wb47 password=2wb47 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yt98 password=2yt98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sr99 password=2sr99 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sw43 password=2sw43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jh83 password=2jh83 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2af22 password=2af22 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fe33 password=2fe33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kg59 password=2kg59 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wx42 password=2wx42 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vc42 password=2vc42 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pn72 password=2pn72 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gj42 password=2gj42 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bg28 password=2bg28 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gw58 password=2gw58 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gi72 password=2gi72 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cm59 password=2cm59 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2az35 password=2az35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2em69 password=2em69 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ga43 password=2ga43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pc65 password=2pc65 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hu43 password=2hu43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2de95 password=2de95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bu53 password=2bu53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jk43 password=2jk43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zt74 password=2zt74 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2px25 password=2px25 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bt33 password=2bt33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ve82 password=2ve82 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kx28 password=2kx28 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tc98 password=2tc98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ue88 password=2ue88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jc89 password=2jc89 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xd94 password=2xd94 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yg63 password=2yg63 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jp24 password=2jp24 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fr68 password=2fr68 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2na33 password=2na33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2du43 password=2du43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ia54 password=2ia54 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rb95 password=2rb95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nx68 password=2nx68 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mw95 password=2mw95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ir49 password=2ir49 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gs44 password=2gs44 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uj86 password=2uj86 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pn58 password=2pn58 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ww64 password=2ww64 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wk93 password=2wk93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2at82 password=2at82 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2df37 password=2df37 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ma93 password=2ma93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tm38 password=2tm38 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mv27 password=2mv27 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ap64 password=2ap64 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rt29 password=2rt29 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ag39 password=2ag39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nw86 password=2nw86 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ne25 password=2ne25 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ut53 password=2ut53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ew96 password=2ew96 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yz47 password=2yz47 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sm33 password=2sm33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pn87 password=2pn87 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2er93 password=2er93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sc86 password=2sc86 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wz59 password=2wz59 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yw65 password=2yw65 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cg98 password=2cg98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pt32 password=2pt32 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pk58 password=2pk58 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sf73 password=2sf73 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pp48 password=2pp48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tf73 password=2tf73 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sh48 password=2sh48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pp55 password=2pp55 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kk95 password=2kk95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fi85 password=2fi85 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pf24 password=2pf24 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2re54 password=2re54 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yu67 password=2yu67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cc46 password=2cc46 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uf25 password=2uf25 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ee77 password=2ee77 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ja92 password=2ja92 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2am57 password=2am57 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pw48 password=2pw48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yv46 password=2yv46 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2et96 password=2et96 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wz27 password=2wz27 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kh39 password=2kh39 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bh47 password=2bh47 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yh74 password=2yh74 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ix94 password=2ix94 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ga55 password=2ga55 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tw62 password=2tw62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wv25 password=2wv25 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rv43 password=2rv43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nr55 password=2nr55 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2et67 password=2et67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xr34 password=2xr34 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ex28 password=2ex28 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ie32 password=2ie32 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jz78 password=2jz78 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2sb28 password=2sb28 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yw59 password=2yw59 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mv97 password=2mv97 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2py32 password=2py32 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gn38 password=2gn38 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2br97 password=2br97 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wn33 password=2wn33 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ka86 password=2ka86 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kg79 password=2kg79 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ad59 password=2ad59 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2if46 password=2if46 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pw26 password=2pw26 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bd24 password=2bd24 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wz54 password=2wz54 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jz62 password=2jz62 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2km86 password=2km86 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uw22 password=2uw22 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2rf69 password=2rf69 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2as35 password=2as35 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vh85 password=2vh85 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cc95 password=2cc95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cv77 password=2cv77 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kj28 password=2kj28 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mn99 password=2mn99 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ss82 password=2ss82 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2iz59 password=2iz59 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2yj79 password=2yj79 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ag88 password=2ag88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xe83 password=2xe83 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bd48 password=2bd48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2in67 password=2in67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2jm34 password=2jm34 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mw53 password=2mw53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2en99 password=2en99 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hg29 password=2hg29 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2cc43 password=2cc43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2za45 password=2za45 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2fd25 password=2fd25 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bw53 password=2bw53 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2dj36 password=2dj36 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gz67 password=2gz67 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2gr98 password=2gr98 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mh87 password=2mh87 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ub43 password=2ub43 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2zd83 password=2zd83 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ch37 password=2ch37 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2hh48 password=2hh48 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xe57 password=2xe57 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2vm85 password=2vm85 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pc85 password=2pc85 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tk82 password=2tk82 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2pu66 password=2pu66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ch88 password=2ch88 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2kw95 password=2kw95 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2nx93 password=2nx93 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2xc99 password=2xc99 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2mj74 password=2mj74 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wv66 password=2wv66 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2it92 password=2it92 profile=Paket2jam
+/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ex48 password=2ex48 profile=Paket2jam
 /ip hotspot walled-garden add comment="place hotspot rules here" disabled=yes
 /ip hotspot walled-garden add comment="bypass teknorak" dst-host=*teknologirakyat.online/portal server=hs-MASTER
 /ip hotspot walled-garden add comment="bypass teknorak" dst-host=*portal.tekra.my.id server=hs-MASTER
@@ -4632,25 +5098,11 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip route add check-gateway=ping distance=1 gateway=8.8.4.4 routing-mark=MYREP target-scope=30
 /ip route add comment=WA-SIMAYA distance=1 gateway=115.178.49.185 routing-mark=VIA-SIMAYA
 /ip route add check-gateway=ping comment="recrisive isp1" distance=1 gateway=8.8.8.8 target-scope=30
-/ip route add check-gateway=ping distance=2 gateway=8.8.4.4 target-scope=30
-/ip route add check-gateway=ping comment="recrisive isp1" disabled=yes distance=1 gateway=115.178.49.185 target-scope=30
 /ip route add check-gateway=ping distance=1 dst-address=8.8.4.4/32 gateway=192.168.123.1
 /ip route add check-gateway=ping distance=1 dst-address=8.8.8.8/32 gateway=115.178.49.185
 /ip route add comment="acs route too x86" distance=1 dst-address=10.1.0.0/21 gateway=172.80.10.100
-/ip route add comment="acs route too x86" distance=1 dst-address=10.1.0.0/21 gateway=172.80.10.100
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.1.0.0/22 gateway=10.6.0.4
 /ip route add comment="acs route too x86" distance=1 dst-address=10.2.0.0/21 gateway=172.80.10.100
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.2.0.0/22 gateway=10.6.0.4
 /ip route add comment="acs route too x86" distance=1 dst-address=10.2.2.148/32 gateway=172.80.10.100
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.3.0.0/22 gateway=10.6.0.4
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.4.0.0/22 gateway=10.6.0.4
-/ip route add comment=FIX-DAGO-LAN distance=1 dst-address=10.6.0.0/24 gateway=10.6.0.1
-/ip route add comment=FIX-DAGO-ROUTE distance=1 dst-address=10.6.0.2/32 gateway=*F1B8BE
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.10.1.0/24 gateway=10.7.0.8
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.10.2.0/24 gateway=10.7.0.8
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.10.3.0/24 gateway=10.7.0.8
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.10.4.0/24 gateway=10.7.0.8
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.10.5.0/24 gateway=10.7.0.8
 /ip route add comment="acs route too x86" distance=1 dst-address=10.10.10.9/32 gateway=172.80.10.100
 /ip route add comment="acs route too x86" distance=1 dst-address=10.10.10.10/32 gateway=172.80.10.100
 /ip route add comment="acs route too x86" distance=1 dst-address=10.10.10.205/32 gateway=172.80.10.100
@@ -4660,40 +5112,7 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip route add comment="acs route too x86" distance=1 dst-address=10.10.13.0/24 gateway=172.80.10.100
 /ip route add comment="acs route too x86" distance=1 dst-address=10.10.14.0/24 gateway=172.80.10.100
 /ip route add comment="acs route too x86" distance=1 dst-address=10.10.15.0/24 gateway=172.80.10.100
-/ip route add comment=DAGO-ROUTE distance=1 dst-address=10.11.0.0/24 gateway=10.6.0.2
-/ip route add comment=FIX-DAGO distance=1 dst-address=10.11.0.0/24 gateway=10.6.0.2
-/ip route add comment=Static-Route-DAGO distance=2 dst-address=10.11.0.0/24 gateway=10.6.0.2
-/ip route add comment=FIX-DAGO distance=1 dst-address=10.12.0.0/21 gateway=10.6.0.2
-/ip route add comment=DAGO-ROUTE distance=1 dst-address=10.12.0.0/21 gateway=10.6.0.2
-/ip route add comment=Static-Route-DAGO distance=2 dst-address=10.12.0.0/21 gateway=10.6.0.2
-/ip route add comment=FIX-DAGO distance=1 dst-address=10.13.0.0/24 gateway=10.6.0.2
-/ip route add comment=DAGO-ROUTE distance=1 dst-address=10.13.0.0/24 gateway=10.6.0.2
-/ip route add comment=Static-Route-DAGO distance=2 dst-address=10.13.0.0/24 gateway=10.6.0.2
-/ip route add comment=FIX-DAGO distance=1 dst-address=10.14.0.0/24 gateway=10.6.0.2
-/ip route add comment=DAGO-ROUTE distance=1 dst-address=10.14.0.0/24 gateway=10.6.0.2
-/ip route add comment=Static-Route-DAGO distance=2 dst-address=10.14.0.0/24 gateway=10.6.0.2
-/ip route add comment=FIX-DAGO distance=1 dst-address=10.15.0.0/24 gateway=10.6.0.2
-/ip route add comment=DAGO-ROUTE distance=1 dst-address=10.15.0.0/24 gateway=10.6.0.2
-/ip route add comment=Static-Route-DAGO distance=2 dst-address=10.15.0.0/24 gateway=10.6.0.2
-/ip route add distance=1 dst-address=10.20.30.0/24 gateway=192.168.81.252
-/ip route add comment=FIX-DAGO distance=1 dst-address=10.20.64.0/20 gateway=10.6.0.2
-/ip route add comment=DAGO-ROUTE distance=1 dst-address=10.20.64.0/20 gateway=10.6.0.2
-/ip route add comment=Static-Route-DAGO distance=2 dst-address=10.20.64.0/20 gateway=10.6.0.2
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.30.64.0/21 gateway=10.7.0.8
-/ip route add comment=Static-Route-CILI distance=2 dst-address=10.40.64.0/21 gateway=10.7.0.8
 /ip route add comment="acs route too x86" distance=1 dst-address=10.100.0.0/21 gateway=172.80.10.100
-/ip route add distance=1 dst-address=172.2.2.0/24 gateway=192.168.31.6
-/ip route add distance=1 dst-address=172.90.10.0/24 gateway=172.80.10.10
-/ip route add disabled=yes distance=1 dst-address=172.90.10.0/24 gateway=10.10.10.202
-/ip route add comment=Static-Route-CILI-olt-hioso distance=1 dst-address=192.168.0.88/32 gateway=10.7.0.8
-/ip route add distance=1 dst-address=192.168.10.0/24 gateway=172.10.1.1
-/ip route add comment="ke rumah" distance=1 dst-address=192.168.10.0/24 gateway=192.168.81.254
-/ip route add comment=FIX-DAGO distance=1 dst-address=192.168.78.10/32 gateway=10.6.0.2
-/ip route add comment=DAGO-ROUTE distance=1 dst-address=192.168.78.10/32 gateway=10.6.0.2
-/ip route add comment=Static-Route-DAGO distance=2 dst-address=192.168.78.10/32 gateway=10.6.0.2
-/ip route add comment=Static-Route-CILI distance=2 dst-address=192.168.101.0/24 gateway=10.7.0.8
-/ip route add comment=Static-Route-CILI-olt-hsgq distance=1 dst-address=192.168.101.10/32 gateway=10.7.0.8
-/ip route add comment=Static-Route-CILI distance=2 dst-address=192.168.124.0/24 gateway=10.7.0.8
 /ip service set telnet disabled=yes
 /ip service set ftp disabled=yes
 /ip service set www disabled=yes
@@ -62062,6 +62481,28 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /system script add comment=mikhmon dont-require-permissions=no name=jul/01/2026-|-20:03:28-|-6gj23-|-2500-|-10.10.10.247-|-20:74:54:A5:49:77-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/01/2026
 /system script add comment=mikhmon dont-require-permissions=no name=jul/01/2026-|-20:48:31-|-2pg54-|-1500-|-192.168.44.139-|-BA:D8:EB:9E:8D:35-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/01/2026
 /system script add comment=mikhmon dont-require-permissions=no name=jul/01/2026-|-21:23:46-|-2jd66-|-1500-|-10.10.10.235-|-5C:D0:6E:1B:36:89-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/01/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-07:47:29-|-2mx95-|-1500-|-192.168.44.122-|-30:CB:F8:EE:AC:CB-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-09:02:53-|-2gm77-|-1500-|-192.168.44.116-|-C4:FE:5B:CE:33:A9-|-12h-|-Paket2jam-|-vc-630-03.30.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-09:10:42-|-2xx64-|-1500-|-192.168.44.26-|-0A:C3:47:76:D6:15-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-09:43:30-|-2yc85-|-1500-|-192.168.44.93-|-2A:2D:3C:22:AC:9C-|-12h-|-Paket2jam-|-vc-545-03.15.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-09:49:28-|-6b4b5-|-2500-|-192.168.44.166-|-5E:38:CD:06:4A:61-|-6h-|-Paket6jam-|-vc-954-01.09.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-10:54:04-|-6uy64-|-2500-|-192.168.44.208-|-BA:67:58:31:31:2A-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-12:17:50-|-2ge72-|-1500-|-192.168.44.218-|-C4:FE:5B:CE:33:A9-|-12h-|-Paket2jam-|-vc-545-03.15.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-12:50:32-|-2pe68-|-1500-|-192.168.44.118-|-2A:2D:3C:22:AC:9C-|-12h-|-Paket2jam-|-vc-545-03.15.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-12:51:26-|-6zc95-|-2500-|-192.168.44.50-|-6A:45:14:62:0D:5C-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-13:11:54-|-6yh34-|-2500-|-192.168.44.212-|-04:C8:07:94:15:0E-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-14:53:12-|-2ay75-|-1500-|-192.168.44.118-|-2A:2D:3C:22:AC:9C-|-12h-|-Paket2jam-|-vc-545-03.15.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-15:59:35-|-2yc34-|-1500-|-192.168.44.189-|-30:CB:F8:EE:AC:CB-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-16:58:11-|-6xv97-|-2500-|-192.168.44.187-|-BA:67:58:31:31:2A-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-17:22:29-|-2kw22-|-1500-|-192.168.44.158-|-F6:A1:1F:E0:B3:28-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-17:49:45-|-6fs58-|-2500-|-192.168.44.54-|-6A:68:09:C3:37:15-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-18:22:52-|-6pr34-|-2500-|-192.168.44.179-|-62:8E:36:AB:D8:4B-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-18:31:34-|-2db58-|-1500-|-192.168.44.168-|-0A:C3:47:76:D6:15-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-18:59:30-|-6eh79-|-2500-|-10.10.10.242-|-20:74:54:A5:49:77-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-19:51:45-|-2ap46-|-1500-|-192.168.44.249-|-E0:1F:88:5F:FD:5E-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-19:59:34-|-6in44-|-2500-|-192.168.44.151-|-72:E2:39:C5:C8:5B-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-20:01:43-|-2ca95-|-1500-|-192.168.44.131-|-6A:75:1C:60:9E:09-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/02/2026-|-20:06:10-|-2je95-|-1500-|-192.168.44.114-|-22:B6:95:64:BA:61-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/02/2026
 /tool netwatch add comment=tunnel-gateway-10.41.0.1 host=10.41.0.1
 /tool netwatch add comment=tunnel-gateway-10.47.0.1 host=10.47.0.1
 /tool netwatch add comment=tunnel-gateway-10.46.0.1 host=10.46.0.1
