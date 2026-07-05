@@ -1,4 +1,4 @@
-# 2026-07-05 02:03:31 by RouterOS 7.16.1
+# 2026-07-06 02:01:29 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -20,7 +20,7 @@
 /interface vlan add interface=ether4 name=VLAN-PPOE-CILISUNG-HIOSO vlan-id=143
 /interface vlan add interface=ether7-OLT name=VLAN-PPPOE-CILISUNG vlan-id=143
 /interface vlan add interface=ether7-OLT name=VLAN-PPPOE-SEKEAWI vlan-id=145
-/interface vlan add interface=sfp-sfpplus1 name=VLAN-TO-PUSAT vlan-id=203
+/interface vlan add interface=sfp-sfpplus1 name=VLAN-TO-PUSAT vlan-id=60
 /interface vlan add interface=ether7-OLT name=vlan100-TR069-E7 vlan-id=100
 /interface vlan add interface=ether4 name=vlan100-TR069-E8 vlan-id=100
 /ip dhcp-server option add code=43 name=acs value=0x0119687474703A2F2F31302E31302E31302E3233303A37353437
@@ -81,7 +81,38 @@
 /ip address add address=192.168.0.1/24 interface=ether9 network=192.168.0.0
 /ip dhcp-server network add address=10.5.50.0/24 comment="hotspot network" gateway=10.5.50.1
 /ip dhcp-server network add address=10.30.64.0/21 gateway=10.30.64.1
-/ip dns set allow-remote-requests=yes cache-max-ttl=1d cache-size=4096KiB servers=1.1.1.1,1.0.0.1
+/ip dns set allow-remote-requests=yes cache-max-ttl=1d cache-size=4096KiB servers=8.8.8.8,8.8.4.4
+/ip firewall address-list add address=yougetsignal.com list=speedtest
+/ip firewall address-list add address=xmyip.com list=speedtest
+/ip firewall address-list add address=www.yougetsignal.com list=speedtest
+/ip firewall address-list add address=expressvpn.com list=speedtest
+/ip firewall address-list add address=www.expressvpn.com list=speedtest
+/ip firewall address-list add address=whatismyip.net list=speedtest
+/ip firewall address-list add address=speedtestcustom.com list=speedtest
+/ip firewall address-list add address=income.speedtestcustom.com list=speedtest
+/ip firewall address-list add address=iplocation.net list=speedtest
+/ip firewall address-list add address=www.iplocation.net list=speedtest
+/ip firewall address-list add address=www.astrill.com list=speedtest
+/ip firewall address-list add address=www.ipsaya.com list=speedtest
+/ip firewall address-list add address=www.nperf.com list=speedtest
+/ip firewall address-list add address=www.myrepublic.co.id list=speedtest
+/ip firewall address-list add address=speedtest.its.ac.id list=speedtest
+/ip firewall address-list add address=speedtest.cbn.id list=speedtest
+/ip firewall address-list add address=fast.com list=speedtest
+/ip firewall address-list add address=extreme-ip-lookup.com list=speedtest
+/ip firewall address-list add address=23.76.224.0/20 list=speedtest
+/ip firewall address-list add address=182.79.223.0/24 list=speedtest
+/ip firewall address-list add address=45.57.0.0/17 list=speedtest
+/ip firewall address-list add address=23.246.55.0/24 list=speedtest
+/ip firewall address-list add address=37.77.186.0/24 list=speedtest
+/ip firewall address-list add address=23.246.54.0/24 list=speedtest
+/ip firewall address-list add address=23.246.0.0/20 list=speedtest
+/ip firewall address-list add address=184.26.248.203 list=speedtest
+/ip firewall address-list add address=104.84.186.211 list=speedtest
+/ip firewall address-list add address=142.79.223.0/24 list=speedtest
+/ip firewall address-list add address=192.168.0.0/16 list=LOCAL-IP
+/ip firewall address-list add address=172.16.0.0/12 list=LOCAL-IP
+/ip firewall address-list add address=10.0.0.0/8 list=LOCAL-IP
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall nat add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.5.50.0/24
@@ -112,14 +143,15 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ip hotspot ip-binding add address=10.5.50.69 to-address=10.5.50.69 type=bypassed
 /ip hotspot user add name=admin
 /ip ipsec profile set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
-/ip route add disabled=no distance=1 dst-address=8.8.8.8/32 gateway=172.90.10.1 routing-table=main scope=10 suppress-hw-offload=no target-scope=10
-/ip route add disabled=no distance=1 dst-address=8.8.4.4/32 gateway=192.168.124.1 routing-table=main scope=10 suppress-hw-offload=no target-scope=10
-/ip route add check-gateway=ping disabled=no distance=1 dst-address=0.0.0.0/0 gateway=8.8.8.8 routing-table=main scope=30 suppress-hw-offload=no target-scope=11
-/ip route add check-gateway=ping disabled=no distance=2 dst-address=0.0.0.0/0 gateway=8.8.4.4 routing-table=main scope=30 suppress-hw-offload=no target-scope=11
+/ip route add disabled=yes distance=1 dst-address=8.8.8.8/32 gateway=172.90.10.1 routing-table=main scope=10 suppress-hw-offload=no target-scope=10
+/ip route add disabled=yes distance=1 dst-address=8.8.4.4/32 gateway=192.168.124.1 routing-table=main scope=10 suppress-hw-offload=no target-scope=10
+/ip route add check-gateway=ping disabled=yes distance=2 dst-address=0.0.0.0/0 gateway=8.8.8.8 routing-table=main scope=30 suppress-hw-offload=yes target-scope=11
+/ip route add check-gateway=ping disabled=yes distance=1 dst-address=0.0.0.0/0 gateway=8.8.4.4 routing-table=main scope=30 suppress-hw-offload=yes target-scope=11
 /ip route add disabled=no distance=1 dst-address=10.10.10.230/32 gateway=10.6.0.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
-/ip route add disabled=no dst-address=0.0.0.0/0 gateway=172.90.10.1 routing-table=main suppress-hw-offload=no
+/ip route add disabled=yes dst-address=0.0.0.0/0 gateway=172.90.10.1 routing-table=main suppress-hw-offload=no
 /ip route add disabled=no dst-address=10.10.10.22/32 gateway=10.6.0.1 routing-table=main suppress-hw-offload=no
-/ip route add disabled=no distance=2 dst-address=0.0.0.0/0 gateway=192.168.124.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
+/ip route add check-gateway=ping disabled=no distance=1 dst-address=0.0.0.0/0 gateway=192.168.124.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
+/ip route add check-gateway=ping disabled=no distance=2 dst-address=0.0.0.0/0 gateway=172.90.10.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip service set telnet disabled=yes
 /ip service set ftp disabled=yes
 /ip service set www disabled=yes
@@ -157,10 +189,10 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=ROSSIE profile=PAKET1 service=pppoe
 /ppp secret add name=ELIS profile=PAKET2 service=pppoe
 /ppp secret add name=231209182065-FIKRI profile=PAKET2 service=pppoe
-/ppp secret add name=231209182068-ABDUL profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=231209182068-ABDUL profile=PAKET1 service=pppoe
 /ppp secret add name=231209182069-GUGUN profile=PAKET1 service=pppoe
 /ppp secret add name=231215114527-LAGIYONO profile=PAKET1 service=pppoe
-/ppp secret add name=240504175814-SASKIA profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=240504175814-SASKIA profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=NOVITA profile=PAKET2 service=pppoe
 /ppp secret add name=NANA profile=PAKET2 service=pppoe
 /ppp secret add name=ILHAM profile=PAKET2 service=pppoe
@@ -170,7 +202,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=TIKA profile=PAKET1 service=pppoe
 /ppp secret add name=TAUFAN profile=PAKET1 service=pppoe
 /ppp secret add name=231209182067-MASRUROH profile=PAKET1 service=pppoe
-/ppp secret add name=231209182070-DESYA profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=231209182070-DESYA profile=PAKET1 service=pppoe
 /ppp secret add name=231209182072-SEFTIANY profile="PAKET MANTAP" service=pppoe
 /ppp secret add disabled=yes name=240504175810-DIKI profile=PAKET1 service=pppoe
 /ppp secret add name=240504175815-IWAN profile="PAKET HEMAT" service=pppoe
@@ -180,10 +212,10 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=240504175821-SOFYAN profile=PAKET4 service=pppoe
 /ppp secret add disabled=yes name=240504175824-AI profile=PAKET1 service=pppoe
 /ppp secret add name=240504175808-IWAN profile=PAKET2 service=pppoe
-/ppp secret add name=240504175825-YANI profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=240504175825-YANI profile=PAKET2 service=pppoe
 /ppp secret add name=240504175827-BELLA profile=PAKET1 service=pppoe
 /ppp secret add name=240504175829-AI profile=PAKET1 service=pppoe
-/ppp secret add name=230312143253-JAJANG profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230312143253-JAJANG profile=PAKET1 service=pppoe
 /ppp secret add name=11100105-DEFIANA profile=PAKET3 service=pppoe
 /ppp secret add name=11100106-SUHENDAR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=231215114525-ROSSIE profile=PAKET1 service=pppoe
@@ -192,20 +224,20 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add disabled=yes name=230526121403-KALUA profile=PAKET1 service=pppoe
 /ppp secret add name=230312143258-ADECANDRA profile=PAKET1 service=pppoe
 /ppp secret add name=230312143259-RATNA profile=PAKET1 service=pppoe
-/ppp secret add name=230312143256-DAYATHIDAYAT profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230312143256-DAYATHIDAYAT profile=PAKET1 service=pppoe
 /ppp secret add name=230526121405-DIANEKA profile=PAKET1 service=pppoe
 /ppp secret add name=230613081722-NARTI profile=PAKET1 service=pppoe
 /ppp secret add name=231209182058-TAUFAN profile=PAKET1 service=pppoe
 /ppp secret add name=231215114524-IMELDA profile=PAKET1 service=pppoe
 /ppp secret add name=220815132421-LILIS profile=PAKET2 service=pppoe
-/ppp secret add name=231215114523-TATI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=231215114523-TATI profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=220815132420-TRIAYU profile=PAKET2 service=pppoe
 /ppp secret add name=230906115927-EFSA profile=PAKET2 service=pppoe
 /ppp secret add name=231209182234-ILHAM profile=PAKET2 service=pppoe
 /ppp secret add name=231209182052-PANDJI profile=PAKET1 service=pppoe
 /ppp secret add name=231209182054-NURLELA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=231209182048-NANA profile=PAKET2 service=pppoe
-/ppp secret add name=11100107-CECEP profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=11100107-CECEP profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=101600001-ZENAL profile=PAKET1 service=pppoe
 /ppp secret add name=101600010-SITI profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=101600011-HENDI profile="PAKET HEMAT" service=pppoe
@@ -214,26 +246,26 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=241111112249-FINNY profile=PAKET2 service=pppoe
 /ppp secret add disabled=yes name=241111123837-LINDA profile=PAKET1 service=pppoe
 /ppp secret add name=230114074232-ACEP profile=PAKET1 service=pppoe
-/ppp secret add name=101600012-NADIA profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=101600012-NADIA profile=PAKET1 service=pppoe
 /ppp secret add name=231215114526-ELIS profile=PAKET2 service=pppoe
 /ppp secret add name=240504175826-TUBAGUS profile=PAKET1 service=pppoe
-/ppp secret add name=230906115925-INTAN profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=230906115925-INTAN profile=PAKET2 service=pppoe
 /ppp secret add name=241205150940-FITRIANA profile=PAKET5 service=pppoe
 /ppp secret add name=241216170358-FAUZAN profile=PAKET5 service=pppoe
-/ppp secret add name=241220150933-FERDY profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=241220150933-FERDY profile=PAKET1 service=pppoe
 /ppp secret add name=250101105349-FAUZI profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=250103162512-CINTAWATI profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=240504175822-RATIH profile=PAKET1 service=pppoe
-/ppp secret add name=250111130802-WIDANINGSIH profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=250111130802-WIDANINGSIH profile=PAKET1 service=pppoe
 /ppp secret add name=230613081721-ADECECE profile=PAKET1 service=pppoe
-/ppp secret add name=230613081715-ROPIK profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=230613081715-ROPIK profile=PAKET2 service=pppoe
 /ppp secret add name=230304191420-DEWI profile=PAKET1 service=pppoe
-/ppp secret add name=230613081717-TATANGTASIR profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230613081717-TATANGTASIR profile=PAKET1 service=pppoe
 /ppp secret add name=230304191417-WILDAN profile=PAKET1 service=pppoe
 /ppp secret add name=230312143257-ANGGA profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=231209182060-ENI profile=PAKET1 service=pppoe
 /ppp secret add name=230304191412-AEPP profile=PAKET1 service=pppoe
-/ppp secret add name=231209182073-SADIAH profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=231209182073-SADIAH profile=PAKET1 service=pppoe
 /ppp secret add name=230426120002-FAUZI profile=PAKET2 service=pppoe
 /ppp secret add name=231209182061-YUNI profile="PAKET PUAS" service=pppoe
 /ppp secret add name=230906115926-PURMAGIANI profile=PAKET1 service=pppoe
@@ -249,12 +281,12 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=230304191419-CENDRAWASIH profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=230312143247-ELLY profile=PAKET2 service=pppoe
 /ppp secret add name=230613081718-YADI profile=PAKET1 service=pppoe
-/ppp secret add name=250118114445-MAMAD profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=250118114445-MAMAD profile=PAKET1 service=pppoe
 /ppp secret add name=250118131256-FIRMAN profile=PAKET1 service=pppoe
 /ppp secret add name=231209182064-RT3 profile=PAKET1 service=pppoe
-/ppp secret add name=230906115929-AKIN profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=230906115929-AKIN profile=PAKET2 service=pppoe
 /ppp secret add name=230909151061-FABIEZA profile=PAKET2 service=pppoe
-/ppp secret add name=231209182053-IMASNENI profile=PAKET3 service=pppoe
+/ppp secret add disabled=yes name=231209182053-IMASNENI profile=PAKET3 service=pppoe
 /ppp secret add name=230613081720-ENDANG profile=PAKET1 service=pppoe
 /ppp secret add name=231209182055-HENISUHAENI profile=PAKET2 service=pppoe
 /ppp secret add name=230312143251-AHMAD profile=PAKET1 service=pppoe
@@ -263,7 +295,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=240504175811-DICKY profile=PAKET2 service=pppoe
 /ppp secret add name=240504175811-NOFAL profile=PAKET2 service=pppoe
 /ppp secret add name=230613081720-ENDANGSUDRAJAT profile=PAKET1 service=pppoe
-/ppp secret add name=230906115923-ALDISAPUTRA profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=230906115923-ALDISAPUTRA profile=PAKET2 service=pppoe
 /ppp secret add disabled=yes name=230312143249-YASTRI profile=PAKET2 service=pppoe
 /ppp secret add name=230312143250-DADANG profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=231209182062-EGAHELMA profile=PAKET2 service=pppoe
@@ -275,18 +307,18 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=240504175813-RAHMAN profile=PAKET1 service=pppoe
 /ppp secret add name=240504175823-EUISSITI profile=PAKET1 service=pppoe
 /ppp secret add name=240504175812-HERISUPRIADI profile=PAKET1 service=pppoe
-/ppp secret add name=230906115930-GERI profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=230906115930-GERI profile=PAKET2 service=pppoe
 /ppp secret add name=230312143246-RINA profile=PAKET2 service=pppoe
 /ppp secret add name=240504175818-RITA profile=PAKET1 service=pppoe
 /ppp secret add name=230526121404-CECEPDEPAN profile=PAKET4 service=pppoe
-/ppp secret add name=230613081719-SYARIFUDIN profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230613081719-SYARIFUDIN profile=PAKET1 service=pppoe
 /ppp secret add name=CILISUNG profile=PAKET1 service=pppoe
-/ppp secret add name=230304191421-HASTI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230304191421-HASTI profile=PAKET1 service=pppoe
 /ppp secret add name=250311155850-PANDU profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250319111600-YULI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250408102651-AGUSGUNAWAN profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250408102651-AGUSGUNAWAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250429110120-MIMIN profile="PAKET HEMAT"
-/ppp secret add name=250430114024-SITIHAMIDAH profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250430114024-SITIHAMIDAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250501112352-ALDIPRATAMA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250506091446-PUTRI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250510112608-TEGUH profile="PAKET HEMAT" service=pppoe
@@ -299,9 +331,9 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add disabled=yes name=250701134513-SITIKOMARIAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250702164311-DEDEH profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250702174424-OYOK profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250716162747-SETIYAR profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250731103516-RITA profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250802101625-GITA profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250716162747-SETIYAR profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250731103516-RITA profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250802101625-GITA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250809104542-ATEP profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250901115943-ANIE profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250902160829-ENUNG profile="PAKET HEMAT" service=pppoe
@@ -321,7 +353,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add disabled=yes name=251128151302-NATASYA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251128162108-IKHWAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251128174314-INDRI profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=251201140217-HARLAN profile="PAKET MANTAP" service=pppoe
+/ppp secret add disabled=yes name=251201140217-HARLAN profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251205104858-AYIHAMDANI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251206102626-PARWATI profile="PAKET MANTAP" service=pppoe
 /ppp secret add disabled=yes name=251209152000-AGUS profile="PAKET MANTAP" service=pppoe
@@ -339,41 +371,41 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260103190059-WIDIASTUTI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260104114743-PUTRI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260104131334-TITI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=260104150834-SITI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260104150834-SITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260104155731-SITINURHASANAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=EPUL profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260105152727-DEBI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260105171537-IWANSETIAWAN profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260106172244-NOVITA profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=260108123338-YATI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260108123338-YATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=260108160859-HESTIA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260108173445-ASEPDEDI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=260109170440-KOMARIAH profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=260112130002-SUGIONO profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260109170440-KOMARIAH profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260112130002-SUGIONO profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260112141011-AGUNGPERMANA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260114145947-ZIDAN profile="PAKET PUAS" service=pppoe
 /ppp secret add disabled=yes name=260124130101-SRIDWI profile="PAKET MANTAP" service=pppoe
 /ppp secret add disabled=yes name=260130140141-FIRZI profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=260131125819-IMAN profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260131125819-IMAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260203181552-HELLENA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260211162621-BAYU profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260216150447-ERNI profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=260217101102-ELI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260217101102-ELI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260220145557-DENI profile=PAKET2 service=pppoe
 /ppp secret add name=260228141635-TANTAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260301131432-ANGGRAENI profile="PAKET PUAS" service=pppoe
-/ppp secret add name=260301134448-KIKI profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=260301134448-KIKI profile=PAKET2 service=pppoe
 /ppp secret add name=260303121842-RIRIN profile="PAKET PUAS" service=pppoe
 /ppp secret add name=R-20260324124925-ROHMIATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=20260329125557-ANI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260330134851-DEVIA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260330152600-CUCUM profile="PAKET HEMAT" service=pppoe
-/ppp secret add comment=LASMI-CILISUNG name=260401135130-LASMI profile="PAKET HEMAT" service=pppoe
+/ppp secret add comment=LASMI-CILISUNG disabled=yes name=260401135130-LASMI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260402123134-GUNAWAN profile=PAKET2 service=pppoe
 /ppp secret add name=260402181107-BAGUS profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260403212233-IRPAN profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260405134433-KIRANA profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=260408150643-RISNA profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260408150643-RISNA profile="PAKET HEMAT" service=pppoe
 /ppp secret add comment="NURWINDA - Cilisung RT02 RW05" name=20260414115345-NURWINDA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260422150730-YANWAR profile=PAKET2 service=pppoe
 /ppp secret add name=260501153341-NOER profile="PAKET MANTAP" service=pppoe
@@ -403,7 +435,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=182 show-at-login=no
+/system note set note=147 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"
