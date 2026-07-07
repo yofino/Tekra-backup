@@ -1,4 +1,4 @@
-# 2026-07-07 02:01:30 by RouterOS 7.11.3
+# 2026-07-08 02:01:35 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -611,7 +611,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=221126120614-OCANG profile=PAKET2 service=pppoe
 /ppp secret add name=230114074227-WIWI profile=PAKET1 service=pppoe
 /ppp secret add name=230114074228-YAYAT profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=230615172244-SRI profile=PAKET2 service=pppoe
+/ppp secret add name=230615172244-SRI profile=PAKET2 service=pppoe
 /ppp secret add name=240315141543-THENDRA profile=PAKET2 service=pppoe
 /ppp secret add name=210902161308-DAENG profile=PAKET5 service=pppoe
 /ppp secret add name=210902161520-KEMAN profile=PAKET2 service=pppoe
@@ -665,7 +665,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=230114190806-SABRINA profile=PAKET1 service=pppoe
 /ppp secret add name=230114190807-SRI profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=240315141545-VIKY profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=230909151083-BAGUS profile=PAKET1 service=pppoe
+/ppp secret add name=230909151083-BAGUS profile=PAKET1 service=pppoe
 /ppp secret add name=210901143902-TOKOFAHRUN profile=PAKET1 service=pppoe
 /ppp secret add name=220901083021-YADI profile=PAKET2 service=pppoe
 /ppp secret add name=230114074222-RESTI profile="PAKET MANTAP" service=pppoe
@@ -883,7 +883,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=SAUNG profile=PAKET4 service=pppoe
 /ppp secret add name=AYI profile=PAKET1 service=pppoe
 /ppp secret add name=220715102353-RICKI profile=PAKET2 service=pppoe
-/ppp secret add disabled=yes name=220715102356-ALDI profile=PAKET1 service=pppoe
+/ppp secret add name=220715102356-ALDI profile=PAKET1 service=pppoe
 /ppp secret add name=220715102355-AWALUDIN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230613081724-FERIMAULANA profile=PAKET1 service=pppoe
 /ppp secret add name=10200109-DEA profile=PAKET1 service=pppoe
@@ -1013,7 +1013,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=250724204016-WINDA profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250726103721-DEDEN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250803143349-YOGA profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=250806154003-CEPI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=250806154003-CEPI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250809135620-ERNI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250810145100-DEDEH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250824110757-NAUFALRAIS profile="PAKET HEMAT" service=pppoe
@@ -1068,7 +1068,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=251125120936-WINIARTI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251128141759-EEN profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251129143806-EROS profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=251130130352-NOVI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=251130130352-NOVI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name="251203113041=ELSA" profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251203113041-ELSANUR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251204095426-RIFA profile="PAKET HEMAT" service=pppoe
@@ -1087,7 +1087,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=251228112206-DIMAS profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251231113740-SANA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260103122904-RIVALDI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=260107165904-LATIFUDIN profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260107165904-LATIFUDIN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260109112002-MUMAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260109150622-ANIHENDRAYANI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260113134055-HAIKAL profile="PAKET MANTAP" service=pppoe
@@ -1177,10 +1177,13 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=260703184756-ASEP profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=FREE-EDI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260706120117-SRIHAYATI profile=PAKET2 service=pppoe
+/ppp secret add name=260707100503-WARSA profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260707141800-MARTHIEN profile=PAKET3 service=pppoe
+/ppp secret add name=260707164219-ARI profile="PAKET MANTAP" service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=494 show-at-login=no
+/system note set note=505 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"

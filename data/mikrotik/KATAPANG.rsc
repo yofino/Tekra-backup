@@ -1,4 +1,4 @@
-# 2026-07-07 02:01:27 by RouterOS 7.19.4
+# 2026-07-08 02:01:32 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -831,7 +831,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add disabled=yes name=TELI profile="PAKET 1" service=pppoe
 /ppp secret add name=NABIL profile="PAKET 1" service=pppoe
 /ppp secret add name=JERI profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=GUNAWAN profile="PAKET 3" service=pppoe
+/ppp secret add name=GUNAWAN profile="PAKET 3" service=pppoe
 /ppp secret add disabled=yes name=ELIT profile="PAKET 1" service=pppoe
 /ppp secret add name=MINAR2 profile="PAKET 1" service=pppoe
 /ppp secret add name=KHUDORI profile="PAKET 1" service=pppoe
@@ -860,7 +860,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add disabled=yes name=RIVALDO profile="PAKET 1" service=pppoe
 /ppp secret add name=PUTRA2 profile="PAKET 4" service=pppoe
 /ppp secret add name=DIRA profile="PAKET 2" service=pppoe
-/ppp secret add disabled=yes name=JUHANA profile="PAKET 2" service=pppoe
+/ppp secret add name=JUHANA profile="PAKET 2" service=pppoe
 /ppp secret add name=HAFIDZ profile="PAKET 1" service=pppoe
 /ppp secret add name=POPI profile="PAKET 1" service=pppoe
 /ppp secret add name=FITRIA profile="PAKET 1" service=pppoe
@@ -954,7 +954,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /system clock set time-zone-autodetect=no time-zone-name=Asia/Jakarta
 /system identity set name="BARANG KITA"
 /system logging add action=disk prefix=-> topics=hotspot,info,debug
-/system note set note=104
+/system note set note=108
 /system ntp client set enabled=yes
 /system ntp client servers add address=202.65.114.202
 /system ntp client servers add address=212.26.18.41
@@ -3500,4 +3500,5 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
     \n\
     \n"
 /system script add dont-require-permissions=no name=reset-pppoe-260125163654-REVALDO owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-260125163654-REVALDO>"
+/system script add dont-require-permissions=no name=reset-pppoe-260209111303-WAWAT owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-260209111303-WAWAT>"
 /tool netwatch add comment=tunnel-gateway-172.29.0.1 host=172.29.0.1 type=simple
