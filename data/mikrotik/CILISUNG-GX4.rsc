@@ -1,4 +1,4 @@
-# 2026-07-08 02:01:26 by RouterOS 7.16.1
+# 2026-07-09 02:01:30 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -12,10 +12,9 @@
 /interface ethernet set [ find default-name=ether5 ] name=ether5-BRIDGE-VLAN-HOTSPOT
 /interface ethernet set [ find default-name=ether6 ] name=ether6-LAN-SWITCH
 /interface ethernet set [ find default-name=ether7 ] name=ether7-OLT
-/interface ethernet set [ find default-name=sfp-sfpplus1 ] auto-negotiation=no speed=1G-baseT-full
 /interface ovpn-client add cipher=aes128-cbc connect-to=115.178.49.186 mac-address=02:F8:50:B2:4E:C0 mode=ethernet name=OVPN-TEKRA port=1000 user=CILISUNG
 /interface ovpn-client add comment=tunnel-31721 connect-to=id-20.tunnel.web.id mac-address=FE:32:21:AE:89:DE name=tunnel-31721 user=cilisung
-/interface vlan add interface=sfp-sfpplus1 name=VLAN-FROM-PUSAT vlan-id=202
+/interface vlan add interface=sfp-sfpplus1 name=VLAN-FROM-PUSAT vlan-id=2021
 /interface vlan add interface=ether7-OLT name=VLAN-MONITOR-OLT vlan-id=144
 /interface vlan add interface=ether4 name=VLAN-PPOE-CILISUNG-HIOSO vlan-id=143
 /interface vlan add interface=ether7-OLT name=VLAN-PPPOE-CILISUNG vlan-id=143
@@ -58,15 +57,14 @@
 /ppp profile add local-address=10.10.2.1 name="PAKET HEMAT" parent-queue=PAKET-2 queue-type=FQ-CODEL rate-limit="10M/10M 0/0 0/0 0/0 8 10M/10M" remote-address=PAKET-2
 /ppp profile add local-address=10.10.3.1 name="PAKET MANTAP" parent-queue=PAKET-3 queue-type=FQ-CODEL rate-limit="20M/20M 0/0 0/0 0/0 8 20M/20M" remote-address=PAKET-3
 /ppp profile add local-address=10.10.5.1 name="PAKET PUAS" parent-queue=PAKET-4 queue-type=FQ-CODEL rate-limit="30M/30M 0/0 0/0 0/0 8 30M/30M" remote-address=PAKET-5
+/routing table add disabled=no fib name=PBR
 /snmp community set [ find default=yes ] write-access=yes
 /interface bridge port add bridge=BRIDGE-HOTSPOT interface=ether6-LAN-SWITCH
 /interface bridge port add bridge=BRIDGE-TR069 interface=vlan100-TR069-E7
 /interface bridge port add bridge=BRIDGE-TR069 interface=vlan100-TR069-E8
 /interface bridge port add bridge=bridge-vlan-hotspot disabled=yes interface=ether5-BRIDGE-VLAN-HOTSPOT
 /interface bridge port add bridge=BRIDGE-PORT-OLT disabled=yes interface=VLAN-PPOE-CILISUNG-HIOSO
-/interface bridge port add bridge=BRIDGE-BACKBONE interface=VLAN-TO-PUSAT
 /interface bridge port add bridge=BRIDGE-BACKBONE interface=ether1
-/interface bridge port add bridge=BRIDGE-BACKBONE interface=sfp-sfpplus1
 /interface bridge port add bridge=BRIDGE-BACKBONE interface=ether10
 /ip firewall connection tracking set udp-timeout=10s
 /ip neighbor discovery-settings set discover-interface-list=!dynamic
@@ -76,12 +74,13 @@
 /interface pppoe-server server add disabled=no interface=VLAN-PPPOE-CILISUNG service-name=service4
 /ip address add address=192.168.101.1/24 interface=VLAN-MONITOR-OLT network=192.168.101.0
 /ip address add address=192.168.124.11/24 interface=BRIDGE-BACKBONE network=192.168.124.0
-/ip address add address=172.90.10.11/24 interface=VLAN-FROM-PUSAT network=172.90.10.0
 /ip address add address=10.30.64.1/21 interface=BRIDGE-TR069 network=10.30.64.0
 /ip address add address=192.168.0.1/24 interface=ether9 network=192.168.0.0
+/ip address add address=172.60.10.11/24 interface=VLAN-FROM-PUSAT network=172.60.10.0
+/ip address add address=172.40.10.1/24 disabled=yes interface=VLAN-TO-PUSAT network=172.40.10.0
 /ip dhcp-server network add address=10.5.50.0/24 comment="hotspot network" gateway=10.5.50.1
 /ip dhcp-server network add address=10.30.64.0/21 gateway=10.30.64.1
-/ip dns set allow-remote-requests=yes cache-max-ttl=1d cache-size=4096KiB servers=8.8.8.8,8.8.4.4
+/ip dns set allow-remote-requests=yes cache-max-ttl=1d cache-size=4096KiB servers=8.8.8.8,8.8.4.4,172.70.10.1
 /ip firewall address-list add address=yougetsignal.com list=speedtest
 /ip firewall address-list add address=xmyip.com list=speedtest
 /ip firewall address-list add address=www.yougetsignal.com list=speedtest
@@ -114,12 +113,14 @@
 /ip firewall address-list add address=172.16.0.0/12 list=LOCAL-IP
 /ip firewall address-list add address=10.0.0.0/8 list=LOCAL-IP
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
+/ip firewall mangle add action=mark-routing chain=prerouting log=yes new-routing-mark=PBR passthrough=no src-address=10.10.3.211
 /ip firewall nat add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.5.50.0/24
 /ip firewall nat add action=masquerade chain=srcnat out-interface=BRIDGE-BACKBONE
 /ip firewall nat add action=masquerade chain=srcnat out-interface=ether2-DARI-PUSAT
 /ip firewall nat add action=masquerade chain=srcnat out-interface=VLAN-MONITOR-OLT
 /ip firewall nat add action=masquerade chain=srcnat out-interface=VLAN-FROM-PUSAT
+/ip firewall nat add action=masquerade chain=srcnat disabled=yes out-interface=sfp-sfpplus1
 /ip firewall nat add action=masquerade chain=srcnat out-interface=OVPN-TEKRA
 /ip firewall nat add action=dst-nat chain=dstnat dst-address=210.79.190.25 dst-port=8321 protocol=tcp to-addresses=10.5.50.1 to-ports=8728
 /ip firewall nat
@@ -143,15 +144,14 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ip hotspot ip-binding add address=10.5.50.69 to-address=10.5.50.69 type=bypassed
 /ip hotspot user add name=admin
 /ip ipsec profile set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
-/ip route add disabled=yes distance=1 dst-address=8.8.8.8/32 gateway=172.90.10.1 routing-table=main scope=10 suppress-hw-offload=no target-scope=10
-/ip route add disabled=yes distance=1 dst-address=8.8.4.4/32 gateway=192.168.124.1 routing-table=main scope=10 suppress-hw-offload=no target-scope=10
-/ip route add check-gateway=ping disabled=yes distance=2 dst-address=0.0.0.0/0 gateway=8.8.8.8 routing-table=main scope=30 suppress-hw-offload=yes target-scope=11
+/ip route add disabled=no distance=1 dst-address=8.8.4.4/32 gateway=172.60.10.1 routing-table=main scope=10 suppress-hw-offload=no target-scope=10
+/ip route add check-gateway=ping disabled=yes distance=1 dst-address=0.0.0.0/0 gateway=172.60.10.1 routing-table=PBR scope=30 suppress-hw-offload=yes target-scope=11
 /ip route add check-gateway=ping disabled=yes distance=1 dst-address=0.0.0.0/0 gateway=8.8.4.4 routing-table=main scope=30 suppress-hw-offload=yes target-scope=11
 /ip route add disabled=no distance=1 dst-address=10.10.10.230/32 gateway=10.6.0.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip route add disabled=yes dst-address=0.0.0.0/0 gateway=172.90.10.1 routing-table=main suppress-hw-offload=no
 /ip route add disabled=no dst-address=10.10.10.22/32 gateway=10.6.0.1 routing-table=main suppress-hw-offload=no
-/ip route add check-gateway=ping disabled=no distance=1 dst-address=0.0.0.0/0 gateway=192.168.124.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
-/ip route add check-gateway=ping disabled=no distance=2 dst-address=0.0.0.0/0 gateway=172.90.10.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
+/ip route add check-gateway=ping disabled=no distance=2 dst-address=0.0.0.0/0 gateway=192.168.124.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
+/ip route add check-gateway=ping disabled=no distance=1 dst-address=0.0.0.0/0 gateway=172.60.10.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip service set telnet disabled=yes
 /ip service set ftp disabled=yes
 /ip service set www disabled=yes
@@ -313,7 +313,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=230526121404-CECEPDEPAN profile=PAKET4 service=pppoe
 /ppp secret add name=230613081719-SYARIFUDIN profile=PAKET1 service=pppoe
 /ppp secret add name=CILISUNG profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=230304191421-HASTI profile=PAKET1 service=pppoe
+/ppp secret add name=230304191421-HASTI profile=PAKET1 service=pppoe
 /ppp secret add name=250311155850-PANDU profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250319111600-YULI profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=250408102651-AGUSGUNAWAN profile="PAKET HEMAT" service=pppoe

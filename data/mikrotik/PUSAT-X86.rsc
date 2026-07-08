@@ -1,4 +1,4 @@
-# 2026-07-08 02:01:35 by RouterOS 7.11.3
+# 2026-07-09 02:01:39 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -7,18 +7,19 @@
 /interface bridge add name=BRIDGE-HOTSPOT
 /interface bridge add name=BRIDGE-HOTSPOT-GX4
 /interface bridge add name=BRIDGE-TR069
-/interface ethernet set [ find default-name=sfp-sfpplus1 ] auto-negotiation=no name=SFP1-WAN-1
+/interface ethernet set [ find default-name=sfp-sfpplus2 ] name=SFP-LNS-LA
+/interface ethernet set [ find default-name=sfp-sfpplus1 ] advertise=1000M-full name=SFP1-TO-CILISUNG
 /interface ethernet set [ find default-name=sfp-sfpplus3 ] auto-negotiation=no name=SFP3-OLT-GPON speed=1Gbps
 /interface ethernet set [ find default-name=sfp-sfpplus4 ] auto-negotiation=no name=SFP4-OLT-EPON speed=1Gbps
 /interface ethernet set [ find default-name=ether1 ] name=ether1-SIMAYA
 /interface ethernet set [ find default-name=ether2 ] name=ether2-SWITCH
-/interface ethernet set [ find default-name=sfp-sfpplus2 ] auto-negotiation=no speed=1Gbps
-/interface ovpn-client add comment=tunnel-31729 connect-to=id-24.tunnel.web.id mac-address=FE:0A:B1:5E:4B:23 name=tunnel-31729 user=pusat-ccr2
+/interface ovpn-client add comment=tunnel-31729 connect-to=id-24.tunnel.web.id disabled=yes mac-address=FE:0A:B1:5E:4B:23 name=tunnel-31729 user=pusat-ccr2
 /interface l2tp-client add connect-to=103.226.138.15 name=l2tp-out2 user=koko
-/interface vlan add interface=sfp-sfpplus2 name=VLAN-FROM-CILISUNG vlan-id=203
-/interface vlan add interface=sfp-sfpplus2 name=VLAN-TO-CILISUNG vlan-id=202
+/interface vlan add interface=SFP-LNS-LA name=215-LNS-LA vlan-id=215
+/interface vlan add interface=SFP1-TO-CILISUNG name=VLAN-TO-CILISUNG vlan-id=2021
 /interface vlan add interface=SFP4-OLT-EPON name=VLAN-TR069-EPON vlan-id=100
 /interface vlan add interface=SFP3-OLT-GPON name=VLAN-TR069-GPON vlan-id=100
+/interface vlan add interface=SFP1-TO-CILISUNG name=vlan-from-cilisung vlan-id=60
 /interface vlan add interface=SFP4-OLT-EPON name="vlan1-HOTSPOT CCR-EPON" vlan-id=103
 /interface vlan add interface=SFP4-OLT-EPON name="vlan2-HOTSPOT GX4" vlan-id=101
 /interface vlan add interface=SFP4-OLT-EPON name="vlan3-PPPOE-BOJONG SEUREUH" vlan-id=102
@@ -54,12 +55,14 @@
 /ip pool add name="paket 4 burst" ranges=10.10.18.5-10.10.18.254
 /ip pool add name="paket 5 burst" ranges=10.10.19.5-10.10.19.254
 /ip pool add name=dhcp_pool16 ranges=192.168.78.2-192.168.78.254
+/ip pool add name=dhcp_pool17 ranges=192.168.89.2-192.168.89.254
 /ip dhcp-server add address-pool=Hotspot interface=BRIDGE-HOTSPOT name=dhcp1
 /ip dhcp-server add address-pool=dhcp_pool9 dhcp-option-set=acs interface=BRIDGE-TR069 name=TR069
 /ip dhcp-server
 # DHCP server can not run on slave interface!
 add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ip dhcp-server add address-pool=dhcp_pool16 interface=ether5 name=dhcp2
+/ip dhcp-server add address-pool=dhcp_pool17 disabled=yes interface=VLAN-TO-CILISUNG name=dhcp4
 /ip hotspot add address-pool=Hotspot addresses-per-mac=unlimited disabled=no interface=BRIDGE-HOTSPOT name=hotspot1 profile=hsprof1
 /ip hotspot add address-pool=hs-pool-14 addresses-per-mac=unlimited disabled=no interface=BRIDGE-HOTSPOT-GX4 name="hs-vlan2-HOTSPOT GX4" profile=hsprof2
 /port set 0 name=serial0
@@ -116,8 +119,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /interface bridge port add bridge=BRIDGE-HOTSPOT-GX4 interface="vlan2-HOTSPOT GX4"
 /interface bridge port add bridge=BRIDGE-BACKBONE-CILISUNG interface=ether12
 /interface bridge port add bridge=BRIDGE-BACKBONE-CILISUNG interface=ether11
-/interface bridge port add bridge=BRIDGE-HOTSPOT-GX4 disabled=yes interface=VLAN-TO-CILISUNG
-/ip neighbor discovery-settings set discover-interface-list=!dynamic
+/ip neighbor discovery-settings set discover-interface-list=all
 /interface pppoe-server server add disabled=no interface=BRIDGE-HOTSPOT service-name=service1
 /interface pppoe-server server add disabled=no interface="vlan3-PPPOE-BOJONG SEUREUH" service-name=service2
 /interface pppoe-server server add disabled=no interface="vlan4-PPPOE BOJONG SUREN" service-name=service3
@@ -129,14 +131,19 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ip address add address=10.100.0.1/21 interface=BRIDGE-TR069 network=10.100.0.0
 /ip address add address=192.168.44.1/24 interface=BRIDGE-HOTSPOT network=192.168.44.0
 /ip address add address=172.90.10.1/24 interface=BRIDGE-HOTSPOT-GX4 network=172.90.10.0
-/ip address add address=192.168.123.90/24 interface=SFP1-WAN-1 network=192.168.123.0
+/ip address add address=192.168.123.90/24 interface=SFP1-TO-CILISUNG network=192.168.123.0
 /ip address add address=172.80.10.100/24 interface=ether1-SIMAYA network=172.80.10.0
 /ip address add address=192.168.100.25/24 interface=ether10 network=192.168.100.0
+/ip address add address=154.19.38.37 interface=215-LNS-LA network=154.19.38.36
+/ip address add address=172.16.103.2/30 comment=IP-Dummy interface=215-LNS-LA network=172.16.103.0
+/ip address add address=172.60.10.1/24 interface=VLAN-TO-CILISUNG network=172.60.10.0
+/ip address add address=172.40.10.11/24 disabled=yes interface=vlan-from-cilisung network=172.40.10.0
 /ip dhcp-server network add address=10.10.10.0/24 comment="hotspot network" gateway=10.10.10.1
 /ip dhcp-server network add address=10.100.0.0/21 dhcp-option=acs gateway=10.100.0.1
 /ip dhcp-server network add address=172.90.10.0/24 comment="hotspot network" gateway=172.90.10.1
 /ip dhcp-server network add address=192.168.78.0/24 gateway=192.168.78.1
-/ip dns set allow-remote-requests=yes servers=8.8.8.8,8.8.4.4
+/ip dhcp-server network add address=192.168.89.0/24 gateway=192.168.89.1
+/ip dns set allow-remote-requests=yes servers=103.99.27.123,157.20.144.117
 /ip dns static add address=10.10.10.230 name=acs.id.myrepublic.net
 /ip dns static add address=10.10.10.230 name=acs
 /ip dns static add address=10.10.10.230 name=xlacs.xl.co.id
@@ -259,10 +266,10 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall filter add action=drop chain=forward comment="BLOCK ISOLIR" src-address-list=ISOLIR-LIST
 /ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=speedtest new-routing-mark=SPEEDTEST passthrough=no src-address-list=private-lokal
-/ip firewall mangle add action=mark-routing chain=prerouting comment=whatsapp dst-address-list=WHATSAPP new-routing-mark=SPEEDTEST passthrough=no src-address-list=private-lokal
-/ip firewall mangle add action=mark-routing chain=prerouting comment=whatsapp dst-address-list=klikbca new-routing-mark=SPEEDTEST passthrough=no src-address-list=private-lokal
+/ip firewall mangle add action=mark-routing chain=prerouting comment=whatsapp disabled=yes dst-address-list=WHATSAPP new-routing-mark=SPEEDTEST passthrough=no src-address-list=private-lokal
+/ip firewall mangle add action=mark-routing chain=prerouting comment=whatsapp disabled=yes dst-address-list=klikbca new-routing-mark=SPEEDTEST passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.10.205
-/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.13.207
+/ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.13.207
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.13.178
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.1.0.2
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.10.13.245
@@ -273,17 +280,13 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ip firewall nat add action=dst-nat chain=dstnat comment=ACS-NAT dst-port=!7547 in-interface=BRIDGE-TR069 protocol=tcp to-addresses=10.10.10.230 to-ports=7547
 /ip firewall nat add action=redirect chain=dstnat comment=ISOLIR dst-port=80,443 protocol=tcp src-address-list=ISOLIR-LIST to-ports=8080
 /ip firewall nat add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
-/ip firewall nat add action=masquerade chain=srcnat out-interface=SFP1-WAN-1
-/ip firewall nat add action=masquerade chain=srcnat out-interface=ether9
 /ip firewall nat add action=masquerade chain=srcnat out-interface=ether1-SIMAYA
-/ip firewall nat
-# no interface
-add action=masquerade chain=srcnat out-interface=*21
+/ip firewall nat add action=masquerade chain=srcnat out-interface=215-LNS-LA
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.10.10.0/24
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=172.90.10.0/24
 /ip firewall nat add action=dst-nat chain=dstnat dst-port=8822 in-interface=ether1-SIMAYA protocol=tcp to-addresses=172.90.10.1 to-ports=8291
 /ip firewall nat add action=dst-nat chain=dstnat dst-port=8844 in-interface=ether1-SIMAYA protocol=tcp to-addresses=10.10.10.5 to-ports=554
-/ip firewall nat add action=dst-nat chain=dstnat dst-port=3388 in-interface=ether1-SIMAYA protocol=tcp to-addresses=10.10.10.205 to-ports=3389
+/ip firewall nat add action=dst-nat chain=dstnat dst-address=154.19.38.37 dst-port=3388 protocol=tcp to-addresses=10.10.10.205 to-ports=3389
 /ip firewall nat add action=dst-nat chain=dstnat dst-port=1822 in-interface=ether1-SIMAYA protocol=tcp to-addresses=172.90.10.1 to-ports=8728
 /ip firewall nat add action=dst-nat chain=dstnat dst-port=1057 in-interface=ether1-SIMAYA protocol=tcp to-addresses=10.10.10.15 to-ports=34567
 /ip firewall nat add action=dst-nat chain=dstnat dst-port=8622 in-interface=ether1-SIMAYA protocol=tcp to-addresses=10.10.10.10 to-ports=37777
@@ -421,7 +424,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ip proxy access add action=deny comment=ISOLIR dst-address=!10.10.16.1 src-address=10.10.16.0/24
 /ip proxy access add action=deny comment=ISOLIR dst-host=!https://portal.tekra.my.id src-address=10.10.16.0/24
 /ip proxy access add action=deny comment=ISOLIR dst-host=!https://tripay.co.id src-address=10.10.16.0/24
-/ip route add check-gateway=ping disabled=no dst-address=0.0.0.0/0 gateway=192.168.123.1 routing-table=main suppress-hw-offload=no
+/ip route add check-gateway=ping disabled=no distance=1 dst-address=0.0.0.0/0 gateway=154.19.38.36 pref-src="" routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip route add disabled=no dst-address=10.10.10.4/32 gateway=172.80.10.1 routing-table=main suppress-hw-offload=no
 /ip route add disabled=no distance=1 dst-address=10.10.10.18/32 gateway=172.80.10.1 pref-src="" routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip route add disabled=no distance=1 dst-address=10.10.10.200/32 gateway=172.80.10.1 pref-src="" routing-table=main scope=30 suppress-hw-offload=no target-scope=10
@@ -447,12 +450,13 @@ add action=masquerade chain=srcnat out-interface=*21
 /ip route add disabled=no distance=1 dst-address=10.10.10.30/32 gateway=172.80.10.1 pref-src="" routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip route add disabled=no distance=1 dst-address=10.10.10.31/32 gateway=172.80.10.1 pref-src="" routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip route add disabled=no distance=1 dst-address=172.90.10.11/32 gateway=172.80.10.1 pref-src="" routing-table=main scope=30 suppress-hw-offload=no target-scope=10
+/ip route add disabled=no distance=1 dst-address=1.1.1.1/32 gateway=154.19.38.36 pref-src="" routing-table=main scope=10 suppress-hw-offload=no target-scope=10
 /ip service set telnet disabled=yes
 /ip service set ftp disabled=yes
 /ip service set www disabled=yes
 /ip service set ssh port=18
 /ip service set api-ssl disabled=yes
-/ip traffic-flow set active-flow-timeout=10m cache-entries=4k enabled=yes interfaces=SFP1-WAN-1
+/ip traffic-flow set active-flow-timeout=10m cache-entries=4k enabled=yes interfaces=SFP1-TO-CILISUNG
 /ip traffic-flow target add dst-address=10.10.10.18 v9-template-timeout=1s
 /ppp secret add local-address=10.6.0.1 name=DAGO remote-address=10.6.0.2
 /ppp secret add local-address=192.168.33.1 name=KEMBAR profile=PAKET4 remote-address=192.168.33.4 service=pppoe
@@ -697,7 +701,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /ppp secret add name=230909151089-ENTIN profile=PAKET1 service=pppoe
 /ppp secret add name=230613081738-UYAT profile=PAKET1 service=pppoe
 /ppp secret add name=230613081739-GUGUN profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=230613081740-DUDIT profile=PAKET1 service=pppoe
+/ppp secret add name=230613081740-DUDIT profile=PAKET1 service=pppoe
 /ppp secret add name=230114190808-SIDIK profile=PAKET1 service=pppoe
 /ppp secret add name=231009185225-DADANG profile=PAKET1 service=pppoe
 /ppp secret add name=231008170944-SOLIHIN profile=PAKET1 service=pppoe
@@ -1183,7 +1187,7 @@ add action=masquerade chain=srcnat out-interface=*21
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=505 show-at-login=no
+/system note set note=504 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
