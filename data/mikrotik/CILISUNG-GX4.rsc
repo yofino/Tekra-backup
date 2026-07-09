@@ -1,4 +1,4 @@
-# 2026-07-09 02:01:30 by RouterOS 7.16.1
+# 2026-07-10 02:02:40 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -113,7 +113,7 @@
 /ip firewall address-list add address=172.16.0.0/12 list=LOCAL-IP
 /ip firewall address-list add address=10.0.0.0/8 list=LOCAL-IP
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
-/ip firewall mangle add action=mark-routing chain=prerouting log=yes new-routing-mark=PBR passthrough=no src-address=10.10.3.211
+/ip firewall mangle add action=mark-routing chain=prerouting disabled=yes log=yes new-routing-mark=PBR passthrough=no src-address=10.10.3.211
 /ip firewall nat add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.5.50.0/24
 /ip firewall nat add action=masquerade chain=srcnat out-interface=BRIDGE-BACKBONE
@@ -377,7 +377,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260105152727-DEBI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260105171537-IWANSETIAWAN profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260106172244-NOVITA profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=260108123338-YATI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260108123338-YATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add disabled=yes name=260108160859-HESTIA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260108173445-ASEPDEDI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260109170440-KOMARIAH profile="PAKET HEMAT" service=pppoe
@@ -435,7 +435,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=175 show-at-login=no
+/system note set note=178 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"

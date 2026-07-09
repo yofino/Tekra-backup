@@ -1,4 +1,4 @@
-# jul/09/2026 02:00:03 by RouterOS 6.49.13
+# jul/10/2026 02:00:02 by RouterOS 6.49.13
 # software id = DUUD-LHXS
 #
 # model = CCR1009-7G-1C-1S+
@@ -2904,7 +2904,7 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2kk82 password=2kk82 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2yb72 password=2yb72 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2vd28 password=2vd28 profile=Paket2jam
-/ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2hh63 password=2hh63 profile=Paket2jam
+/ip hotspot user add comment="jul/10/2026 02:45:36" limit-uptime=2h name=2hh63 password=2hh63 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2fz67 password=2fz67 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2wt23 password=2wt23 profile=Paket2jam
 /ip hotspot user add comment=vc-545-03.15.26- limit-uptime=2h name=2um44 password=2um44 profile=Paket2jam
@@ -3429,7 +3429,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-880-03.30.26- limit-uptime=6h name=6zw83 password=6zw83 profile=Paket6jam
 /ip hotspot user add comment=vc-880-03.30.26- limit-uptime=6h name=6ym44 password=6ym44 profile=Paket6jam
 /ip hotspot user add comment=vc-880-03.30.26- limit-uptime=6h name=6cp64 password=6cp64 profile=Paket6jam
-/ip hotspot user add comment=vc-880-03.30.26- limit-uptime=6h name=6td75 password=6td75 profile=Paket6jam
 /ip hotspot user add comment=vc-880-03.30.26- limit-uptime=6h name=6uf82 password=6uf82 profile=Paket6jam
 /ip hotspot user add comment=vc-880-03.30.26- limit-uptime=6h name=6zz45 password=6zz45 profile=Paket6jam
 /ip hotspot user add comment=vc-880-03.30.26- limit-uptime=6h name=6zf35 password=6zf35 profile=Paket6jam
@@ -3654,8 +3653,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6dw36 password=6dw36 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ww62 password=6ww62 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6fu32 password=6fu32 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6dd25 password=6dd25 profile=Paket6jam
-/ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6xn76 password=6xn76 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6bg33 password=6bg33 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6rf29 password=6rf29 profile=Paket6jam
 /ip hotspot user add comment=vc-817-04.16.26- limit-uptime=6h name=6ir83 password=6ir83 profile=Paket6jam
@@ -3761,23 +3758,18 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2pb89 password=2pb89 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2uf32 password=2uf32 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ne63 password=2ne63 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2tj63 password=2tj63 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ra84 password=2ra84 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2xg56 password=2xg56 profile=Paket2jam
+/ip hotspot user add comment="jul/10/2026 07:08:52" limit-uptime=2h name=2tj63 password=2tj63 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2xn42 password=2xn42 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2hi42 password=2hi42 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2tn22 password=2tn22 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2yb97 password=2yb97 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2mj23 password=2mj23 profile=Paket2jam
+/ip hotspot user add comment="jul/10/2026 06:40:15" limit-uptime=2h name=2mj23 password=2mj23 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2vp72 password=2vp72 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2bi48 password=2bi48 profile=Paket2jam
-/ip hotspot user add comment="jul/09/2026 03:06:58" limit-uptime=2h name=2nv54 password=2nv54 profile=Paket2jam
-/ip hotspot user add comment="jul/09/2026 05:53:13" limit-uptime=2h name=2gk54 password=2gk54 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ad43 password=2ad43 profile=Paket2jam
+/ip hotspot user add comment="jul/10/2026 12:24:28" limit-uptime=2h name=2ad43 password=2ad43 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2sr38 password=2sr38 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ks84 password=2ks84 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2sx64 password=2sx64 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2xk55 password=2xk55 profile=Paket2jam
+/ip hotspot user add comment="jul/10/2026 03:01:09" limit-uptime=2h name=2sx64 password=2sx64 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2cj45 password=2cj45 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fy38 password=2fy38 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2jm37 password=2jm37 profile=Paket2jam
@@ -4062,7 +4054,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ki99 password=2ki99 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2br72 password=2br72 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ta36 password=2ta36 profile=Paket2jam
-/ip hotspot user add comment="jul/09/2026 06:29:48" limit-uptime=2h name=2ar65 password=2ar65 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2df96 password=2df96 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fy58 password=2fy58 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ex89 password=2ex89 profile=Paket2jam
@@ -4093,7 +4084,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ym86 password=2ym86 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fu54 password=2fu54 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fn57 password=2fn57 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ww28 password=2ww28 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2tr44 password=2tr44 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fi66 password=2fi66 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2tf25 password=2tf25 profile=Paket2jam
@@ -4124,7 +4114,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6yf62 password=6yf62 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6hw34 password=6hw34 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ws68 password=6ws68 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6jp75 password=6jp75 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6cz35 password=6cz35 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6rs89 password=6rs89 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6aw92 password=6aw92 profile=Paket6jam
@@ -4275,7 +4264,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6bf76 password=6bf76 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ud52 password=6ud52 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ey54 password=6ey54 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6bw62 password=6bw62 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6by32 password=6by32 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6wx59 password=6wx59 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6fu25 password=6fu25 profile=Paket6jam
@@ -4288,7 +4276,7 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6wg54 password=6wg54 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6iz95 password=6iz95 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6rz56 password=6rz56 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6tn97 password=6tn97 profile=Paket6jam
+/ip hotspot user add comment="jul/10/2026 04:34:10" limit-uptime=6h name=6tn97 password=6tn97 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ry66 password=6ry66 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6kj78 password=6kj78 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6wn84 password=6wn84 profile=Paket6jam
@@ -4332,9 +4320,7 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6se99 password=6se99 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6wg34 password=6wg34 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6pf49 password=6pf49 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6zi66 password=6zi66 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6rb99 password=6rb99 profile=Paket6jam
-/ip hotspot user add comment="jul/09/2026 02:06:31" limit-uptime=6h name=6yg65 password=6yg65 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6rd99 password=6rd99 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6rf99 password=6rf99 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6nh44 password=6nh44 profile=Paket6jam
@@ -4346,11 +4332,9 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6cr67 password=6cr67 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6jf75 password=6jf75 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6pr82 password=6pr82 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6jc48 password=6jc48 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6vy47 password=6vy47 profile=Paket6jam
+/ip hotspot user add comment="jul/10/2026 03:02:52" limit-uptime=6h name=6vy47 password=6vy47 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6as68 password=6as68 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6jn62 password=6jn62 profile=Paket6jam
-/ip hotspot user add comment="jul/09/2026 03:26:50" limit-uptime=6h name=6tb36 password=6tb36 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6wa79 password=6wa79 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6zm38 password=6zm38 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6eh82 password=6eh82 profile=Paket6jam
@@ -4473,7 +4457,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6jd38 password=6jd38 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6cj48 password=6cj48 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6dj83 password=6dj83 profile=Paket6jam
-/ip hotspot user add comment="jul/09/2026 02:31:15" limit-uptime=6h name=6dx63 password=6dx63 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ds38 password=6ds38 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6wc37 password=6wc37 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6mh78 password=6mh78 profile=Paket6jam
@@ -4522,7 +4505,7 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2ey96 password=2ey96 profile=Paket2jam
 /ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2uw37 password=2uw37 profile=Paket2jam
 /ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2as52 password=2as52 profile=Paket2jam
-/ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wx69 password=2wx69 profile=Paket2jam
+/ip hotspot user add comment="jul/10/2026 05:58:33" limit-uptime=2h name=2wx69 password=2wx69 profile=Paket2jam
 /ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2wp92 password=2wp92 profile=Paket2jam
 /ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2bb67 password=2bb67 profile=Paket2jam
 /ip hotspot user add comment=vc-722-07.02.26- limit-uptime=2h name=2tk39 password=2tk39 profile=Paket2jam
@@ -5028,235 +5011,11 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip service set api-ssl disabled=yes
 /lcd set color-scheme=dark time-interval=weekly
 /lcd interface pages set 0 interfaces=sfp-HYPER,ether1-SIMAYA,ether2,ether3,ether4-TO-X86,ether5-pfsense,ether6,ether7
-/ppp secret add local-address=192.168.9.1 name=tesi remote-address=192.168.9.9 service=pppoe
-/ppp secret add local-address=192.168.9.2 name=test remote-address=192.168.9.10 service=pppoe
 /ppp secret add local-address=10.6.0.1 name=DAGO password=DAGO profile=TUNNEL-PROFILE remote-address=10.6.0.2 service=ovpn
-/ppp secret add local-address=192.168.33.1 name=KEMBAR remote-address=192.168.33.4 service=pppoe
-/ppp secret add local-address=192.168.33.1 name=WULAN remote-address=192.168.33.105 service=pppoe
-/ppp secret add name=ABANG profile=PAKET2 service=pppoe
-/ppp secret add local-address=192.168.33.1 name=GUSTI remote-address=192.168.33.14 service=pppoe
-/ppp secret add local-address=192.168.33.1 name=DENI remote-address=192.168.33.81 service=pppoe
 /ppp secret add local-address=192.168.33.1 name=SELAMET remote-address=192.168.33.33 service=pppoe
-/ppp secret add name=TOTO profile=PAKET2 service=pppoe
-/ppp secret add name=ALDY profile=PAKET1 service=pppoe
-/ppp secret add name=ABAH profile=PAKET2 service=pppoe
-/ppp secret add name=SERVER profile=PAKET4 service=pppoe
-/ppp secret add name=IRPAN profile=PAKET2 service=pppoe
-/ppp secret add name=ANDRI profile=PAKET2 service=pppoe
-/ppp secret add name=220720164405-SULASTRI profile=PAKET2 service=pppoe
-/ppp secret add name=NINA profile=PAKET1 service=pppoe
-/ppp secret add name=aldy profile=PAKET2 service=pppoe
-/ppp secret add name=220801153539-DETI profile=PAKET1 service=pppoe
-/ppp secret add name=MAMAN profile=PAKET2 service=pppoe
-/ppp secret add name=SARAH profile=PAKET1 service=pppoe
-/ppp secret add name=IPENK profile=PAKET2 service=pppoe
-/ppp secret add name=NONO profile=PAKET1 service=pppoe
-/ppp secret add name=SARI profile=PAKET1 service=pppoe
-/ppp secret add name=210901203309-FERY profile=PAKET4 service=pppoe
-/ppp secret add name=DIDIN profile=PAKET1 service=pppoe
-/ppp secret add name=TARYANA profile=PAKET2 service=pppoe
-/ppp secret add name=TESTING profile=PAKET2 service=pppoe
-/ppp secret add name=ELIN profile=PAKET2 service=pppoe
-/ppp secret add name=221119172542-LENI profile=PAKET2 service=pppoe
-/ppp secret add name=SUGIARTO profile=PAKET2 service=pppoe
-/ppp secret add name=r1 profile=PAKET2 service=pppoe
-/ppp secret add name=r2 profile=PAKET1 service=pppoe
-/ppp secret add name=RUMAH profile=PAKET2 service=pppoe
-/ppp secret add name=r4 profile=PAKET5 service=pppoe
-/ppp secret add name=r5 profile=PAKET1 service=pppoe
-/ppp secret add name=HENI profile=PAKET1 service=pppoe
-/ppp secret add name=ANWAR profile=PAKET1 service=pppoe
-/ppp secret add name=FERRY profile=PAKET4 service=pppoe
-/ppp secret add name=230114074208-ADITYA profile=PAKET2 service=pppoe
-/ppp secret add disabled=yes name=DINI profile=PAKET2 service=pppoe
-/ppp secret add name=IKI profile=PAKET4 service=pppoe
-/ppp secret add name=230114074223-TUTI profile=PAKET2 service=pppoe
-/ppp secret add disabled=yes name=MAYANG profile=PAKET1 service=pppoe
-/ppp secret add name=UBUK profile=PAKET1 service=pppoe
-/ppp secret add name=FAHRUN profile=PAKET3 service=pppoe
-/ppp secret add disabled=yes name=TUNTAS profile=PAKET4 service=pppoe
-/ppp secret add name=KALUA profile=PAKET1 service=pppoe
-/ppp secret add name=DAYAT profile=PAKET1 service=pppoe
-/ppp secret add name=DIANEKA profile=PAKET1 service=pppoe
-/ppp secret add name=RIKA profile=PAKET1 service=pppoe
 /ppp secret add local-address=11.2.0.1 name=YOFI profile=PAKET2 remote-address=10.2.0.79 service=pppoe
-/ppp secret add name=TEST profile=PAKET5 service=pppoe
-/ppp secret add name=ENDA profile=PAKET1 service=pppoe
-/ppp secret add name=RIAN profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=HENDRA profile=PAKET1 service=pppoe
 /ppp secret add name=CILISUNG profile=PAKET1 service=pppoe
-/ppp secret add name=230909151059-IMAS profile=PAKET1 service=pppoe
-/ppp secret add name=RIA profile=PAKET2 service=pppoe
-/ppp secret add name=ADIBIL profile=PAKET1 service=pppoe
-/ppp secret add name=IRFA profile=PAKET1 service=pppoe
-/ppp secret add name=ADIB profile=PAKET2 service=pppoe
-/ppp secret add name=SHINTA profile=PAKET1 service=pppoe
-/ppp secret add name=KPPS profile=PAKET5 service=pppoe
-/ppp secret add name=IQBAL profile=PAKET4 service=pppoe
-/ppp secret add name=USIN profile=PAKET1 service=pppoe
-/ppp secret add name=NENDI profile=PAKET1 service=pppoe
-/ppp secret add name=210902132718-UJANG profile=PAKET1 service=pppoe
-/ppp secret add name=210902125942-TEBE profile=PAKET2 service=pppoe
-/ppp secret add name=210902135358-USIN profile=PAKET1 service=pppoe
-/ppp secret add name=210902134829-IKI profile=PAKET1 service=pppoe
-/ppp secret add name=230909151054-ANGGA profile=PAKET1 service=pppoe
-/ppp secret add name=230909151056-SUWITO profile=PAKET1 service=pppoe
-/ppp secret add name=230114074231-DIKDIK profile=PAKET1 service=pppoe
-/ppp secret add name=230909151066-AEP profile=PAKET1 service=pppoe
-/ppp secret add name=210902135654-DADI profile=PAKET1 service=pppoe
-/ppp secret add name=230909151072-DINGGO profile=PAKET1 service=pppoe
-/ppp secret add name=220322140756-INOY profile=PAKET1 service=pppoe
-/ppp secret add name=230909151055-CACAH profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=230909151062-ASEP profile=PAKET2 service=pppoe
-/ppp secret add name=230114074216-FITRIYANI profile=PAKET1 service=pppoe
-/ppp secret add name=231008170936-YUNITA profile=PAKET2 service=pppoe
-/ppp secret add name=230909151063-RANTI profile=PAKET1 service=pppoe
-/ppp secret add name=210902134719-UCOK profile=PAKET1 service=pppoe
-/ppp secret add name=230613081729-DWI profile=PAKET2 service=pppoe
-/ppp secret add name=230613081731-SHINTA profile=PAKET1 service=pppoe
-/ppp secret add name=231008170938-ADIB profile=PAKET2 service=pppoe
-/ppp secret add name=230909151058-RIAN profile=PAKET1 service=pppoe
-/ppp secret add name=210902123833-IQBAL profile=PAKET4 service=pppoe
-/ppp secret add name=210902135558-KOCREK profile=PAKET1 service=pppoe
-/ppp secret add name=230906111356-RINA profile=PAKET1 service=pppoe
-/ppp secret add name=210902124605-DEA profile=PAKET1 service=pppoe
-/ppp secret add name=220315114250-EKA profile=PAKET2 service=pppoe
-/ppp secret add name=230613081727-RINI profile=PAKET1 service=pppoe
-/ppp secret add name=230613081728-YADI profile=PAKET1 service=pppoe
-/ppp secret add name=210902135311-IYAH profile=PAKET2 service=pppoe
-/ppp secret add name=220726185926-NENDEN profile=PAKET2 service=pppoe
-/ppp secret add name=231008170940-YENI profile=PAKET2 service=pppoe
-/ppp secret add name=231008170939-ROCHSI profile=PAKET4 service=pppoe
-/ppp secret add name=230909151046-SUMPENA profile=PAKET2 service=pppoe
-/ppp secret add name=220606150759-NIA profile=PAKET1 service=pppoe
-/ppp secret add name=210902124058-MAYA profile=PAKET1 service=pppoe
-/ppp secret add name=231008170932-YUDI profile=PAKET2 service=pppoe
-/ppp secret add name=231009185223-RENDY profile=PAKET2 service=pppoe
-/ppp secret add name=221011122722-TANTI profile=PAKET1 service=pppoe
-/ppp secret add name=230114074226-NENDI profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=210901203434-SANSAN profile=PAKET1 service=pppoe
-/ppp secret add name=230114074209-DAINE profile=PAKET2 service=pppoe
-/ppp secret add disabled=yes name=230909151057-DALIT profile=PAKET1 service=pppoe
-/ppp secret add name=210901203608-ELIS profile=PAKET2 service=pppoe
-/ppp secret add name=230909151069-ERIK profile=PAKET3 service=pppoe
-/ppp secret add name=231008170935-RIA profile=PAKET2 service=pppoe
-/ppp secret add name=230909151060-RENI profile=PAKET1 service=pppoe
-/ppp secret add name=220818123605-ESA profile=PAKET2 service=pppoe
-/ppp secret add name=231009185222-LINA profile=PAKET3 service=pppoe
-/ppp secret add name=231008170942-MENTARI profile=PAKET3 service=pppoe
-/ppp secret add name=230909151074-HERMAWAN profile=PAKET1 service=pppoe
-/ppp secret add name=230909151075-AYI profile=PAKET1 service=pppoe
-/ppp secret add name=220318142406-AHO profile=PAKET1 service=pppoe
-/ppp secret add name=210902133706-CIKAL profile=PAKET2 service=pppoe
-/ppp secret add name=230909151076-KOMARIAH profile=PAKET1 service=pppoe
-/ppp secret add name=OGUT profile=PAKET1 service=pppoe
-/ppp secret add name=230613081734-YADI profile=PAKET1 service=pppoe
-/ppp secret add name=230909151077-RESTIWI profile=PAKET1 service=pppoe
-/ppp secret add name=ARIF profile=PAKET1 service=pppoe
-/ppp secret add name=SAEFUL profile=PAKET2 service=pppoe
-/ppp secret add name=210902162958-HANIPAH profile=PAKET2 service=pppoe
-/ppp secret add name=220307114152-TOM profile=PAKET2 service=pppoe
-/ppp secret add name=210902170221-FROZEN profile=PAKET1 service=pppoe
-/ppp secret add name=210902163107-IIP profile=PAKET1 service=pppoe
-/ppp secret add name=210902164511-DUDE profile=PAKET2 service=pppoe
-/ppp secret add name=210902165641-RIDWAN profile=PAKET3 service=pppoe
-/ppp secret add name=240315141540-DENDI profile=PAKET2 service=pppoe
-/ppp secret add name=221119172541-AHMAD profile=PAKET1 service=pppoe
-/ppp secret add name=221119172547-WENDI profile=PAKET1 service=pppoe
-/ppp secret add name=210902163224-AYU profile=PAKET2 service=pppoe
-/ppp secret add name=231008170931-RIFKI profile=PAKET1 service=pppoe
-/ppp secret add name=240315141542-ADE profile=PAKET1 service=pppoe
-/ppp secret add name=220104200010-DESI profile=PAKET1 service=pppoe
-/ppp secret add name=210902161926-IDA profile=PAKET1 service=pppoe
-/ppp secret add name=210902170557-YANA profile=PAKET1 service=pppoe
-/ppp secret add name=210902164603-DENI profile=PAKET1 service=pppoe
-/ppp secret add name=210902161800-GUSTI profile=PAKET2 service=pppoe
-/ppp secret add name=221228123326-AKUR profile=PAKET1 service=pppoe
-/ppp secret add name=210901114107-DEDI profile=PAKET1 service=pppoe
-/ppp secret add name=221228123324-IMAS profile=PAKET1 service=pppoe
-/ppp secret add name=210902140131-ASEP profile=PAKET1 service=pppoe
-/ppp secret add name=231008170943-VIQRI profile=PAKET1 service=pppoe
-/ppp secret add name=230909151080-EBIH profile=PAKET1 service=pppoe
-/ppp secret add name=210902162311-TONO profile=PAKET2 service=pppoe
-/ppp secret add name=220718133013-INDRA profile=PAKET2 service=pppoe
-/ppp secret add name=210902133102-ANWAR profile=PAKET1 service=pppoe
-/ppp secret add name=230311155641-DEBI profile=PAKET2 service=pppoe
-/ppp secret add name=210901143902-FAHRUN profile=PAKET3 service=pppoe
-/ppp secret add name=230114074225-FENI profile=PAKET1 service=pppoe
-/ppp secret add name=230909151050-FIKRI profile=PAKET1 service=pppoe
-/ppp secret add name=221119172544-HENI profile=PAKET1 service=pppoe
-/ppp secret add name=221009174256-RUSTINI profile=PAKET4 service=pppoe
-/ppp secret add name=230114074214-IROB profile=PAKET1 service=pppoe
-/ppp secret add name=220512104255-IRPAN profile=PAKET2 service=pppoe
-/ppp secret add name=231009185221-IRFAN profile=PAKET1 service=pppoe
-/ppp secret add name=210902194915-IZAL profile=PAKET2 service=pppoe
-/ppp secret add name=230909151052-UJANG profile=PAKET1 service=pppoe
-/ppp secret add name=220810121116-MAMAN profile=PAKET2 service=pppoe
-/ppp secret add name=220720135429-NINA profile=PAKET1 service=pppoe
-/ppp secret add name=230909151053-PUTRI profile=PAKET2 service=pppoe
-/ppp secret add name=230114074229-REZKA profile=PAKET2 service=pppoe
-/ppp secret add name=221119172543-SUGIARTO profile=PAKET2 service=pppoe
-/ppp secret add name=221119172548-SUHERMAN profile=PAKET2 service=pppoe
-/ppp secret add name=230909151051-UKON profile=PAKET1 service=pppoe
-/ppp secret add name=221126120614-OCANG profile=PAKET2 service=pppoe
-/ppp secret add name=230114074227-WIWI profile=PAKET1 service=pppoe
-/ppp secret add name=230114074228-YAYAT profile=PAKET1 service=pppoe
-/ppp secret add name=230615172244-SRI profile=PAKET2 service=pppoe
-/ppp secret add name=240315141543-THENDRA profile=PAKET2 service=pppoe
-/ppp secret add name=210902161308-DAENG profile=PAKET4 service=pppoe
-/ppp secret add name=210902161520-KEMAN profile=PAKET1 service=pppoe
-/ppp secret add name=231008170930-NOVISA profile=PAKET2 service=pppoe
-/ppp secret add name=IWAN profile=PAKET1 service=pppoe
-/ppp secret add name=EMANNUR profile=PAKET1 service=pppoe
-/ppp secret add name=EDI profile=PAKET1 service=pppoe
-/ppp secret add name=AMAT profile=PAKET1 service=pppoe
-/ppp secret add name=SAHMAN profile=PAKET1 service=pppoe
-/ppp secret add name=YANYAN profile=PAKET1 service=pppoe
-/ppp secret add name=WIWI profile=PAKET1 service=pppoe
-/ppp secret add name=ROSA profile=PAKET1 service=pppoe
-/ppp secret add name=11200001-HARIYADI profile=PAKET1 service=pppoe
-/ppp secret add name=211222184753-YAYAN profile=PAKET1 service=pppoe
-/ppp secret add name=210902163935-NUR profile=PAKET1 service=pppoe
-/ppp secret add name=230102125719-IMAT profile=PAKET1 service=pppoe
-/ppp secret add name=FAJAR profile=PAKET1 service=pppoe
-/ppp secret add name=230909151081-YOPPI profile=PAKET1 service=pppoe
-/ppp secret add name=210901143237-MANO profile=PAKET1 service=pppoe
-/ppp secret add name=210901143046-SENDUL profile=PAKET1 service=pppoe
-/ppp secret add name=210901120736-ALYA profile=PAKET1 service=pppoe
-/ppp secret add name=210901120952-CINDI profile=PAKET1 service=pppoe
-/ppp secret add name=210902130133-ASEPDEDI profile=PAKET1 service=pppoe
-/ppp secret add name=210901115359-RESI profile=PAKET3 service=pppoe
-/ppp secret add name=210902125742-IKIN profile=PAKET1 service=pppoe
-/ppp secret add name=210901120842-HENDAR profile=PAKET1 service=pppoe
-/ppp secret add name=210902134955-IISMARTINI profile=PAKET1 service=pppoe
-/ppp secret add name=210902124240-OJEH profile=PAKET1 service=pppoe
-/ppp secret add name=210901143402-BUALDY profile=PAKET1 service=pppoe
-/ppp secret add name=211209092917-CINDIANDANG profile=PAKET2 service=pppoe
-/ppp secret add name=220604103729-ADAM profile=PAKET2 service=pppoe
-/ppp secret add name=230909151065-ADIBIL profile=PAKET1 service=pppoe
-/ppp secret add name=5G profile=PAKET5 service=pppoe
-/ppp secret add name=WARUNGAMAT profile=PAKET1 service=pppoe
-/ppp secret add name=5G1 profile=PAKET5 service=pppoe
-/ppp secret add name=5G2 profile=PAKET5 service=pppoe
-/ppp secret add name=5G3 profile=PAKET5 service=pppoe
-/ppp secret add name=5G4 profile=PAKET5 service=pppoe
-/ppp secret add name=210902133157-ITANG profile=PAKET1 service=pppoe
-/ppp secret add name=210901115538-EDI profile=PAKET1 service=pppoe
-/ppp secret add name=210901143749-ABANG profile=PAKET2 service=pppoe
-/ppp secret add name=210902132954-MORFIN profile=PAKET1 service=pppoe
-/ppp secret add name=r3 profile=PAKET5 service=pppoe
-/ppp secret add name=230613081736-KOMALA profile=PAKET1 service=pppoe
-/ppp secret add name=230613081737-ADE profile=PAKET1 service=pppoe
-/ppp secret add name=230114074213-CAHYANA profile=PAKET2 service=pppoe
-/ppp secret add name=210902135124-ATEN profile=PAKET1 service=pppoe
-/ppp secret add name=240315141544-DEDEN profile=PAKET2 service=pppoe
-/ppp secret add name=230909151082-ELIS profile=PAKET1 service=pppoe
-/ppp secret add name=221119172546-YAYAH profile=PAKET2 service=pppoe
-/ppp secret add name=230114074224-RIKA profile=PAKET4 service=pppoe
-/ppp secret add name=221119172545-IKA profile=PAKET4 service=pppoe
-/ppp secret add name=210902165403-ALDY password=210902165403-ALDY profile=PAKET2 service=pppoe
 /ppp secret add local-address=10.6.0.1 name=AVA password=AVA remote-address=10.6.0.3 service=l2tp
-/ppp secret add disabled=yes local-address=10.6.0.1 name=KATAPANG password=KATAPANG profile=TUNNEL-SINGLE remote-address=10.6.0.4 service=l2tp
 /ppp secret add local-address=10.6.0.1 name=CILISUNGGX password=CILISUNGGX profile=TUNNEL-SINGLE remote-address=10.6.0.5 service=l2tp
 /ppp secret add local-address=10.6.0.1 name=CILISUNGGR password=CILISUNGGR remote-address=10.6.0.6 service=l2tp
 /ppp secret add local-address=10.6.0.1 name=hotware password=hotware profile=TUNNEL-SINGLE remote-address=10.6.0.7 service=l2tp
@@ -5268,9 +5027,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ppp secret add name=NILA-JATINANGOR-B password=nila-b@tekra profile=TUNNEL-PROFILE remote-address=10.7.0.7 service=ovpn
 /ppp secret add name=CILISUNG password=CILISUNG profile=TUNNEL-PROFILE remote-address=10.7.0.8 service=ovpn
 /ppp secret add name=KATAPANG password=KATAPANG profile=TUNNEL-PROFILE remote-address=10.7.0.9 service=ovpn
-/ppp secret add comment="Imas Rukiyah - Dago" name=260312154926-IMAS password=260312154926-IMAS profile=PAKET3 service=pppoe
-/ppp secret add name=250724204016-WINDA password=250724204016-WINDA profile=PAKET1 service=pppoe
-/ppp secret add name=230108152454-YANA password=230108152454-YANA profile=PAKET1 service=pppoe
 /radius add address=192.168.55.1 secret=12345 service=ppp,hotspot
 /routing bgp network add disabled=yes network=10.10.10.0/24
 /routing bgp peer add disabled=yes name=cilisung remote-address=10.6.0.5 remote-as=65530
@@ -62503,6 +62259,25 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /system script add comment=mikhmon dont-require-permissions=no name=jul/08/2026-|-20:06:34-|-6yg65-|-2500-|-192.168.44.131-|-8E:AA:71:EF:F1:04-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/08/2026
 /system script add comment=mikhmon dont-require-permissions=no name=jul/08/2026-|-20:31:18-|-6dx63-|-2500-|-10.10.10.237-|-20:74:54:A5:49:77-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/08/2026
 /system script add comment=mikhmon dont-require-permissions=no name=jul/08/2026-|-21:26:53-|-6tb36-|-2500-|-192.168.44.249-|-6A:75:1C:60:9E:09-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/08/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-05:35:27-|-6xn76-|-2500-|-10.10.10.242-|-72:E9:34:61:1A:F7-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-08:05:16-|-6zi66-|-2500-|-192.168.44.186-|-6A:75:1C:60:9E:09-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-08:41:04-|-2xk55-|-1500-|-192.168.44.122-|-30:CB:F8:EE:AC:CB-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-08:59:30-|-6bw62-|-2500-|-192.168.44.219-|-BA:67:58:31:31:2A-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-10:27:35-|-2xg56-|-1500-|-192.168.44.89-|-62:20:74:66:29:5F-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-11:29:57-|-6jc48-|-2500-|-192.168.44.193-|-8E:AA:71:EF:F1:04-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-13:23:05-|-2ww28-|-1500-|-192.168.44.243-|-88:D5:0C:22:4C:79-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-13:47:50-|-2ra84-|-1500-|-192.168.44.143-|-62:20:74:66:29:5F-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-14:45:39-|-2hh63-|-1500-|-192.168.44.215-|-D8:CE:3A:66:78:01-|-12h-|-Paket2jam-|-vc-545-03.15.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-15:01:12-|-2sx64-|-1500-|-192.168.44.115-|-30:CB:F8:EE:AC:CB-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-15:26:02-|-6dd25-|-2500-|-192.168.44.183-|-72:E9:34:61:1A:F7-|-6h-|-Paket6jam-|-vc-817-04.16.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-17:58:36-|-2wx69-|-1500-|-192.168.44.155-|-DE:B1:54:0A:92:D5-|-12h-|-Paket2jam-|-vc-722-07.02.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-18:22:01-|-6jp75-|-2500-|-192.168.44.76-|-8E:AA:71:EF:F1:04-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-18:37:39-|-6td75-|-2500-|-192.168.44.163-|-44:46:87:90:80:AD-|-6h-|-Paket6jam-|-vc-880-03.30.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-18:40:18-|-2mj23-|-1500-|-10.10.10.248-|-BA:67:58:31:31:2A-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-19:08:55-|-2tj63-|-1500-|-192.168.44.70-|-62:20:74:66:29:5F-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-21:02:55-|-6vy47-|-2500-|-192.168.44.230-|-6A:75:1C:60:9E:09-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/09/2026-|-22:34:13-|-6tn97-|-2500-|-192.168.44.70-|-20:74:54:A5:49:77-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/09/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/10/2026-|-00:24:31-|-2ad43-|-1500-|-192.168.44.76-|-8E:AA:71:EF:F1:04-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/10/2026
 /tool netwatch add comment=tunnel-gateway-10.41.0.1 host=10.41.0.1
 /tool netwatch add comment=tunnel-gateway-10.47.0.1 host=10.47.0.1
 /tool netwatch add comment=tunnel-gateway-10.46.0.1 host=10.46.0.1
