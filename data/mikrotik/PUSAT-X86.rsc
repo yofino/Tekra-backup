@@ -1,4 +1,4 @@
-# 2026-07-10 02:02:50 by RouterOS 7.11.3
+# 2026-07-11 02:01:24 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -511,7 +511,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=KPPS profile=PAKET5 service=pppoe
 /ppp secret add name=IQBAL profile=PAKET4 service=pppoe
 /ppp secret add name=NENDI profile=PAKET1 service=pppoe
-/ppp secret add name=210902132718-UJANG profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=210902132718-UJANG profile=PAKET2 service=pppoe
 /ppp secret add name=210902125942-TEBE profile=PAKET2 service=pppoe
 /ppp secret add name=210902135358-USIN profile=PAKET2 service=pppoe
 /ppp secret add name=210902134829-IKI profile=PAKET1 service=pppoe
@@ -631,7 +631,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=210902163935-NUR profile=PAKET1 service=pppoe
 /ppp secret add name=230102125719-IMAT profile=PAKET1 service=pppoe
 /ppp secret add name=FAJAR profile=PAKET1 service=pppoe
-/ppp secret add name=230909151081-YOPPI profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230909151081-YOPPI profile=PAKET1 service=pppoe
 /ppp secret add name=210901143237-MANO profile=PAKET2 service=pppoe
 /ppp secret add name=210901143046-SENDUL profile=PAKET1 service=pppoe
 /ppp secret add name=210901120736-ALYA profile=PAKET1 service=pppoe
@@ -795,7 +795,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=240315141569-JUJU profile=PAKET1 service=pppoe
 /ppp secret add name=241006135944-FIRMAN profile=PAKET2 service=pppoe
 /ppp secret add name=240315141570-DANA profile=PAKET1 service=pppoe
-/ppp secret add name=240315141571-ADE profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=240315141571-ADE profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230613081761-HENDRA profile=PAKET1 service=pppoe
 /ppp secret add name=230114074215-SITI profile=PAKET2 service=pppoe
 /ppp secret add name=220808121224-ANTON profile=PAKET1 service=pppoe
@@ -946,7 +946,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=250207112615-YAYANG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=10100198-YOPIHIDAYAT profile=PAKET1 service=pppoe
 /ppp secret add name=250212093026-SUNAEDI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250215140432-ASEP profile="PAKET MANTAP" service=pppoe
+/ppp secret add disabled=yes name=250215140432-ASEP profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=250221163051-MIASITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250222093240-EUISSITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250222104603-VINAJULI profile="PAKET HEMAT" service=pppoe
@@ -970,7 +970,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=250303155354-ANENG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250305104835-NURSULASTRI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250305141050-HARYANTO profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=220717160400-NERI profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=220717160400-NERI profile=PAKET2 service=pppoe
 /ppp secret add name=211116183142-ANTONWINDANI profile=PAKET2 service=pppoe
 /ppp secret add name=250310164048-MAHMURI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250311155850-PANDU profile="PAKET HEMAT" service=pppoe
@@ -1120,7 +1120,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=260302144821-LALA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260303155159-INDRA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260304162648-TAUFIK profile="PAKET MANTAP" service=pppoe
-/ppp secret add disabled=yes name=260312105131-KOKO profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260312105131-KOKO profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260318131256-ALVIN profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260330134851-DEVIA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260330135611-LINA profile="PAKET HEMAT" service=pppoe
@@ -1184,10 +1184,11 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=260707100503-WARSA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260707141800-MARTHIEN profile=PAKET3 service=pppoe
 /ppp secret add name=260707164219-ARI profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260710163712-ROSA profile="PAKET HEMAT" service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=505 show-at-login=no
+/system note set note=500 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
