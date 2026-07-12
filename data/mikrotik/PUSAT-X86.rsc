@@ -1,4 +1,4 @@
-# 2026-07-12 02:01:29 by RouterOS 7.11.3
+# 2026-07-13 02:01:29 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -1116,7 +1116,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=260227135245-ACEP profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260227162520-ADEJUARIYAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260228105519-DEVA profile=PAKET2 service=pppoe
-/ppp secret add disabled=yes name=260228123401-SETIAWAN profile=PAKET2 service=pppoe
+/ppp secret add name=260228123401-SETIAWAN profile=PAKET2 service=pppoe
 /ppp secret add name=260302144821-LALA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260303155159-INDRA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260304162648-TAUFIK profile="PAKET MANTAP" service=pppoe
@@ -1164,7 +1164,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=260605141259-SITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260607164010-ANGGI profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260607164911-ANGGI profile="PAKET PUAS" service=pppoe
-/ppp secret add name=260612134828-CHINTIA profile=PAKET3 service=pppoe
+/ppp secret add disabled=yes name=260612134828-CHINTIA profile=PAKET3 service=pppoe
 /ppp secret add name=260612164435-LALU profile=PAKET3 service=pppoe
 /ppp secret add name=260614094435-EDEN profile=PAKET3 service=pppoe
 /ppp secret add name=260616173623-AGUS profile=PAKET2 service=pppoe
