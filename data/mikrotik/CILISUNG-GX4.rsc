@@ -1,4 +1,4 @@
-# 2026-07-13 02:01:18 by RouterOS 7.16.1
+# 2026-07-14 02:01:10 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -73,7 +73,7 @@
 /interface pppoe-server server add disabled=no interface=VLAN-PPOE-CILISUNG-HIOSO service-name=service3
 /interface pppoe-server server add disabled=no interface=VLAN-PPPOE-CILISUNG service-name=service4
 /ip address add address=192.168.101.1/24 interface=VLAN-MONITOR-OLT network=192.168.101.0
-/ip address add address=192.168.124.11/24 interface=BRIDGE-BACKBONE network=192.168.124.0
+/ip address add address=192.168.42.11/24 interface=BRIDGE-BACKBONE network=192.168.42.0
 /ip address add address=10.30.64.1/21 interface=BRIDGE-TR069 network=10.30.64.0
 /ip address add address=192.168.0.1/24 interface=ether9 network=192.168.0.0
 /ip address add address=172.60.10.11/24 interface=VLAN-FROM-PUSAT network=172.60.10.0
@@ -150,7 +150,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ip route add disabled=no distance=1 dst-address=10.10.10.230/32 gateway=10.6.0.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip route add disabled=yes dst-address=0.0.0.0/0 gateway=172.90.10.1 routing-table=main suppress-hw-offload=no
 /ip route add disabled=no dst-address=10.10.10.22/32 gateway=10.6.0.1 routing-table=main suppress-hw-offload=no
-/ip route add check-gateway=ping disabled=no distance=2 dst-address=0.0.0.0/0 gateway=192.168.124.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
+/ip route add check-gateway=ping disabled=no distance=2 dst-address=0.0.0.0/0 gateway=192.168.42.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip route add check-gateway=ping disabled=no distance=1 dst-address=0.0.0.0/0 gateway=172.60.10.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip service set telnet disabled=yes
 /ip service set ftp disabled=yes
@@ -432,10 +432,11 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260625180130-MASJIDCILISUNG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260701122600-RINA profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260703144237-MARWAN profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260713151657-KURAESIN profile="PAKET HEMAT" service=pppoe
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=179 show-at-login=no
+/system note set note=180 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"

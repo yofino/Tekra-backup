@@ -1,4 +1,4 @@
-# 2026-07-13 02:01:29 by RouterOS 7.11.3
+# 2026-07-14 02:01:22 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -677,7 +677,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=210902123948-IIN profile=PAKET1 service=pppoe
 /ppp secret add name=220307114338-ACEP profile=PAKET2 service=pppoe
 /ppp secret add name=230114074230-HERY profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=230108152454-YANA profile=PAKET1 service=pppoe
+/ppp secret add disabled=yes name=230108152454-YANA profile=PAKET1 service=pppoe
 /ppp secret add name=210902134333-EUNGGING profile=PAKET1 service=pppoe
 /ppp secret add name=210902164954-WINDA profile="PAKET TURBO" service=pppoe
 /ppp secret add name=231008170937-SIFA profile=PAKET1 service=pppoe
@@ -769,7 +769,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=230613081753-WAHYUDIN profile=PAKET1 service=pppoe
 /ppp secret add name=240315141561-EDDY profile=PAKET1 service=pppoe
 /ppp secret add name=230613081754-NENDEN profile=PAKET1 service=pppoe
-/ppp secret add disabled=yes name=230909151098-ENCAR profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=230909151098-ENCAR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=221109122214-ALISKA profile=PAKET1 service=pppoe
 /ppp secret add name=240315141562-SARDAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=230126060443-WIWIN profile=PAKET1 service=pppoe
@@ -1094,7 +1094,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=260107165904-LATIFUDIN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260109112002-MUMAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260109150622-ANIHENDRAYANI profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=260113134055-HAIKAL profile="PAKET MANTAP" service=pppoe
+/ppp secret add disabled=yes name=260113134055-HAIKAL profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260118103427-RINI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260119114124-FITRIYANI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260121134333-DIANHERDIANA profile="PAKET HEMAT" service=pppoe
@@ -1164,7 +1164,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=260605141259-SITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260607164010-ANGGI profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260607164911-ANGGI profile="PAKET PUAS" service=pppoe
-/ppp secret add disabled=yes name=260612134828-CHINTIA profile=PAKET3 service=pppoe
+/ppp secret add name=260612134828-CHINTIA profile=PAKET3 service=pppoe
 /ppp secret add name=260612164435-LALU profile=PAKET3 service=pppoe
 /ppp secret add name=260614094435-EDEN profile=PAKET3 service=pppoe
 /ppp secret add name=260616173623-AGUS profile=PAKET2 service=pppoe
