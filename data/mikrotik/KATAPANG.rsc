@@ -1,4 +1,4 @@
-# 2026-07-15 02:01:29 by RouterOS 7.19.4
+# 2026-07-16 02:01:18 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -927,7 +927,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add disabled=yes name=260106113519-SRIRAHAYU profile="PAKET 1" service=pppoe
 /ppp secret add name=260106114508-DEDE profile="PAKET 1" service=pppoe
 /ppp secret add name=260112164604-SOFYAN profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=260119150334-ROSITA profile="PAKET 1" service=pppoe
+/ppp secret add name=260119150334-ROSITA profile="PAKET 1" service=pppoe
 /ppp secret add name=260125163654-REVALDO profile="PAKET 1" service=pppoe
 /ppp secret add name=260202165929-LIA profile="PAKET 1" service=pppoe
 /ppp secret add name=260202175238-IIN profile="PAKET 1" service=pppoe
@@ -950,6 +950,8 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=260702193315-JAMAL profile="PAKET 1" service=pppoe
 /ppp secret add name=260708174815-RAKA profile="PAKET 1" service=pppoe
 /ppp secret add name=260209111303-WAWAT profile="PAKET 1" service=pppoe
+/ppp secret add name=260715145832-NAMBILA profile="PAKET 2" service=pppoe
+/ppp secret add name=TEST-DUMMY service=pppoe
 /routing bfd configuration add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /snmp set contact=AHKAM enabled=yes location=KATAPANG-KABUPATEN-BANDUNG trap-version=2
 /system clock set time-zone-autodetect=no time-zone-name=Asia/Jakarta

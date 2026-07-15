@@ -1,4 +1,4 @@
-# 2026-07-15 02:01:35 by RouterOS 7.11.3
+# 2026-07-16 02:01:24 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -965,7 +965,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=250228161959-SARI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250302105822-ROBBY profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=250302114437-DINIFATIMAH profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=250302134218-CEPI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=250302134218-CEPI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250303143516-TATIKARYATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250303155354-ANENG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=250305104835-NURSULASTRI profile="PAKET HEMAT" service=pppoe
@@ -1166,7 +1166,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=260607164911-ANGGI profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260612134828-CHINTIA profile=PAKET3 service=pppoe
 /ppp secret add name=260612164435-LALU profile=PAKET3 service=pppoe
-/ppp secret add disabled=yes name=260614094435-EDEN profile=PAKET3 service=pppoe
+/ppp secret add name=260614094435-EDEN profile=PAKET3 service=pppoe
 /ppp secret add name=260616173623-AGUS profile=PAKET2 service=pppoe
 /ppp secret add local-address=10.10.13.1 name=260619152230-SITI profile=PAKET3 remote-address=10.10.13.207 service=pppoe
 /ppp secret add name=260620174152-AGUNG profile="PAKET MANTAP" service=pppoe
@@ -1798,4 +1798,5 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /system script add dont-require-permissions=no name=reset-pppoe-20260425131734-HENI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-20260425131734-HENI>"
 /system script add dont-require-permissions=no name=reset-pppoe-260427110615-YULIA owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-260427110615-YULIA>"
 /system script add dont-require-permissions=no name=reset-pppoe-260505102240-ENUR owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-260505102240-ENUR>"
+/system script add dont-require-permissions=no name=reset-pppoe-260614094435-EDEN owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-260614094435-EDEN>"
 /tool netwatch add comment=tunnel-gateway-172.26.0.1 host=172.26.0.1 type=simple
