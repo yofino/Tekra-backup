@@ -1,4 +1,4 @@
-# 2026-07-16 02:01:18 by RouterOS 7.19.4
+# 2026-07-17 02:01:20 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -952,6 +952,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=260209111303-WAWAT profile="PAKET 1" service=pppoe
 /ppp secret add name=260715145832-NAMBILA profile="PAKET 2" service=pppoe
 /ppp secret add name=TEST-DUMMY service=pppoe
+/ppp secret add name=260716102417-AHCAM profile="PAKET 2" service=pppoe
 /routing bfd configuration add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /snmp set contact=AHKAM enabled=yes location=KATAPANG-KABUPATEN-BANDUNG trap-version=2
 /system clock set time-zone-autodetect=no time-zone-name=Asia/Jakarta
