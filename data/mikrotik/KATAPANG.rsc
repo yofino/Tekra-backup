@@ -1,4 +1,4 @@
-# 2026-07-21 02:01:27 by RouterOS 7.19.4
+# 2026-07-22 02:02:12 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -173,6 +173,7 @@
 /ip firewall address-list add address=perfect-privacy.com list=speedtest
 /ip firewall address-list add address=www.whatsmyip.org list=speedtest
 /ip firewall filter add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
+/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=jalur-speedtest passthrough=no src-address=10.2.3.235
 /ip firewall mangle add action=mark-routing chain=prerouting dst-address-list=speedtest new-routing-mark=jalur-speedtest passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=SPEEDTEST passthrough=no src-address=10.2.3.24
 /ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=SPEEDTEST passthrough=no src-address=10.2.0.0/22
@@ -950,7 +951,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=260702193315-JAMAL profile="PAKET 1" service=pppoe
 /ppp secret add name=260708174815-RAKA profile="PAKET 1" service=pppoe
 /ppp secret add name=260209111303-WAWAT profile="PAKET 1" service=pppoe
-/ppp secret add name=260715145832-NAMBILA profile="PAKET 2" service=pppoe
+/ppp secret add local-address=10.2.3.1 name=260715145832-NAMBILA profile="PAKET 3" remote-address=10.2.3.235 service=pppoe
 /ppp secret add name=TEST-DUMMY service=pppoe
 /ppp secret add name=260716102417-AHCAM profile="PAKET 2" service=pppoe
 /routing bfd configuration add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
