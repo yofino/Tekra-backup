@@ -1,4 +1,4 @@
-# 2026-07-23 02:02:18 by RouterOS 7.16.1
+# 2026-07-24 02:02:09 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -360,7 +360,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=251210144124-PIPIH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251219110718-ANISA profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251220105317-DELASEPTI profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=251221111624-FEBRI profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=251221111624-FEBRI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251225144806-NIDA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251226191658-NAJMUDIN profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251229105157-NAZWA profile="PAKET MANTAP" service=pppoe
@@ -437,7 +437,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=180 show-at-login=no
+/system note set note=181 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"
