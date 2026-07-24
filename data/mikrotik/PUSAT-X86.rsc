@@ -1,4 +1,4 @@
-# 2026-07-24 02:02:27 by RouterOS 7.11.3
+# 2026-07-25 02:02:29 by RouterOS 7.11.3
 # software id = NTU4-626A
 #
 # model = CCR2116-12G-4S+
@@ -1063,7 +1063,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=251109114922-SITINURLAENI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=220717160400-NERI2 profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251111115915-TASYA profile="PAKET HEMAT" service=pppoe
-/ppp secret add name=210902170651-LERY profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=210902170651-LERY profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251111163823-WINA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=251112091645-YUYUN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=251117160919-LILIS profile="PAKET MANTAP" service=pppoe
@@ -1170,7 +1170,7 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add local-address=10.10.13.1 name=260619152230-SITI profile=PAKET3 remote-address=10.10.13.207 service=pppoe
 /ppp secret add name=260620174152-AGUNG profile="PAKET MANTAP" service=pppoe
 /ppp secret add disabled=yes name=260622112131-RESTI profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=260623140552-TIA profile=PAKET2 service=pppoe
+/ppp secret add name=260623140552-TIA profile=PAKET2 service=pppoe
 /ppp secret add name=230613081729-DWI profile=PAKET2 service=pppoe
 /ppp secret add name=260625132343-SITI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260625144519-TATI profile="PAKET HEMAT" service=pppoe
@@ -1187,10 +1187,11 @@ add address-pool=hs-pool-14 interface="vlan2-HOTSPOT GX4" name=dhcp3
 /ppp secret add name=230909151095-IPAN profile=PAKET1 service=pppoe
 /ppp secret add name=260718133911-UDIN profile=PAKET3 service=pppoe
 /ppp secret add name=260720173718-MERI profile="PAKET MANTAP" service=pppoe
+/ppp secret add name=260724104446-CANDRA profile="PAKET MANTAP" service=pppoe
 /snmp set enabled=yes trap-generators=start-trap trap-version=2
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=PUSAT
-/system note set note=518 show-at-login=no
+/system note set note=517 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:21:31
 /system script add dont-require-permissions=no name=reset-pppoe-230114074226-NENDI owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-230114074226-NENDI>"
