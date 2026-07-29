@@ -1,4 +1,4 @@
-# 2026-07-29 02:00:26 by RouterOS 7.19.4
+# 2026-07-30 02:00:26 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -950,17 +950,17 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=260702193315-JAMALUDIN profile="PAKET 1" service=pppoe
 /ppp secret add name=260702193315-JAMAL profile="PAKET 1" service=pppoe
 /ppp secret add name=260708174815-RAKA profile="PAKET 1" service=pppoe
-/ppp secret add name=260209111303-WAWAT profile="PAKET 1" service=pppoe
 /ppp secret add local-address=10.2.3.1 name=260715145832-NAMBILA profile="PAKET 3" remote-address=10.2.3.235 service=pppoe
 /ppp secret add name=TEST-DUMMY service=pppoe
 /ppp secret add name=260716102417-AHCAM profile="PAKET 2" service=pppoe
 /ppp secret add name=260723164926-SHENDY profile="PAKET 1" service=pppoe
+/ppp secret add name=260209111303-WAWAT profile="PAKET 1" service=pppoe
 /routing bfd configuration add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /snmp set contact=AHKAM enabled=yes location=KATAPANG-KABUPATEN-BANDUNG trap-version=2
 /system clock set time-zone-autodetect=no time-zone-name=Asia/Jakarta
 /system identity set name="BARANG KITA"
 /system logging add action=disk prefix=-> topics=hotspot,info,debug
-/system note set note=106
+/system note set note=110
 /system ntp client set enabled=yes
 /system ntp client servers add address=202.65.114.202
 /system ntp client servers add address=212.26.18.41
@@ -975,7 +975,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /system scheduler add name=datetime-startup on-event="/sys scr run datetime" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-time=startup
 /system scheduler add disabled=yes interval=1d name="RESTART OTOMATIS" on-event="/system reboot" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2021-01-21 start-time=05:00:00
 /system scheduler add comment="Monitor Profile 12-Jam" interval=2m44s name=12-Jam on-event=":local dateint do={:local montharray ( \"jan\",\"feb\",\"mar\",\"apr\",\"may\",\"jun\",\"jul\",\"aug\",\"sep\",\"oct\",\"nov\",\"dec\" );:local days [ :pick \$d 4 6 ];:local month [ :pick \$d 0 3 ];:local year [ :pick \$d 7 11 ];:local monthint ([ :find \$montharray \$month]);:local month (\$monthint + 1);:if ( [len \$month] = 1) do={:local zero (\"0\");:return [:tonum (\"\$year\$zero\$month\$days\")];} else={:return [:tonum (\"\$year\$month\$days\")];}}; :local timeint do={ :local hours [ :pick \$t 0 2 ]; :local minutes [ :pick \$t 3 5 ]; :return (\$hours * 60 + \$minutes) ; }; :local date [ /system clock get date ]; :local time [ /system clock get time ]; :local today [\$dateint d=\$date] ; :local curtime [\$timeint t=\$time] ; :foreach i in [ /ip hotspot user find where profile=\"12-Jam\" ] do={ :local comment [ /ip hotspot user get \$i comment]; :local name [ /ip hotspot user get \$i name]; :local gettime [:pic \$comment 12 20]; :if ([:pic \$comment 3] = \"/\" and [:pic \$comment 6] = \"/\") do={:local expd [\$dateint d=\$comment] ; :local expt [\$timeint t=\$gettime] ; :if ((\$expd < \$today and \$expt < \$curtime) or (\$expd < \$today and \$expt > \$curtime) or (\$expd = \$today and \$expt < \$curtime)) do={ [ /ip hotspot user remove \$i ]; [ /ip hotspot active remove [find where user=\$name] ];}}}" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2021-01-31 start-time=03:39:32
-/system scheduler add comment=ISOLIR-MY-WIFI interval=10m name=ISOLIR-MY-WIFI on-event="/tool fetch url=\"https://selatan.tekra.my.id/front/isolir/kz8ooEecVzBzD8v4\" keep-result=no" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2024-03-22 start-time=15:29:11
+/system scheduler add comment=ISOLIR-MY-WIFI disabled=yes interval=10m name=ISOLIR-MY-WIFI on-event="/tool fetch url=\"https://selatan.tekra.my.id/front/isolir/kz8ooEecVzBzD8v4\" keep-result=no" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2024-03-22 start-time=15:29:11
 /system scheduler add comment=COUNT-PPPOE interval=15m name=COUNT-PPPOE on-event="/tool fetch url=\"https://selatan.tekra.my.id/front/countpppoe/kz8ooEecVzBzD8v4\" keep-result=no" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2024-03-22 start-time=15:29:11
 /system scheduler add comment=GENERATE-BILL interval=1d name=GENERATE-BILL on-event="/tool fetch url=\"https://selatan.tekra.my.id/front/createbill/kz8ooEecVzBzD8v4\" keep-result=no" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2024-03-22 start-time=15:29:11
 /system scheduler add comment=REMINDER-BILL disabled=yes interval=1d name=REMINDER-BILL on-event="/tool fetch url=\"https://selatan.tekra.my.id/front/reminderduedate/kz8ooEecVzBzD8v4\" keep-result=no" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2024-03-22 start-time=15:29:11

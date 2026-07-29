@@ -1,4 +1,4 @@
-# 2026-07-29 02:00:16 by RouterOS 7.16.1
+# 2026-07-30 02:00:16 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -152,6 +152,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ip route add disabled=no dst-address=10.10.10.22/32 gateway=10.6.0.1 routing-table=main suppress-hw-offload=no
 /ip route add check-gateway=ping disabled=no distance=2 dst-address=0.0.0.0/0 gateway=192.168.42.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
 /ip route add check-gateway=ping disabled=no distance=1 dst-address=0.0.0.0/0 gateway=172.60.10.1 routing-table=main scope=30 suppress-hw-offload=no target-scope=10
+/ip route add disabled=no distance=1 dst-address=8.8.8.8/32 gateway=192.168.42.1 routing-table=main scope=10 suppress-hw-offload=no target-scope=10
 /ip service set telnet disabled=yes
 /ip service set ftp disabled=yes
 /ip service set www disabled=yes
@@ -371,7 +372,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260103190059-WIDIASTUTI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260104114743-PUTRI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260104131334-TITI profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=260104150834-SITI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260104150834-SITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260104155731-SITINURHASANAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=EPUL profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260105152727-DEBI profile="PAKET HEMAT" service=pppoe
