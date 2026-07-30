@@ -1,4 +1,4 @@
-# jul/30/2026 02:00:02 by RouterOS 6.49.13
+# jul/31/2026 02:00:03 by RouterOS 6.49.13
 # software id = DUUD-LHXS
 #
 # model = CCR1009-7G-1C-1S+
@@ -76,6 +76,7 @@
 /ppp profile add local-address=11.6.0.1 name=PAKET6 remote-address="HOTSPOT TRIAL"
 /ppp profile add local-address=10.7.0.1 name=TUNNEL-PROFILE remote-address=TUNNEL-CLIENTS use-encryption=yes
 /ppp profile add change-tcp-mss=yes comment="single-session tunnel profile" local-address=10.6.0.1 name=TUNNEL-SINGLE only-one=yes remote-address=10.6.0.0
+/ppp profile set *FFFFFFFE local-address=Hotspot remote-address=Hotspot
 /queue simple add max-limit=13M/13M name="PA ADANG CIGURIANG" target=10.10.10.158/32
 /queue simple add max-limit=5M/5M name="BU RT 05" target=10.10.10.164/32
 /queue type add kind=sfq name=SFQ
@@ -267,22 +268,22 @@
 /ip firewall filter add action=drop chain=input src-address=86.125.222.222
 /ip firewall filter add action=log chain=forward dst-address=172.80.10.100 dst-port=8728 log-prefix="CCR2116-API-ATTACK: " protocol=tcp
 /ip firewall filter add action=drop chain=forward comment=BLOCK-CCR2116-API-WAN dst-address=172.80.10.100 dst-port=8728 protocol=tcp src-address=!10.0.0.0/8
-/ip firewall mangle add action=accept chain=forward dst-address-list=bypass src-address-list=bypass
-/ip firewall mangle add action=accept chain=output dst-address-list=bypass src-address-list=bypass
-/ip firewall mangle add action=accept chain=prerouting dst-address-list=bypass src-address-list=bypass
-/ip firewall mangle add action=mark-routing chain=prerouting comment="<<<===|| VPN-SPEEDTEST ||===>>>" dst-address-list=speedtest new-routing-mark=FASTAMA passthrough=no src-address-list=private-lokal
+/ip firewall mangle add action=accept chain=forward disabled=yes dst-address-list=bypass src-address-list=bypass
+/ip firewall mangle add action=accept chain=output disabled=yes dst-address-list=bypass src-address-list=bypass
+/ip firewall mangle add action=accept chain=prerouting disabled=yes dst-address-list=bypass src-address-list=bypass
+/ip firewall mangle add action=mark-routing chain=prerouting comment="<<<===|| VPN-SPEEDTEST ||===>>>" disabled=yes dst-address-list=speedtest new-routing-mark=FASTAMA passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.10.10.28
-/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=MYREP passthrough=yes src-address=172.90.10.11
+/ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=MYREP passthrough=yes src-address=172.90.10.11
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.10.10.22-10.10.10.51
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.10.10.18
-/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=MYREP passthrough=yes src-address=10.10.10.53-10.10.10.199
-/ip firewall mangle add action=mark-routing chain=prerouting comment="HOTSPOT VOUCHER" new-routing-mark=MYREP passthrough=yes src-address-list=VOUCHER
+/ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.10.10.53-10.10.10.199
+/ip firewall mangle add action=mark-routing chain=prerouting comment="HOTSPOT VOUCHER" disabled=yes new-routing-mark=MYREP passthrough=yes src-address-list=VOUCHER
 /ip firewall mangle add action=mark-routing chain=prerouting comment="MYREP INOY" disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.1.0.0/22
 /ip firewall mangle add action=mark-routing chain=prerouting comment="MYREP INOY" disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.4.0.0/22
 /ip firewall mangle add action=mark-routing chain=prerouting comment="MYREP INOY" disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.2.0.0/22
 /ip firewall mangle add action=mark-routing chain=prerouting comment="MYREP INOY" disabled=yes new-routing-mark=MYREP passthrough=yes src-address=10.3.0.0/22
-/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=MYREP passthrough=yes src-address=192.168.44.13-192.168.44.71
-/ip firewall mangle add action=mark-routing chain=prerouting new-routing-mark=MYREP passthrough=yes src-address-list=VOUCHER2
+/ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=MYREP passthrough=yes src-address=192.168.44.13-192.168.44.71
+/ip firewall mangle add action=mark-routing chain=prerouting disabled=yes new-routing-mark=MYREP passthrough=yes src-address-list=VOUCHER2
 /ip firewall mangle add action=add-dst-to-address-list address-list=video address-list-timeout=1h chain=forward disabled=yes protocol=tcp tls-host=*video*
 /ip firewall mangle add action=add-dst-to-address-list address-list=video address-list-timeout=1h chain=forward disabled=yes protocol=tcp tls-host=*tiktokv*
 /ip firewall mangle add action=add-dst-to-address-list address-list=video address-list-timeout=1h chain=forward disabled=yes protocol=tcp tls-host=*tiktokcdn*
@@ -292,7 +293,7 @@
 /ip firewall mangle add action=mark-routing chain=prerouting comment=WHATSAPP disabled=yes dst-address-list=WHATSAPP-DOMAIN new-routing-mark=VIA-SIMAYA passthrough=yes src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting comment=UMUM disabled=yes dst-port=21-23,80,81,88,182,443,843,853,5050,8000-8081,8090,8443,8888 new-routing-mark=MYREP passthrough=no protocol=tcp src-address-list=YOFINO
 /ip firewall mangle add action=mark-routing chain=prerouting disabled=yes dst-port=21-23,80,81,88,182,443,843,853,5050,8000-8081,8090,8443,8888 new-routing-mark=MYREP passthrough=no protocol=udp src-address-list=YOFINO
-/ip firewall mangle add action=mark-routing chain=prerouting comment=MARKETPLACE dst-address-list=WHATSAPP new-routing-mark=VIA-SIMAYA passthrough=no src-address-list=private-lokal
+/ip firewall mangle add action=mark-routing chain=prerouting comment=MARKETPLACE disabled=yes dst-address-list=WHATSAPP new-routing-mark=VIA-SIMAYA passthrough=no src-address-list=private-lokal
 /ip firewall mangle add action=mark-routing chain=prerouting comment=WA-TCP disabled=yes dst-port=443,5222,5223,5228 layer7-protocol=*1 new-routing-mark=VIA-SIMAYA passthrough=yes protocol=tcp
 /ip firewall mangle add action=mark-routing chain=prerouting comment=WA-VOIP disabled=yes dst-port=3478,40000-49999 new-routing-mark=VIA-SIMAYA passthrough=yes protocol=udp
 /ip firewall nat add action=passthrough chain=unused-hs-chain comment="place hotspot rules here" disabled=yes
@@ -320,18 +321,18 @@
 /ip firewall nat add action=dst-nat chain=dstnat comment=EPON-HIOSO-CILISUNG dst-address=115.178.49.186 dst-port=1051 protocol=tcp to-addresses=10.10.10.10 to-ports=37777
 /ip firewall nat add action=dst-nat chain=dstnat comment=NOCITA-PWR-PUSAT dst-address=115.178.49.186 dst-port=1046 protocol=tcp to-addresses=10.10.10.18 to-ports=22
 /ip firewall nat add action=dst-nat chain=dstnat comment=NOCITA-PWR-PUSAT dst-address=115.178.49.186 dst-port=1038 protocol=tcp to-addresses=10.10.10.30 to-ports=22
-/ip firewall nat add action=masquerade chain=srcnat out-interface=ether1-SIMAYA
-/ip firewall nat add action=masquerade chain=srcnat out-interface=MASTER
-/ip firewall nat add action=masquerade chain=srcnat out-interface=ether4-TO-X86
-/ip firewall nat add action=masquerade chain=srcnat out-interface=ether5-pfsense
+/ip firewall nat add action=masquerade chain=srcnat
+/ip firewall nat add action=masquerade chain=srcnat
+/ip firewall nat add action=masquerade chain=srcnat
+/ip firewall nat add action=masquerade chain=srcnat
 /ip firewall nat
 # in/out-interface matcher not possible when interface (SFP-COMBO) is slave - use master instead (FORM-CILISUNG)
 add action=masquerade chain=srcnat out-interface=SFP-COMBO
 /ip firewall nat
 # in/out-interface matcher not possible when interface (sfp-HYPER) is slave - use master instead (FORM-CILISUNG)
 add action=masquerade chain=srcnat out-interface=sfp-HYPER
-/ip firewall nat add action=masquerade chain=srcnat out-interface=ether2
-/ip firewall nat add action=masquerade chain=srcnat out-interface=all-ppp
+/ip firewall nat add action=masquerade chain=srcnat
+/ip firewall nat add action=masquerade chain=srcnat
 /ip firewall nat
 # no interface
 add action=masquerade chain=srcnat out-interface=*F
@@ -345,21 +346,11 @@ add action=dst-nat chain=dstnat dst-port=1052 in-interface=*F protocol=tcp to-ad
 /ip firewall nat add action=dst-nat chain=dstnat disabled=yes dst-port=53 protocol=tcp src-address=!10.10.10.15 to-addresses=10.10.10.15 to-ports=5352
 /ip firewall nat add action=dst-nat chain=dstnat disabled=yes dst-port=53 protocol=udp src-address=!10.10.10.15 to-addresses=10.10.10.15 to-ports=5352
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.5.50.0/24
-/ip firewall nat
-# no interface
-add action=dst-nat chain=dstnat dst-port=106 in-interface=*F protocol=tcp to-addresses=10.10.10.18 to-ports=106
-/ip firewall nat
-# no interface
-add action=dst-nat chain=dstnat dst-port=110 in-interface=*F protocol=tcp to-addresses=10.10.10.18 to-ports=110
-/ip firewall nat
-# no interface
-add action=dst-nat chain=dstnat dst-port=143 in-interface=*F protocol=tcp to-addresses=10.10.10.18 to-ports=143
-/ip firewall nat
-# no interface
-add action=dst-nat chain=dstnat dst-port=2224 in-interface=*F protocol=tcp to-addresses=10.10.10.18 to-ports=2224
-/ip firewall nat
-# no interface
-add action=masquerade chain=srcnat out-interface=*1D
+/ip firewall nat add action=dst-nat chain=dstnat disabled=yes dst-port=106 in-interface=*F protocol=tcp to-addresses=10.10.10.18 to-ports=106
+/ip firewall nat add action=dst-nat chain=dstnat disabled=yes dst-port=110 in-interface=*F protocol=tcp to-addresses=10.10.10.18 to-ports=110
+/ip firewall nat add action=dst-nat chain=dstnat disabled=yes dst-port=143 in-interface=*F protocol=tcp to-addresses=10.10.10.18 to-ports=143
+/ip firewall nat add action=dst-nat chain=dstnat disabled=yes dst-port=2224 in-interface=*F protocol=tcp to-addresses=10.10.10.18 to-ports=2224
+/ip firewall nat add action=masquerade chain=srcnat disabled=yes out-interface=*1D
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.5.50.0/24
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.5.50.0/24
 /ip firewall nat add action=masquerade chain=srcnat comment="masquerade hotspot network" src-address=10.5.50.0/24
@@ -2205,7 +2196,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6xczs password=6xczs profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6u3hu password=6u3hu profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6psai password=6psai profile=Paket6jam
-/ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=63r87 password=63r87 profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6khiw password=6khiw profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6dng9 password=6dng9 profile=Paket6jam
 /ip hotspot user add comment=vc-954-01.09.26- limit-uptime=6h name=6htn7 password=6htn7 profile=Paket6jam
@@ -3774,7 +3764,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2cu34 password=2cu34 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2kd27 password=2kd27 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2xr74 password=2xr74 profile=Paket2jam
-/ip hotspot user add comment="jul/30/2026 02:52:32" limit-uptime=2h name=2js64 password=2js64 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2nn67 password=2nn67 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2jz56 password=2jz56 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2rv99 password=2rv99 profile=Paket2jam
@@ -3882,21 +3871,17 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2jy62 password=2jy62 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2sh57 password=2sh57 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2uw63 password=2uw63 profile=Paket2jam
-/ip hotspot user add comment="jul/30/2026 05:14:04" limit-uptime=2h name=2zx58 password=2zx58 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2if96 password=2if96 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fk76 password=2fk76 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2bw29 password=2bw29 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2yb48 password=2yb48 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2kk76 password=2kk76 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2nc72 password=2nc72 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2rg34 password=2rg34 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2gz69 password=2gz69 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ip88 password=2ip88 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2hy36 password=2hy36 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2fp69 password=2fp69 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ef78 password=2ef78 profile=Paket2jam
+/ip hotspot user add comment="jul/31/2026 08:43:36" limit-uptime=2h name=2fp69 password=2fp69 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2bb49 password=2bb49 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2hf38 password=2hf38 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2cc33 password=2cc33 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2bg55 password=2bg55 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2vh63 password=2vh63 profile=Paket2jam
@@ -4011,7 +3996,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ds25 password=6ds25 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ct55 password=6ct55 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6pt42 password=6pt42 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6zb34 password=6zb34 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6je59 password=6je59 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6xu22 password=6xu22 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6nx86 password=6nx86 profile=Paket6jam
@@ -4090,7 +4074,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6kt36 password=6kt36 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6kc95 password=6kc95 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6bi47 password=6bi47 profile=Paket6jam
-/ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6kv47 password=6kv47 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6ye35 password=6ye35 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6iu38 password=6iu38 profile=Paket6jam
 /ip hotspot user add comment=vc-852-06.24.26- limit-uptime=6h name=6cf57 password=6cf57 profile=Paket6jam
@@ -4779,6 +4762,7 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ppp secret add name=NILA-JATINANGOR-B password=nila-b@tekra profile=TUNNEL-PROFILE remote-address=10.7.0.7 service=ovpn
 /ppp secret add name=CILISUNG password=CILISUNG profile=TUNNEL-PROFILE remote-address=10.7.0.8 service=ovpn
 /ppp secret add name=KATAPANG password=KATAPANG profile=TUNNEL-PROFILE remote-address=10.7.0.9 service=ovpn
+/ppp secret add name=sdd password=sdd profile=default-encryption
 /radius add address=192.168.55.1 secret=12345 service=ppp,hotspot
 /routing bgp network add disabled=yes network=10.10.10.0/24
 /routing bgp peer add disabled=yes name=cilisung remote-address=10.6.0.5 remote-as=65530
@@ -5145,6 +5129,13 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /system script add comment=mikhmon dont-require-permissions=no name=jul/29/2026-|-17:14:07-|-2zx58-|-1500-|-192.168.44.218-|-88:D5:0C:22:4C:79-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/29/2026
 /system script add comment=mikhmon dont-require-permissions=no name=jul/29/2026-|-18:57:41-|-6tn72-|-2500-|-192.168.44.189-|-8E:AA:71:EF:F1:04-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/29/2026
 /system script add comment=mikhmon dont-require-permissions=no name=jul/29/2026-|-19:08:08-|-6wf83-|-2500-|-10.10.10.246-|-6A:75:1C:60:9E:09-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/29/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/30/2026-|-06:27:59-|-2ef78-|-1500-|-10.10.10.237-|-8E:AA:71:EF:F1:04-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/30/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/30/2026-|-08:48:46-|-63r87-|-2500-|-192.168.44.227-|-76:6D:3C:DE:52:FA-|-6h-|-Paket6jam-|-vc-954-01.09.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/30/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/30/2026-|-11:21:07-|-2hf38-|-1500-|-192.168.44.104-|-30:CB:F8:EE:AC:CB-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/30/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/30/2026-|-11:34:36-|-2nc72-|-1500-|-192.168.44.124-|-88:D5:0C:22:4C:79-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/30/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/30/2026-|-17:40:40-|-6zb34-|-2500-|-192.168.44.94-|-6A:75:1C:60:9E:09-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/30/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/30/2026-|-18:13:21-|-6kv47-|-2500-|-192.168.44.211-|-8E:AA:71:EF:F1:04-|-6h-|-Paket6jam-|-vc-852-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/30/2026
+/system script add comment=mikhmon dont-require-permissions=no name=jul/30/2026-|-20:43:39-|-2fp69-|-1500-|-192.168.44.85-|-0C:98:38:FA:92:95-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=jul2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=jul/30/2026
 /tool netwatch add comment=tunnel-gateway-10.41.0.1 host=10.41.0.1
 /tool netwatch add comment=tunnel-gateway-10.47.0.1 host=10.47.0.1
 /tool netwatch add comment=tunnel-gateway-10.46.0.1 host=10.46.0.1
