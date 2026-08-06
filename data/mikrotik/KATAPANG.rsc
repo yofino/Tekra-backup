@@ -1,4 +1,4 @@
-# 2026-08-05 02:00:26 by RouterOS 7.19.4
+# 2026-08-07 02:00:24 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -868,7 +868,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=HAFIZD profile="PAKET 2" service=pppoe
 /ppp secret add name=RIKA profile="PAKET 1" service=pppoe
 /ppp secret add name=ELSA profile="PAKET 1" service=pppoe
-/ppp secret add name=250119111455-ERLINDA profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=250119111455-ERLINDA profile="PAKET 1" service=pppoe
 /ppp secret add name=100019-ANTI profile="PAKET 1" service=pppoe
 /ppp secret add disabled=yes name=100057-AYU profile="PAKET 1" service=pppoe
 /ppp secret add name=100008-DARSINI profile="PAKET 1" service=pppoe
@@ -911,21 +911,21 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=250925095127-AIYETI profile="PAKET 1" service=pppoe
 /ppp secret add name=NANANG2 profile="PAKET 1" service=pppoe
 /ppp secret add name=251001173645-ONIMAWATI profile="PAKET 1" service=pppoe
-/ppp secret add name=251003093523-FITRIAH profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=251003093523-FITRIAH profile="PAKET 1" service=pppoe
 /ppp secret add name=ILHAM profile="PAKET 2" service=pppoe
 /ppp secret add name=251020123902-DONDY profile="PAKET 1" service=pppoe
-/ppp secret add name=251020145702-GENGEN profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=251020145702-GENGEN profile="PAKET 1" service=pppoe
 /ppp secret add name=251112163131-MAMUN profile="PAKET 1" service=pppoe
 /ppp secret add name=251112181942-IRA profile="PAKET 1" service=pppoe
 /ppp secret add name=251127122925-BAYU profile="PAKET 2" service=pppoe
 /ppp secret add name=251205102442-NINA profile="PAKET 1" service=pppoe
 /ppp secret add name=RAMA profile="PAKET 1" service=pppoe
 /ppp secret add name="KRISNA 2" profile="PAKET 1" service=pppoe
-/ppp secret add name=251215115412-RONI profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=251215115412-RONI profile="PAKET 1" service=pppoe
 /ppp secret add name=251215151741-DONI profile="PAKET 1" service=pppoe
 /ppp secret add name=260102154336-ERIKA profile="PAKET 1" service=pppoe
 /ppp secret add name=260102163839-KIKI profile="PAKET 2" service=pppoe
-/ppp secret add name=260106113519-SRIRAHAYU profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=260106113519-SRIRAHAYU profile="PAKET 1" service=pppoe
 /ppp secret add name=260106114508-DEDE profile="PAKET 1" service=pppoe
 /ppp secret add name=260112164604-SOFYAN profile="PAKET 1" service=pppoe
 /ppp secret add name=260119150334-ROSITA profile="PAKET 1" service=pppoe
