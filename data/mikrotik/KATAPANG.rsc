@@ -1,4 +1,4 @@
-# 2026-08-07 02:00:24 by RouterOS 7.19.4
+# 2026-08-08 02:00:26 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -826,7 +826,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=LISNA profile="PAKET 2" service=pppoe
 /ppp secret add name=ZAKKA profile="PAKET 2" service=pppoe
 /ppp secret add name=ZIDAN profile="PAKET 1" service=pppoe
-/ppp secret add name=DEGA profile="PAKET 2" service=pppoe
+/ppp secret add disabled=yes name=DEGA profile="PAKET 2" service=pppoe
 /ppp secret add name=TULUS profile="PAKET 2" service=pppoe
 /ppp secret add local-address=10.3.0.1 name=NOVRAN profile="PAKET 4" remote-address=10.3.3.25 service=pppoe
 /ppp secret add disabled=yes name=TELI profile="PAKET 1" service=pppoe
@@ -847,14 +847,14 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=LASITO profile="PAKET 1" service=pppoe
 /ppp secret add name=NITA profile="PAKET 1" service=pppoe
 /ppp secret add name=NINDA profile="PAKET 1" service=pppoe
-/ppp secret add name=KRISNA profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=KRISNA profile="PAKET 1" service=pppoe
 /ppp secret add name=INTAN profile="PAKET 1" service=pppoe
 /ppp secret add name=TENI profile="PAKET 1" service=pppoe
 /ppp secret add name=RISTA profile="PAKET 1" service=pppoe
 /ppp secret add name=SIGIT profile="PAKET 1" service=pppoe
 /ppp secret add local-address=10.3.0.1 name=SULAIMAN profile="PAKET 3" remote-address=10.3.3.251 service=pppoe
 /ppp secret add name=100062-UCU profile="PAKET 2" service=pppoe
-/ppp secret add name=100064-KRISNA profile="PAKET 1" service=pppoe
+/ppp secret add disabled=yes name=100064-KRISNA profile="PAKET 1" service=pppoe
 /ppp secret add name=100063-DEWIROHAENI profile="PAKET 2" service=pppoe
 /ppp secret add name=ASSYEH profile="PAKET 1" service=pppoe
 /ppp secret add name=GIANTARA profile="PAKET 1" service=pppoe
@@ -911,10 +911,10 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=250925095127-AIYETI profile="PAKET 1" service=pppoe
 /ppp secret add name=NANANG2 profile="PAKET 1" service=pppoe
 /ppp secret add name=251001173645-ONIMAWATI profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=251003093523-FITRIAH profile="PAKET 1" service=pppoe
+/ppp secret add name=251003093523-FITRIAH profile="PAKET 1" service=pppoe
 /ppp secret add name=ILHAM profile="PAKET 2" service=pppoe
 /ppp secret add name=251020123902-DONDY profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=251020145702-GENGEN profile="PAKET 1" service=pppoe
+/ppp secret add name=251020145702-GENGEN profile="PAKET 1" service=pppoe
 /ppp secret add name=251112163131-MAMUN profile="PAKET 1" service=pppoe
 /ppp secret add name=251112181942-IRA profile="PAKET 1" service=pppoe
 /ppp secret add name=251127122925-BAYU profile="PAKET 2" service=pppoe
