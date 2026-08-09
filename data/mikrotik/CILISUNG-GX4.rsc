@@ -1,4 +1,4 @@
-# 2026-08-09 02:00:29 by RouterOS 7.16.1
+# 2026-08-10 02:00:21 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -373,7 +373,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260103190059-WIDIASTUTI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260104114743-PUTRI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260104131334-TITI profile="PAKET HEMAT" service=pppoe
-/ppp secret add disabled=yes name=260104150834-SITI profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260104150834-SITI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260104155731-SITINURHASANAH profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=EPUL profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260105152727-DEBI profile="PAKET HEMAT" service=pppoe
@@ -396,7 +396,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260220145557-DENI profile=PAKET2 service=pppoe
 /ppp secret add name=260228141635-TANTAN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260301131432-ANGGRAENI profile="PAKET PUAS" service=pppoe
-/ppp secret add disabled=yes name=260301134448-KIKI profile=PAKET2 service=pppoe
+/ppp secret add name=260301134448-KIKI profile=PAKET2 service=pppoe
 /ppp secret add name=260303121842-RIRIN profile="PAKET PUAS" service=pppoe
 /ppp secret add name=R-20260324124925-ROHMIATI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=20260329125557-ANI profile="PAKET HEMAT" service=pppoe
@@ -428,7 +428,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260605160202-SALMA profile=PAKET3 service=pppoe
 /ppp secret add name=260606160907-CEVI profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260609133503-DANI profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=260609152254-TENI profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260609152254-TENI profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260610154815-SUPRIYANTO profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260623103711-REVITA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260625180130-MASJIDCILISUNG profile="PAKET HEMAT" service=pppoe
