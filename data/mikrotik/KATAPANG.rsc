@@ -1,4 +1,4 @@
-# 2026-08-11 02:00:26 by RouterOS 7.19.4
+# 2026-08-12 02:00:24 by RouterOS 7.19.4
 # software id = E66U-VIKA
 #
 # model = RB450Gx4
@@ -916,7 +916,7 @@ add action=dst-nat chain=dstnat dst-port=8126 in-interface=*A protocol=tcp to-ad
 /ppp secret add name=251020123902-DONDY profile="PAKET 1" service=pppoe
 /ppp secret add name=251020145702-GENGEN profile="PAKET 1" service=pppoe
 /ppp secret add name=251112163131-MAMUN profile="PAKET 1" service=pppoe
-/ppp secret add disabled=yes name=251112181942-IRA profile="PAKET 1" service=pppoe
+/ppp secret add name=251112181942-IRA profile="PAKET 1" service=pppoe
 /ppp secret add name=251127122925-BAYU profile="PAKET 2" service=pppoe
 /ppp secret add name=251205102442-NINA profile="PAKET 1" service=pppoe
 /ppp secret add name=RAMA profile="PAKET 1" service=pppoe
