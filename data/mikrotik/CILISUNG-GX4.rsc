@@ -1,4 +1,4 @@
-# 2026-08-13 02:00:28 by RouterOS 7.16.1
+# 2026-08-14 02:00:25 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -434,7 +434,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260625180130-MASJIDCILISUNG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260701122600-RINA profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260703144237-MARWAN profile="PAKET MANTAP" service=pppoe
-/ppp secret add name=260713151657-KURAESIN profile="PAKET HEMAT" service=pppoe
+/ppp secret add disabled=yes name=260713151657-KURAESIN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260720131035-MOH profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260803192447-NURHAYATI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260807141818-TOPAN profile="PAKET MANTAP" service=pppoe
