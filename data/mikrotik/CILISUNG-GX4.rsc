@@ -1,4 +1,4 @@
-# 2026-08-15 02:00:22 by RouterOS 7.16.1
+# 2026-08-16 02:00:26 by RouterOS 7.16.1
 # software id = 4CAB-TI0E
 #
 # model = RB4011iGS+
@@ -221,7 +221,7 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=11100105-DEFIANA profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=11100106-SUHENDAR profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=231215114525-ROSSIE profile=PAKET1 service=pppoe
-/ppp secret add name=231215114521-AIYETI profile=PAKET2 service=pppoe
+/ppp secret add disabled=yes name=231215114521-AIYETI profile=PAKET2 service=pppoe
 /ppp secret add name=231215114522-FAUZIAH profile=PAKET1 service=pppoe
 /ppp secret add disabled=yes name=230526121403-KALUA profile=PAKET1 service=pppoe
 /ppp secret add name=230312143258-ADECANDRA profile=PAKET1 service=pppoe
@@ -434,14 +434,14 @@ add action=dst-nat chain=dstnat dst-port=8080 in-interface=*14 protocol=tcp to-a
 /ppp secret add name=260625180130-MASJIDCILISUNG profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260701122600-RINA profile="PAKET PUAS" service=pppoe
 /ppp secret add name=260703144237-MARWAN profile="PAKET MANTAP" service=pppoe
-/ppp secret add disabled=yes name=260713151657-KURAESIN profile="PAKET HEMAT" service=pppoe
+/ppp secret add name=260713151657-KURAESIN profile="PAKET HEMAT" service=pppoe
 /ppp secret add name=260720131035-MOH profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260803192447-NURHAYATI profile="PAKET MANTAP" service=pppoe
 /ppp secret add name=260807141818-TOPAN profile="PAKET MANTAP" service=pppoe
 /snmp set enabled=yes trap-version=3
 /system clock set time-zone-name=Asia/Jakarta
 /system identity set name=CILISUNG
-/system note set note=175 show-at-login=no
+/system note set note=176 show-at-login=no
 /system routerboard settings set enter-setup-on=delete-key
 /system scheduler add interval=30s name=sched_pppoe_count on-event=update_pppoe_count policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-01-05 start-time=15:26:44
 /system script add dont-require-permissions=no name=reset-pppoe-220815132421-LILIS owner=keanu policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="/interface reset-counters <pppoe-220815132421-LILIS>"
