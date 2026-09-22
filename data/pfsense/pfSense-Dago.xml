@@ -65,7 +65,6 @@
 		</webgui>
 		<disablesegmentationoffloading></disablesegmentationoffloading>
 		<disablelargereceiveoffloading></disablelargereceiveoffloading>
-		<ipv6allow></ipv6allow>
 		<maximumtableentries>400000</maximumtableentries>
 		<powerd_ac_mode>hadp</powerd_ac_mode>
 		<powerd_battery_mode>hadp</powerd_battery_mode>
@@ -73,7 +72,6 @@
 		<bogons>
 			<interval>monthly</interval>
 		</bogons>
-		<hn_altq_enable></hn_altq_enable>
 		<timezone>Asia/Jakarta</timezone>
 		<language>en_US</language>
 		<dnsserver>8.8.8.8</dnsserver>
@@ -93,6 +91,7 @@
 		<gw_down_kill_states>none</gw_down_kill_states>
 		<use_mfs_tmp_size></use_mfs_tmp_size>
 		<use_mfs_var_size></use_mfs_var_size>
+		<disablechecksumoffloading></disablechecksumoffloading>
 	</system>
 	<interfaces>
 		<wan>
@@ -164,16 +163,15 @@
 			<descr><![CDATA[WAN4]]></descr>
 			<if>em3</if>
 			<spoofmac></spoofmac>
-			<enable></enable>
-			<ipaddr>192.168.44.60</ipaddr>
+			<ipaddr>192.168.14.60</ipaddr>
 			<subnet>24</subnet>
-			<gateway>WAN4</gateway>
 		</opt4>
 		<opt5>
 			<descr><![CDATA[WAN5]]></descr>
 			<if>em4</if>
 			<spoofmac></spoofmac>
-			<ipaddr>192.168.124.60</ipaddr>
+			<enable></enable>
+			<ipaddr>192.168.44.67</ipaddr>
 			<subnet>24</subnet>
 			<gateway>WAN5</gateway>
 		</opt5>
@@ -300,11 +298,24 @@
 		<syslocation></syslocation>
 		<syscontact></syscontact>
 		<rocommunity>public</rocommunity>
+		<modules>
+			<mibii></mibii>
+			<netgraph></netgraph>
+			<pf></pf>
+			<hostres></hostres>
+			<ucd></ucd>
+			<regex></regex>
+		</modules>
+		<enable></enable>
+		<pollport>161</pollport>
+		<trapserver></trapserver>
+		<trapserverport>162</trapserverport>
+		<trapstring></trapstring>
+		<ipprotocol>inet4</ipprotocol>
+		<bindip>all</bindip>
 	</snmpd>
 	<diag>
-		<ipv6nat>
-			<ipaddr></ipaddr>
-		</ipv6nat>
+		<ipv6nat></ipv6nat>
 	</diag>
 	<syslog>
 		<filterdescriptions>1</filterdescriptions>
@@ -872,8 +883,8 @@
 	</vlans>
 	<qinqs></qinqs>
 	<revision>
-		<time>1777523860</time>
-		<description><![CDATA[admin@192.168.123.50 (Local Database): Status: Monitoring: updated old configuration.]]></description>
+		<time>1783064433</time>
+		<description><![CDATA[admin@192.168.123.50 (Local Database): Gateway Groups settings saved]]></description>
 		<username><![CDATA[admin@192.168.123.50 (Local Database)]]></username>
 	</revision>
 	<gateways>
@@ -909,22 +920,22 @@
 		</gateway_item>
 		<gateway_item>
 			<interface>opt4</interface>
-			<gateway>192.168.44.1</gateway>
+			<gateway>192.168.14.1</gateway>
 			<name>WAN4</name>
 			<weight>1</weight>
 			<ipprotocol>inet</ipprotocol>
 			<descr><![CDATA[WAN4]]></descr>
 			<gw_down_kill_states></gw_down_kill_states>
-			<monitor>1.1.1.1</monitor>
 		</gateway_item>
 		<gateway_item>
 			<interface>opt5</interface>
-			<gateway>192.168.124.1</gateway>
+			<gateway>192.168.44.1</gateway>
 			<name>WAN5</name>
 			<weight>1</weight>
 			<ipprotocol>inet</ipprotocol>
 			<descr><![CDATA[WAN5]]></descr>
 			<gw_down_kill_states></gw_down_kill_states>
+			<monitor>1.1.1.1</monitor>
 		</gateway_item>
 		<gateway_item>
 			<interface>opt11</interface>
@@ -949,7 +960,7 @@
 			<item>WAN1|1|address</item>
 			<item>WAN2|1|address</item>
 			<item>WAN3|1|address</item>
-			<item>WAN4|1|address</item>
+			<item>WAN5|1|address</item>
 			<trigger>downlosslatency</trigger>
 			<descr><![CDATA[LB]]></descr>
 		</gateway_group>
@@ -981,4 +992,5 @@
 			<bridgeif>bridge0</bridgeif>
 		</bridged>
 	</bridges>
+	<dhcpbackend></dhcpbackend>
 </pfsense>

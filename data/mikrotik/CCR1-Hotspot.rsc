@@ -1,4 +1,4 @@
-# sep/22/2026 02:00:03 by RouterOS 6.49.20
+# sep/22/2026 18:18:38 by RouterOS 6.49.20
 # software id = DUUD-LHXS
 #
 # model = CCR1009-7G-1C-1S+
@@ -2040,7 +2040,7 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6hx92 password=6hx92 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6ac53 password=6ac53 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6bc36 password=6bc36 profile=Paket6jam
-/ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6yp79 password=6yp79 profile=Paket6jam
+/ip hotspot user add comment="sep/22/2026 22:10:01" limit-uptime=6h name=6yp79 password=6yp79 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6ma45 password=6ma45 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6vf96 password=6vf96 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6hv57 password=6hv57 profile=Paket6jam
@@ -3627,8 +3627,8 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc- name=ATirxxa9y2 password=ATirxxa9y2 profile=V-6000
 /ip hotspot user add comment="MARWIYAH - 55rb - Bojong Suren" name=260124095750-MARWIYAH password=260124095750-MARWIYAH profile="1BULAN 1ORANG"
 /ip hotspot user add comment=vc- name=ATozpxbbai password=ATozpxbbai profile=V-2000
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2vm73 password=2vm73 profile=Paket2jam
-/ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2cn52 password=2cn52 profile=Paket2jam
+/ip hotspot user add comment="sep/22/2026 19:28:29" limit-uptime=2h name=2vm73 password=2vm73 profile=Paket2jam
+/ip hotspot user add comment="sep/22/2026 18:47:55" limit-uptime=2h name=2cn52 password=2cn52 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2xv34 password=2xv34 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ey49 password=2ey49 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2nb57 password=2nb57 profile=Paket2jam
@@ -5193,6 +5193,9 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /system script add comment=mikhmon dont-require-permissions=no name=sep/21/2026-|-11:03:54-|-2ud53-|-1500-|-10.10.10.249-|-2C:5B:B8:6D:6D:43-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=sep2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=sep/21/2026
 /system script add comment=mikhmon dont-require-permissions=no name=sep/21/2026-|-12:41:09-|-2jh97-|-1500-|-10.10.10.250-|-88:D5:0C:22:4C:79-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=sep2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=sep/21/2026
 /system script add comment=mikhmon dont-require-permissions=no name=sep/21/2026-|-18:38:01-|-6yp74-|-2500-|-192.168.44.215-|-44:46:87:90:80:AD-|-6h-|-Paket6jam-|-vc-880-03.30.26- owner=sep2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=sep/21/2026
+/system script add comment=mikhmon dont-require-permissions=no name=sep/22/2026-|-06:47:57-|-2cn52-|-1500-|-192.168.44.60-|-7E:92:82:D7:1A:1D-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=sep2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=sep/22/2026
+/system script add comment=mikhmon dont-require-permissions=no name=sep/22/2026-|-07:28:31-|-2vm73-|-1500-|-192.168.44.202-|-30:CB:F8:EE:AC:CB-|-12h-|-Paket2jam-|-vc-116-06.24.26- owner=sep2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=sep/22/2026
+/system script add comment=mikhmon dont-require-permissions=no name=sep/22/2026-|-16:10:04-|-6yp79-|-2500-|-192.168.44.56-|-44:46:87:90:80:AD-|-6h-|-Paket6jam-|-vc-608-10.03.25- owner=sep2026 policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=sep/22/2026
 /tool netwatch add comment=tunnel-gateway-10.41.0.1 host=10.41.0.1
 /tool netwatch add comment=tunnel-gateway-10.47.0.1 host=10.47.0.1
 /tool netwatch add comment=tunnel-gateway-10.46.0.1 host=10.46.0.1

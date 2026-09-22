@@ -372,11 +372,7 @@ if __name__ == "__main__":
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     backup_mikrotik()
-    backup_pfsense()
-    backup_olt_epon()
-    backup_databases()
     backup_workspace_hermes()
-    backup_workspace_remote()
     cleanup_old_backups()
     git_commit_push()
 
