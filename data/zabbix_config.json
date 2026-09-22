@@ -1,0 +1,565 @@
+{
+  "exported_at": "2026-05-13T21:57:18.469798",
+  "hosts": [
+    {
+      "host": "Zabbix server",
+      "name": "Zabbix server",
+      "hostid": "10084",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 153
+    },
+    {
+      "host": "CCR2",
+      "name": "CCR2",
+      "hostid": "10674",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "172.80.10.100",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 19414
+    },
+    {
+      "host": "CCR1",
+      "name": "CCR1",
+      "hostid": "10675",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.1",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 1390
+    },
+    {
+      "host": "DAGO",
+      "name": "DAGO",
+      "hostid": "10676",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.6.0.2",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 9256
+    },
+    {
+      "host": "CILISUNG",
+      "name": "CILISUNG",
+      "hostid": "10677",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.7.0.8",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 6163
+    },
+    {
+      "host": "KATAPANG",
+      "name": "KATAPANG",
+      "hostid": "10678",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.7.0.9",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 4705
+    },
+    {
+      "host": "pfsense",
+      "name": "pfsense",
+      "hostid": "10681",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "192.168.123.1",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 490
+    },
+    {
+      "host": "pfsenese-gateway",
+      "name": "network/gateway",
+      "hostid": "10682",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "powerr",
+      "name": "powerr",
+      "hostid": "10684",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.15",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 1
+    },
+    {
+      "host": "UPS-NUT-LOCAL",
+      "name": "UPS-NUT-LOCAL",
+      "hostid": "10685",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 7
+    },
+    {
+      "host": "RaspberryPi-PZEM",
+      "name": "RaspberryPi-PZEM",
+      "hostid": "10688",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.16",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 15
+    },
+    {
+      "host": "Monitoring-Qos",
+      "name": "Monitoring-Qos",
+      "hostid": "10689",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 7
+    },
+    {
+      "host": "OLT-EPON-PUSAT",
+      "name": "OLT-EPON-PUSAT",
+      "hostid": "10690",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.203",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 6
+    },
+    {
+      "host": "DESKTOP-WHJFVWIHJF.home.arpa",
+      "name": "DESKTOP-WHJFVWIHJF.home.arpa",
+      "hostid": "10691",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "192.168.123.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 329
+    },
+    {
+      "host": "PZEM-Gardu-A",
+      "name": "PZEM-Gardu-A",
+      "hostid": "10692",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 8
+    },
+    {
+      "host": "ISP-CORE",
+      "name": "ISP-CORE",
+      "hostid": "10694",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "INTERNET-QUALITY-MONITOR",
+      "name": "INTERNET-QUALITY-MONITOR",
+      "hostid": "10697",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 9
+    },
+    {
+      "host": "facebook.com",
+      "name": "Facebook",
+      "hostid": "10698",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "instagram.com",
+      "name": "Instagram",
+      "hostid": "10699",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "whatsapp.com",
+      "name": "WhatsApp",
+      "hostid": "10700",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "google.com",
+      "name": "Google",
+      "hostid": "10701",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "youtube.com",
+      "name": "YouTube",
+      "hostid": "10702",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "tiktok.com",
+      "name": "TikTok",
+      "hostid": "10703",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "shopee.co.id",
+      "name": "Shopee",
+      "hostid": "10704",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "tokopedia.com",
+      "name": "Tokopedia",
+      "hostid": "10705",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "mobilelegends.com",
+      "name": "Mobile Legends",
+      "hostid": "10706",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "roblox.com",
+      "name": "Roblox",
+      "hostid": "10707",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "pubg.com",
+      "name": "PUBG",
+      "hostid": "10708",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "ff.garena.com",
+      "name": "Free Fire",
+      "hostid": "10709",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "netflix.com",
+      "name": "Netflix",
+      "hostid": "10710",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "lazada.co.id",
+      "name": "Lazada",
+      "hostid": "10711",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "twitter.com",
+      "name": "X / Twitter",
+      "hostid": "10712",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "127.0.0.1",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 2
+    },
+    {
+      "host": "OLT-EPON-PUSAT-SNMP",
+      "name": "OLT EPON Pusat (HSGQ)",
+      "hostid": "10713",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.203",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 44
+    },
+    {
+      "host": "OLT-GPON-PUSAT-SNMP",
+      "name": "OLT GPON Pusat (HSGQ-G008ID)",
+      "hostid": "10714",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.204",
+          "type": "2",
+          "port": "161"
+        }
+      ],
+      "items_count": 80
+    },
+    {
+      "host": "VPS-Nocita",
+      "name": "VPS Nocita (Portal/Mail/Siti)",
+      "hostid": "10715",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "103.129.148.97",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 6
+    },
+    {
+      "host": "VPS-TekraApp",
+      "name": "VPS TekraApp (Apps)",
+      "hostid": "10716",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "103.197.191.8",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 6
+    },
+    {
+      "host": "Proxmox-Pusat",
+      "name": "Proxmox Pusat (10.4)",
+      "hostid": "10717",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.4",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 5
+    },
+    {
+      "host": "Proxmox-AI",
+      "name": "Proxmox AI (10.29)",
+      "hostid": "10718",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.29",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 5
+    },
+    {
+      "host": "Zara-VM",
+      "name": "Zara VM (10.10.10.30)",
+      "hostid": "10719",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.30",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 5
+    },
+    {
+      "host": "Anatasya-VM",
+      "name": "Anatasya VM (10.10.10.31)",
+      "hostid": "10720",
+      "status": "enabled",
+      "interfaces": [
+        {
+          "ip": "10.10.10.31",
+          "type": "1",
+          "port": "10050"
+        }
+      ],
+      "items_count": 5
+    }
+  ]
+}

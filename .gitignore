@@ -1,0 +1,9 @@
+config.json
+backup.log
+__pycache__/
+*.pyc
+*.bak_*
+data/databases/*.sql.gz
+data/workspace/*.tar.gz
+data/workspace-agents/*.tar.gz
+data/olt_onu_offline.json
