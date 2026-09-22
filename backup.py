@@ -225,12 +225,16 @@ def backup_workspace_hermes():
     try:
         archive = out_dir / f"hermes-home-{TODAY}.tar.gz"
         subprocess.run(
-            ["tar", "czf", str(archive), "--exclude=*.pyc", "--exclude=__pycache__",
+            ["tar", "czf", str(archive), "--warning=no-file-changed",
+             "--ignore-failed-read", "--exclude=*.pyc", "--exclude=__pycache__",
              "--exclude=sessions", "--exclude=logs", "--exclude=audio_cache",
              "-C", "/root", ".hermes"],
-            check=True, timeout=60
+            check=False, timeout=120
         )
-        ok(f"Hermes home ({archive.stat().st_size//1024}KB)")
+        if archive.exists() and archive.stat().st_size > 0:
+            ok(f"Hermes home ({archive.stat().st_size//1024}KB)")
+        else:
+            raise Exception("Archive kosong / tidak terbentuk")
     except Exception as e:
         fail("Hermes home", e)
     # Backup workspace scripts (now at /opt/tekra-scripts/)
