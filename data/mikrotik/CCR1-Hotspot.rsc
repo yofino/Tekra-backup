@@ -1,4 +1,4 @@
-# sep/22/2026 18:20:00 by RouterOS 6.49.20
+# sep/23/2026 02:00:03 by RouterOS 6.49.20
 # software id = DUUD-LHXS
 #
 # model = CCR1009-7G-1C-1S+
@@ -2040,7 +2040,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6hx92 password=6hx92 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6ac53 password=6ac53 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6bc36 password=6bc36 profile=Paket6jam
-/ip hotspot user add comment="sep/22/2026 22:10:01" limit-uptime=6h name=6yp79 password=6yp79 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6ma45 password=6ma45 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6vf96 password=6vf96 profile=Paket6jam
 /ip hotspot user add comment=vc-608-10.03.25- limit-uptime=6h name=6hv57 password=6hv57 profile=Paket6jam
@@ -3627,8 +3626,6 @@ add action=dst-nat chain=dstnat dst-port=1259 in-interface=*F protocol=tcp to-ad
 /ip hotspot user add comment=vc- name=ATirxxa9y2 password=ATirxxa9y2 profile=V-6000
 /ip hotspot user add comment="MARWIYAH - 55rb - Bojong Suren" name=260124095750-MARWIYAH password=260124095750-MARWIYAH profile="1BULAN 1ORANG"
 /ip hotspot user add comment=vc- name=ATozpxbbai password=ATozpxbbai profile=V-2000
-/ip hotspot user add comment="sep/22/2026 19:28:29" limit-uptime=2h name=2vm73 password=2vm73 profile=Paket2jam
-/ip hotspot user add comment="sep/22/2026 18:47:55" limit-uptime=2h name=2cn52 password=2cn52 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2xv34 password=2xv34 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2ey49 password=2ey49 profile=Paket2jam
 /ip hotspot user add comment=vc-116-06.24.26- limit-uptime=2h name=2nb57 password=2nb57 profile=Paket2jam
