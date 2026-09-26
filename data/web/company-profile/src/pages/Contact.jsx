@@ -34,7 +34,7 @@ const contactInfo = [
   },
   {
     label: 'Jam Operasional',
-    value: 'NOC 24/7 · Kantor: Senin–Jumat, 08.00–17.00 WIB',
+    value: 'NOC 24/7 · Kantor: Senin–Sabtu, 08.00–17.00 WIB',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
